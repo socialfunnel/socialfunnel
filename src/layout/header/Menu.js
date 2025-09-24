@@ -250,11 +250,11 @@ const MobileMenu = () => {
   const [activeMenu, setActiveMenu] = useState("");
   const [multiMenu, setMultiMenu] = useState("");
   const activeMenuSet = (value) =>
-      setActiveMenu(activeMenu === value ? "" : value),
+    setActiveMenu(activeMenu === value ? "" : value),
     activeLi = (value) =>
       value === activeMenu ? { display: "block" } : { display: "none" };
   const multiMenuSet = (value) =>
-      setMultiMenu(multiMenu === value ? "" : value),
+    setMultiMenu(multiMenu === value ? "" : value),
     multiMenuActiveLi = (value) =>
       value === multiMenu ? { display: "block" } : { display: "none" };
   return (

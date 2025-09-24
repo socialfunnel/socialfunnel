@@ -1,0 +1,337 @@
+{
+  "company": {
+    "name": "Social Funnel",
+    "tagline": "Client Acquisition Systems for High-Ticket Businesses",
+    "description": "Social Funnel is a Kenyan-based marketing agency that provides end-to-end Business Development solutions to businesses dealing in high ticket services and products. Our ideal client has a minimum product value of $10,000 (>Ksh 1M) per sale. We offer a tested and proven Lead Generation solution, and we set up dedicated call centres for our clients to nurture the Leads through the Funnel.",
+    "mission": "To build client acquisition systems that create predictable revenue and freedom for service businesses—while funding generational impact across Africa. We use our skills to solve real-world problems.",
+    "founded": "2020",
+    "location": {
+      "address": "P. O. Box 1215 - 10400, Cape Chestnut, Nanyuki",
+      "country": "Kenya",
+      "city": "Nanyuki"
+    }
+  },
+  "contact": {
+    "phone": "+254 721634183",
+    "email": "info@socialfunnel.agency",
+    "website": "www.socialfunnel.agency",
+    "social": {
+      "linkedin": "https://www.linkedin.com/company/socialfunnel-agency",
+      "facebook": "",
+      "twitter": "",
+      "instagram": ""
+    }
+  },
+  "hero": {
+    "title": {
+      "main": "Social",
+      "accent": "Funnel",
+      "suffix": "Marketing"
+    },
+    "subtitle": "Building Client Acquisition Systems for High-Ticket Businesses",
+    "description": "We specialize in businesses with minimum product values of $10,000+ per sale, creating predictable revenue through proven automation systems.",
+    "cta": {
+      "text": "Book Discovery Call",
+      "link": "tel:+254721634183"
+    }
+  },
+  "services": [
+    {
+      "id": 1,
+      "title": "Client Acquisition Funnels",
+      "shortDescription": "High-converting landing pages and automated lead capture sequences that maximize conversions",
+      "fullDescription": "We map and design the entire customer journey—from the first ad click to a booked appointment. Our funnels are built to maximize conversions at every step, using data-driven testing and proven frameworks.",
+      "features": [
+        "High-converting landing pages tailored to your industry",
+        "Automated lead capture and follow-up sequences",
+        "Conversion tracking to measure ROI at every stage"
+      ],
+      "result": "More qualified leads, consistently filling your pipeline.",
+      "icon": "assets/images/services/icon1.png"
+    },
+    {
+      "id": 2,
+      "title": "AI-Powered Chatbots & CRM Systems",
+      "shortDescription": "24/7 chatbot support with automated lead scoring and CRM integrations",
+      "fullDescription": "Your leads don't want to wait. We set up intelligent chatbots that respond instantly, answer questions, and qualify prospects—all while syncing to your CRM.",
+      "features": [
+        "24/7 chatbot support for instant lead response",
+        "Automated lead scoring so you know who's ready to buy",
+        "CRM setup and integrations to keep your sales organized"
+      ],
+      "result": "No missed opportunities—every prospect is followed up, every lead tracked.",
+      "icon": "assets/images/services/icon2.png"
+    },
+    {
+      "id": 3,
+      "title": "Paid Ads That Actually Work",
+      "shortDescription": "Facebook, Instagram & Google Ads with precision targeting for decision-makers",
+      "fullDescription": "We don't waste money on 'likes' or vanity metrics. Our ad campaigns are laser-focused on one thing: client acquisition.",
+      "features": [
+        "Facebook, Instagram & Google Ads built for ROI",
+        "Precision targeting to reach decision-makers in your industry",
+        "Continuous testing and optimization to lower cost per lead"
+      ],
+      "result": "More clients for less ad spend.",
+      "icon": "assets/images/services/icon3.png"
+    },
+    {
+      "id": 4,
+      "title": "Automation Systems",
+      "shortDescription": "Sales running on autopilot while you focus on delivery",
+      "fullDescription": "We take the manual, repetitive work off your plate and replace it with smart automation.",
+      "features": [
+        "Automated booking flows that sync to your calendar",
+        "Email/SMS follow-ups that nurture leads until they're ready",
+        "Lead qualification workflows to prioritize high-value prospects"
+      ],
+      "result": "Sales running on autopilot, while you focus on delivery.",
+      "icon": "assets/images/services/icon4.png"
+    },
+    {
+      "id": 5,
+      "title": "Brand & Funnel Design",
+      "shortDescription": "Professional design that builds instant credibility and converts leads",
+      "fullDescription": "Your funnel isn't just a system—it's also the first impression your clients get of your business. We design with clarity, trust, and authority in mind.",
+      "features": [
+        "Clean, professional funnel pages that build instant credibility",
+        "Persuasive copywriting that moves clients to take action",
+        "Brand-aligned design so you look as good as you perform"
+      ],
+      "result": "A brand presence that inspires confidence and converts leads into long-term clients.",
+      "icon": "assets/images/services/icon1.png"
+    },
+    {
+      "id": 6,
+      "title": "Strategic Communications & Campaigns",
+      "shortDescription": "Campaigns that shift perception, win attention, and deliver measurable outcomes",
+      "fullDescription": "We don't just market—we tell stories that move people and mobilize action. Whether it's a product launch, a corporate rebrand, or a national advocacy campaign, we craft narratives that cut through noise and build trust.",
+      "features": [
+        "Campaign strategy and messaging frameworks",
+        "Multi-channel execution: social, digital, print, and on-ground activations",
+        "Influencer engagement, PR, and stakeholder alignment",
+        "Data-driven monitoring and reporting to show real impact"
+      ],
+      "result": "Campaigns that don't just look good—they shift perception, win attention, and deliver measurable outcomes.",
+      "icon": "assets/images/services/icon2.png"
+    }
+  ],
+  "whyChooseUs": [
+    {
+      "title": "High-Ticket Expertise",
+      "description": "We specialize in businesses with minimum product values of $10,000+ per sale, understanding the unique challenges of high-ticket industries",
+      "icon": "fas fa-funnel-dollar"
+    },
+    {
+      "title": "ROI-Focused Approach",
+      "description": "We prioritize measurable results over vanity metrics. Every campaign is built to deliver qualified leads and actual revenue growth",
+      "icon": "fas fa-chart-line"
+    },
+    {
+      "title": "Scalable Systems",
+      "description": "Our automation systems grow with your business, providing sustainable lead generation that doesn't require constant manual work",
+      "icon": "fas fa-cogs"
+    }
+  ],
+  "statistics": [
+    {
+      "number": 50,
+      "suffix": "+",
+      "title": "High-Ticket Clients Served",
+      "icon": "fal fa-funnel-dollar"
+    },
+    {
+      "number": 10,
+      "suffix": "M+",
+      "title": "Revenue Generated (USD)",
+      "icon": "fal fa-chart-line"
+    },
+    {
+      "number": 15,
+      "suffix": "",
+      "title": "Expert Team Members",
+      "icon": "fal fa-users"
+    },
+    {
+      "number": 95,
+      "suffix": "%",
+      "title": "Client Satisfaction Rate",
+      "icon": "fal fa-trophy"
+    }
+  ],
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Richard S. Robertson",
+      "position": "CEO & Founder",
+      "company": "TechCorp Ltd",
+      "rating": 5,
+      "text": "Social Funnel transformed our lead generation process. We went from struggling to find qualified prospects to having a consistent pipeline of high-value clients.",
+      "image": "assets/images/testimonials/client1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Sarah M. Johnson",
+      "position": "Managing Director",
+      "company": "Construction Plus",
+      "rating": 5,
+      "text": "The automation systems they built for us saved us countless hours while increasing our conversion rates by 300%. Truly exceptional service.",
+      "image": "assets/images/testimonials/client2.jpg"
+    },
+    {
+      "id": 3,
+      "name": "David K. Mwangi",
+      "position": "Founder",
+      "company": "Healthcare Solutions Kenya",
+      "rating": 5,
+      "text": "Their understanding of high-ticket sales processes is unmatched. They helped us scale from 2 clients per month to 15+ qualified leads weekly.",
+      "image": "assets/images/testimonials/client3.jpg"
+    }
+  ],
+  "linkedinPosts": [
+    {
+      "id": 1,
+      "embedUrl": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7189186812152537088?collapsed=1",
+      "height": "590"
+    },
+    {
+      "id": 2,
+      "embedUrl": "https://www.linkedin.com/embed/feed/update/urn:li:share:7326526145561018368?collapsed=1",
+      "height": "670"
+    },
+    {
+      "id": 3,
+      "embedUrl": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7325134242856751104",
+      "height": "1024"
+    },
+    {
+      "id": 4,
+      "embedUrl": "https://www.linkedin.com/embed/feed/update/urn:li:share:7267494921920483329",
+      "height": "2076"
+    },
+    {
+      "id": 5,
+      "embedUrl": "https://www.linkedin.com/embed/feed/update/urn:li:share:7259076968623562752",
+      "height": "1174"
+    },
+    {
+      "id": 6,
+      "embedUrl": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7247154515785773056",
+      "height": "1213"
+    }
+  ],
+  "navigation": {
+    "singlePage": [
+      { "label": "Home", "href": "#home" },
+      { "label": "About", "href": "#about" },
+      { "label": "Services", "href": "#services" },
+      { "label": "Case Studies", "href": "#projects" },
+      { "label": "Team", "href": "#team" },
+      { "label": "Testimonials", "href": "#testimonials" },
+      { "label": "Insights", "href": "#news" }
+    ],
+    "multiPage": {
+      "main": [
+        { "label": "Home", "href": "/" },
+        { "label": "About", "href": "/about" },
+        { "label": "Services", "href": "/services" },
+        { "label": "Insights", "href": "/insights" },
+        { "label": "Contact", "href": "/contact" }
+      ],
+      "footer": [
+        { "label": "Lead Generation", "href": "/services" },
+        { "label": "Paid Advertising", "href": "/services" },
+        { "label": "Marketing Automation", "href": "/services" },
+        { "label": "Book Discovery Call", "href": "/contact" },
+        { "label": "FAQs", "href": "/faqs" }
+      ]
+    }
+  },
+  "cta": {
+    "primary": {
+      "title": "Ready to Build Your Client Acquisition System?",
+      "description": "Not sure where to begin? Book a discovery call with us and let's discuss how we can help scale your high-ticket business.",
+      "buttonText": "Book Discovery Call",
+      "buttonLink": "tel:+254721634183"
+    },
+    "secondary": {
+      "title": "Let's Work Together",
+      "description": "Transform your business with proven automation systems",
+      "buttonText": "Get Started",
+      "buttonLink": "mailto:info@socialfunnel.agency"
+    }
+  },
+  "seo": {
+    "title": "Social Funnel - Client Acquisition Systems for High-Ticket Businesses",
+    "description": "Social Funnel - Kenyan marketing agency specializing in client acquisition systems for high-ticket businesses. Lead generation, automation, and ROI-focused campaigns.",
+    "keywords": "marketing agency Kenya, lead generation, client acquisition, high-ticket sales, marketing automation, Nanyuki marketing, business development",
+    "author": "Social Funnel",
+    "image": "assets/images/social-preview.jpg"
+  },
+  "team": [
+    {
+      "id": 1,
+      "name": "Elvis Wangari",
+      "position": "Founder & CEO",
+      "bio": "Expert in high-ticket client acquisition with over 8 years of experience in marketing automation and business development.",
+      "image": "assets/images/team/elvis.jpg",
+      "social": {
+        "linkedin": "https://www.linkedin.com/in/elviswangari",
+        "twitter": "",
+        "email": "elvis@socialfunnel.agency"
+      }
+    }
+  ],
+  "pricing": {
+    "plans": [
+      {
+        "name": "Starter Package",
+        "price": 2500,
+        "currency": "USD",
+        "period": "month",
+        "description": "Perfect for businesses ready to automate their lead generation",
+        "features": [
+          "Lead generation funnel setup",
+          "Basic chatbot integration",
+          "Email automation sequences",
+          "Monthly performance reports",
+          "Phone support"
+        ],
+        "popular": false
+      },
+      {
+        "name": "Growth Package",
+        "price": 5000,
+        "currency": "USD",
+        "period": "month",
+        "description": "Comprehensive system for scaling high-ticket businesses",
+        "features": [
+          "Full acquisition funnel suite",
+          "Advanced AI chatbot & CRM",
+          "Multi-channel paid advertising",
+          "Lead scoring & qualification",
+          "Weekly strategy calls",
+          "Dedicated account manager"
+        ],
+        "popular": true
+      },
+      {
+        "name": "Enterprise Package",
+        "price": 10000,
+        "currency": "USD",
+        "period": "month",
+        "description": "Complete business development solution with full automation",
+        "features": [
+          "Custom acquisition system design",
+          "Full marketing automation suite",
+          "Dedicated call center setup",
+          "Strategic communications campaigns",
+          "24/7 priority support",
+          "Quarterly business reviews",
+          "White-label solutions"
+        ],
+        "popular": false
+      }
+    ]
+  }
+}

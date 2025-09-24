@@ -11,8 +11,9 @@ const Nav = ({ singleMenu }) => {
               <a>
                 <img
                   src="assets/images/logos/logo.png"
-                  alt="Logo"
-                  title="Logo"
+                  alt="Social Funnel Logo"
+                  title="Social Funnel"
+                  style={{ maxHeight: '40px', width: 'auto' }}
                 />
               </a>
             </Link>

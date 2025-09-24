@@ -14,13 +14,10 @@ const DefaultHeader = ({ singleMenu, dark }) => {
                 <Link legacyBehavior href="/">
                   <a>
                     <img
-                      src={
-                        dark
-                          ? "assets/images/logos/logo-white.png"
-                          : "assets/images/logos/logo.png"
-                      }
-                      alt="Logo"
-                      title="Logo"
+                      src="assets/images/logos/logo.png"
+                      alt="Social Funnel Logo"
+                      title="Social Funnel"
+                      style={{ maxHeight: '50px', width: 'auto' }}
                     />
                   </a>
                 </Link>

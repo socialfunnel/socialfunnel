@@ -1,6 +1,9 @@
 import Link from "next/link";
+import { useAgencyData } from "@/src/hooks/useAgencyData";
 
 const DefaultFooter = ({ dark }) => {
+  const { company, contact } = useAgencyData();
+
   return (
     <footer
       className="main-footer rel z-1"
@@ -16,12 +19,9 @@ const DefaultFooter = ({ dark }) => {
                 <Link legacyBehavior href="/">
                   <a>
                     <img
-                      src={
-                        dark
-                          ? "assets/images/logos/footer-logo-white.png"
-                          : "assets/images/logos/footer-logo.png"
-                      }
-                      alt="Logo"
+                      src="assets/images/logos/footer-logo.png"
+                      alt="Social Funnel Logo"
+                      style={{ maxHeight: '60px', width: 'auto' }}
                     />
                   </a>
                 </Link>
@@ -58,15 +58,15 @@ const DefaultFooter = ({ dark }) => {
               <div className="footer-contact-info wow fadeInUp delay-0-3s animated">
                 <a
                   className="theme-btn style-three"
-                  href="mailto:info@socialfunnel.agency"
+                  href={`mailto:${contact.email}`}
                 >
-                  info@socialfunnel.agency <i className="far fa-arrow-right" />
+                  {contact.email} <i className="far fa-arrow-right" />
                 </a>
                 <a
                   className="theme-btn style-three phone-number"
-                  href="tel:+254721634183"
+                  href={`tel:${contact.phone}`}
                 >
-                  +254 721634183 <i className="far fa-arrow-right" />
+                  {contact.phone} <i className="far fa-arrow-right" />
                 </a>
               </div>
             </div>
@@ -84,49 +84,49 @@ const DefaultFooter = ({ dark }) => {
                     </Link>
                   </li>
                   <li>
-                    <Link legacyBehavior href="/arch/services">
+                    <Link legacyBehavior href="/services">
                       Our Services
                     </Link>
                   </li>
                   <li>
-                    <Link legacyBehavior href="/arch/about">
+                    <Link legacyBehavior href="/about">
                       About Us
                     </Link>
                   </li>
                   <li>
-                    <Link legacyBehavior href="/arch/blog">
+                    <Link legacyBehavior href="/blog">
                       Insights
                     </Link>
                   </li>
                   <li>
-                    <Link legacyBehavior href="/arch/contact">
+                    <Link legacyBehavior href="/contact">
                       Contact Us
                     </Link>
                   </li>
                 </ul>
                 <ul className="list-style-two wow fadeInUp delay-0-4s animated">
                   <li>
-                    <Link legacyBehavior href="/arch/services">
+                    <Link legacyBehavior href="/services">
                       Lead Generation
                     </Link>
                   </li>
                   <li>
-                    <Link legacyBehavior href="/arch/services">
+                    <Link legacyBehavior href="/services">
                       Paid Advertising
                     </Link>
                   </li>
                   <li>
-                    <Link legacyBehavior href="/arch/services">
+                    <Link legacyBehavior href="/services">
                       Marketing Automation
                     </Link>
                   </li>
                   <li>
-                    <Link legacyBehavior href="/arch/contact">
+                    <Link legacyBehavior href="/contact">
                       Book Discovery Call
                     </Link>
                   </li>
                   <li>
-                    <Link legacyBehavior href="/arch/faqs">
+                    <Link legacyBehavior href="/faqs">
                       FAQs
                     </Link>
                   </li>
@@ -168,7 +168,7 @@ const DefaultFooter = ({ dark }) => {
                 <p>
                   Copyright @2024,{" "}
                   <Link legacyBehavior href="/">
-                    <a>Social Funnel</a>
+                    <a>{company.name}</a>
                   </Link>{" "}
                   All Rights Reserved
                 </p>

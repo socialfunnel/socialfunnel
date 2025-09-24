@@ -1,5 +1,6 @@
 import Layout from "@/src/layout/Layout";
 import { sliderProps } from "@/src/sliderProps";
+import { useAgencyData } from "@/src/hooks/useAgencyData";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -9,6 +10,10 @@ const Counter = dynamic(() => import("@/src/components/Counter"), {
 });
 
 const IndexSingle = () => {
+  const agencyData = useAgencyData();
+  const { company, hero, services, whyChooseUs, statistics, contact } =
+    agencyData;
+
   return (
     <Layout singleMenu dark>
       {/* Hero Section Start */}
@@ -18,7 +23,8 @@ const IndexSingle = () => {
             <div className="col-lg-8">
               <div className="hero-content wow fadeInLeft delay-0-2s">
                 <h1>
-                  Social <span>Funnel</span> <i>Marketing</i>
+                  {hero.title.main} <span>{hero.title.accent}</span>{" "}
+                  <i>{hero.title.suffix}</i>
                 </h1>
               </div>
             </div>
@@ -33,16 +39,16 @@ const IndexSingle = () => {
           <div className="hero-bottom-image">
             <img src="assets/images/hero/hero.jpg" alt="Hero" />
             <div className="hero-social">
-              <a href="https://www.linkedin.com/company/socialfunnel-agency">
+              <a href={contact.social.linkedin}>
                 <i className="fab fa-linkedin-in" /> <span>LinkedIn</span>
               </a>
-              <a href="tel:+254721634183">
-                <i className="fas fa-phone" /> <span>+254 721634183</span>
+              <a href={`tel:${contact.phone}`}>
+                <i className="fas fa-phone" /> <span>{contact.phone}</span>
               </a>
-              <a href="mailto:info@socialfunnel.agency">
+              <a href={`mailto:${contact.email}`}>
                 <i className="fas fa-envelope" /> <span>Email Us</span>
               </a>
-              <a href="https://www.socialfunnel.agency">
+              <a href={`https://${contact.website}`}>
                 <i className="fas fa-globe" /> <span>Website</span>
               </a>
             </div>
@@ -68,20 +74,12 @@ const IndexSingle = () => {
             <div className="col-xl-7 col-lg-9">
               <div className="about-content wow fadeInUp delay-0-4s">
                 <div className="section-title mb-40">
-                  <span className="sub-title mb-15">About Social Funnel</span>
-                  <h2>
-                    Building Client Acquisition Systems for High-Ticket Businesses
-                  </h2>
+                  <span className="sub-title mb-15">About {company.name}</span>
+                  <h2>{company.tagline}</h2>
                 </div>
                 <div className="content">
-                  <p>
-                    Social Funnel is a Kenyan-based marketing agency that provides end-to-end
-                    Business Development solutions to businesses dealing in high ticket services
-                    and products. Our ideal client has a minimum product value of $10,000 (&gt;Ksh 1M)
-                    per sale. We offer a tested and proven Lead Generation solution, and we set up
-                    dedicated call centres for our clients to nurture the Leads through the Funnel.
-                  </p>
-                  <Link legacyBehavior href="/arch/about">
+                  <p>{company.description.replace(">", "&gt;")}</p>
+                  <Link legacyBehavior href="/about">
                     <a className="read-more mt-10">
                       Read More <i className="far fa-arrow-right" />
                     </a>
@@ -121,10 +119,11 @@ const IndexSingle = () => {
                   <div className="content">
                     <h5>Client Acquisition Funnels</h5>
                     <p>
-                      We map and design the entire customer journey—from the first ad click to a booked
-                      appointment. Our funnels are built to maximize conversions at every step.
+                      We map and design the entire customer journey—from the
+                      first ad click to a booked appointment. Our funnels are
+                      built to maximize conversions at every step.
                     </p>
-                    <Link legacyBehavior href="/arch/service-details">
+                    <Link legacyBehavior href="/services">
                       <a className="read-more style-two">
                         <span>Read More</span>{" "}
                         <i className="far fa-arrow-right" />
@@ -139,10 +138,11 @@ const IndexSingle = () => {
                   <div className="content">
                     <h5>AI-Powered Chatbots & CRM</h5>
                     <p>
-                      We set up intelligent chatbots that respond instantly, answer questions, and qualify
-                      prospects—all while syncing to your CRM for organized sales processes.
+                      We set up intelligent chatbots that respond instantly,
+                      answer questions, and qualify prospects—all while syncing
+                      to your CRM for organized sales processes.
                     </p>
-                    <Link legacyBehavior href="/arch/service-details">
+                    <Link legacyBehavior href="/services">
                       <a className="read-more style-two">
                         <span>Read More</span>{" "}
                         <i className="far fa-arrow-right" />
@@ -157,10 +157,11 @@ const IndexSingle = () => {
                   <div className="content">
                     <h5>Paid Ads That Convert</h5>
                     <p>
-                      Our ad campaigns are laser-focused on client acquisition. Facebook, Instagram & Google Ads
-                      built for ROI with precision targeting to reach decision-makers.
+                      Our ad campaigns are laser-focused on client acquisition.
+                      Facebook, Instagram & Google Ads built for ROI with
+                      precision targeting to reach decision-makers.
                     </p>
-                    <Link legacyBehavior href="/arch/service-details">
+                    <Link legacyBehavior href="/services">
                       <a className="read-more style-two">
                         <span>Read More</span>{" "}
                         <i className="far fa-arrow-right" />
@@ -190,7 +191,9 @@ const IndexSingle = () => {
               <div className="counter-item counter-text-wrap wow fadeInUp delay-0-2s">
                 <i className="fal fa-funnel-dollar" />
                 <Counter end={50} extraClass={"+"} />
-                <span className="counter-title">High-Ticket Clients Served</span>
+                <span className="counter-title">
+                  High-Ticket Clients Served
+                </span>
               </div>
             </div>
             <div className="col-xl-2 col-lg-3 col-6">
@@ -237,14 +240,17 @@ const IndexSingle = () => {
               <div className="service-three-item wow fadeInUp delay-0-2s">
                 <div className="title-icon">
                   <h5>
-                    <Link legacyBehavior href="/arch/service-details">
+                    <Link legacyBehavior href="/services">
                       <a>Client Acquisition Funnels</a>
                     </Link>
                   </h5>
                   <img src="assets/images/services/icon1.png" alt="Icon" />
                 </div>
                 <div className="content">
-                  <p>High-converting landing pages and automated lead capture sequences that maximize conversions</p>
+                  <p>
+                    High-converting landing pages and automated lead capture
+                    sequences that maximize conversions
+                  </p>
                   <Link legacyBehavior href="/service-details">
                     <a className="read-more style-two">
                       <span>Read More</span>{" "}
@@ -258,14 +264,17 @@ const IndexSingle = () => {
               <div className="service-three-item wow fadeInDown delay-0-2s">
                 <div className="title-icon">
                   <h5>
-                    <Link legacyBehavior href="/arch/service-details">
+                    <Link legacyBehavior href="/services">
                       <a>AI-Powered Chatbots & CRM</a>
                     </Link>
                   </h5>
                   <img src="assets/images/services/icon2.png" alt="Icon" />
                 </div>
                 <div className="content">
-                  <p>24/7 chatbot support with automated lead scoring and CRM integrations</p>
+                  <p>
+                    24/7 chatbot support with automated lead scoring and CRM
+                    integrations
+                  </p>
                   <Link legacyBehavior href="/service-details">
                     <a className="read-more style-two">
                       <span>Read More</span>{" "}
@@ -279,14 +288,17 @@ const IndexSingle = () => {
               <div className="service-three-item wow fadeInUp delay-0-2s">
                 <div className="title-icon">
                   <h5>
-                    <Link legacyBehavior href="/arch/service-details">
+                    <Link legacyBehavior href="/services">
                       <a>Paid Ads That Convert</a>
                     </Link>
                   </h5>
                   <img src="assets/images/services/icon3.png" alt="Icon" />
                 </div>
                 <div className="content">
-                  <p>Facebook, Instagram & Google Ads with precision targeting for decision-makers</p>
+                  <p>
+                    Facebook, Instagram & Google Ads with precision targeting
+                    for decision-makers
+                  </p>
                   <Link legacyBehavior href="/service-details">
                     <a className="read-more style-two">
                       <span>Read More</span>{" "}
@@ -300,14 +312,17 @@ const IndexSingle = () => {
               <div className="service-three-item wow fadeInDown delay-0-2s">
                 <div className="title-icon">
                   <h5>
-                    <Link legacyBehavior href="/arch/service-details">
+                    <Link legacyBehavior href="/services">
                       <a>Strategic Communications</a>
                     </Link>
                   </h5>
                   <img src="assets/images/services/icon4.png" alt="Icon" />
                 </div>
                 <div className="content">
-                  <p>Campaigns that shift perception, win attention, and deliver measurable outcomes</p>
+                  <p>
+                    Campaigns that shift perception, win attention, and deliver
+                    measurable outcomes
+                  </p>
                   <Link legacyBehavior href="/service-details">
                     <a className="read-more style-two">
                       <span>Read More</span>{" "}
@@ -780,7 +795,9 @@ const IndexSingle = () => {
             <div className="col-xl-5">
               <div className="why-choose-two-wrap">
                 <div className="section-title mb-55 wow fadeInUp delay-0-2s">
-                  <span className="sub-title mb-15">Why Choose Social Funnel</span>
+                  <span className="sub-title mb-15">
+                    Why Choose Social Funnel
+                  </span>
                   <h2>Proven Systems That Deliver Predictable Results</h2>
                 </div>
                 <div className="why-choose-item-two wow fadeInUp delay-0-3s">
@@ -790,13 +807,14 @@ const IndexSingle = () => {
                   </div>
                   <div className="content">
                     <h4>
-                      <Link legacyBehavior href="/arch/service-details">
+                      <Link legacyBehavior href="/services">
                         <a>High-Ticket Expertise</a>
                       </Link>
                     </h4>
                     <p>
-                      We specialize in businesses with minimum product values of $10,000+ per sale,
-                      understanding the unique challenges of high-ticket industries
+                      We specialize in businesses with minimum product values of
+                      $10,000+ per sale, understanding the unique challenges of
+                      high-ticket industries
                     </p>
                   </div>
                 </div>
@@ -807,13 +825,14 @@ const IndexSingle = () => {
                   </div>
                   <div className="content">
                     <h4>
-                      <Link legacyBehavior href="/arch/service-details">
+                      <Link legacyBehavior href="/services">
                         <a>ROI-Focused Approach</a>
                       </Link>
                     </h4>
                     <p>
-                      We prioritize measurable results over vanity metrics. Every campaign is built
-                      to deliver qualified leads and actual revenue growth
+                      We prioritize measurable results over vanity metrics.
+                      Every campaign is built to deliver qualified leads and
+                      actual revenue growth
                     </p>
                   </div>
                 </div>
@@ -823,13 +842,14 @@ const IndexSingle = () => {
                   </div>
                   <div className="content">
                     <h4>
-                      <Link legacyBehavior href="/arch/service-details">
+                      <Link legacyBehavior href="/services">
                         <a>Scalable Systems</a>
                       </Link>
                     </h4>
                     <p>
                       Our automation systems grow with your business, providing
-                      sustainable lead generation that doesn't require constant manual work
+                      sustainable lead generation that doesn't require constant
+                      manual work
                     </p>
                   </div>
                 </div>
