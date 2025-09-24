@@ -3,6 +3,7 @@ import Layout from "@/src/layout/Layout";
 import { sliderProps } from "@/src/sliderProps";
 import dynamic from "next/dynamic";
 import { Swiper, SwiperSlide } from "swiper/react";
+import Link from 'next/link';
 
 const Counter = dynamic(() => import("@/src/components/Counter"), {
   ssr: false,

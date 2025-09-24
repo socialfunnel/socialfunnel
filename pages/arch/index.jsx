@@ -8,11 +8,11 @@ const Counter = dynamic(() => import("@/src/components/Counter"), {
   ssr: false,
 });
 
-const IndexSingle = () => {
+const Index = () => {
   return (
-    <Layout singleMenu dark>
+    <Layout dark>
       {/* Hero Section Start */}
-      <section id="home" className="hero-area pt-185 rpt-150 rel z-1">
+      <section className="hero-area pt-185 rpt-150 rel z-1">
         <div className="container">
           <div className="row">
             <div className="col-lg-8">
@@ -54,7 +54,7 @@ const IndexSingle = () => {
       </section>
       {/* Hero Section End */}
       {/* About Us Area start */}
-      <section id="about" className="about-area pt-130 rpt-100 rel z-1">
+      <section className="about-area pt-130 rpt-100 rel z-1">
         <div className="container">
           <div className="row justify-content-between">
             <div className="col-xl-5 col-lg-3">
@@ -218,10 +218,7 @@ const IndexSingle = () => {
       </div>
       {/* Statistics Area end */}
       {/* Service Style Three start */}
-      <section
-        id="services"
-        className="service-three-area pt-70 rpt-40 rel z-1"
-      >
+      <section className="service-three-area pt-70 rpt-40 rel z-1">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-7">
@@ -332,10 +329,7 @@ const IndexSingle = () => {
       </div>
       {/* Headline Area end */}
       {/* Project Timeline Area start */}
-      <section
-        id="projects"
-        className="project-timeline-area pt-90 rpt-75 rel z-1"
-      >
+      <section className="project-timeline-area pt-90 rpt-75 rel z-1">
         <div className="container container-1290">
           <div className="row justify-content-between align-items-center pb-25">
             <div className="col-xl-6 col-lg-8">
@@ -425,7 +419,7 @@ const IndexSingle = () => {
       </section>
       {/* Project Timeline Area end */}
       {/* Team Area start */}
-      <section id="team" className="team-area pt-70 rpt-40">
+      <section className="team-area pt-70 rpt-40">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-9">
@@ -644,7 +638,7 @@ const IndexSingle = () => {
       </div>
       {/* Headline Area end */}
       {/* Pricing style three start */}
-      <section id="pricing" className="pricing-area-three pt-85">
+      <section className="pricing-area-three pt-85">
         <div className="container container-1290">
           <div className="row justify-content-center">
             <div className="col-xl-8 col-lg-10">
@@ -850,10 +844,7 @@ const IndexSingle = () => {
       </div>
       {/* Headline Area end */}
       {/* Testimonial Area start */}
-      <section
-        id="testimonials"
-        className="testimonials-three-area pt-95 rpt-70"
-      >
+      <section className="testimonials-three-area pt-95 rpt-70">
         <div className="container container-1260">
           <div className="row gap-120 align-items-center">
             <div className="col-lg-6">
@@ -1006,7 +997,7 @@ const IndexSingle = () => {
 
       {/* Testimonial Area end */}
       {/* Blog Style Two start */}
-      <section id="news" className="blog-area-two pt-125 rpt-100 pb-70 rpb-40">
+      <section className="blog-area-two pt-125 rpt-100 pb-70 rpb-40">
         <div className="container container-1290">
           <div className="row justify-content-center">
             <div className="col-xl-8 col-lg-10">
@@ -1113,4 +1104,4 @@ const IndexSingle = () => {
     </Layout>
   );
 };
-export default IndexSingle;
+export default Index;
