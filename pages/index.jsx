@@ -18,7 +18,7 @@ const IndexSingle = () => {
             <div className="col-lg-8">
               <div className="hero-content wow fadeInLeft delay-0-2s">
                 <h1>
-                  Web <span>Design</span> <i>Agency</i>
+                  Social <span>Funnel</span> <i>Marketing</i>
                 </h1>
               </div>
             </div>
@@ -33,17 +33,17 @@ const IndexSingle = () => {
           <div className="hero-bottom-image">
             <img src="assets/images/hero/hero.jpg" alt="Hero" />
             <div className="hero-social">
-              <a href="#">
-                <i className="fab fa-facebook-f" /> <span>Facebook</span>
+              <a href="https://www.linkedin.com/company/socialfunnel-agency">
+                <i className="fab fa-linkedin-in" /> <span>LinkedIn</span>
               </a>
-              <a href="#">
-                <i className="fab fa-twitter" /> <span>Twitter</span>
+              <a href="tel:+254721634183">
+                <i className="fas fa-phone" /> <span>+254 721634183</span>
               </a>
-              <a href="#">
-                <i className="fab fa-dribbble" /> <span>Dribbble</span>
+              <a href="mailto:info@socialfunnel.agency">
+                <i className="fas fa-envelope" /> <span>Email Us</span>
               </a>
-              <a href="#">
-                <i className="fab fa-behance" /> <span>Behance</span>
+              <a href="https://www.socialfunnel.agency">
+                <i className="fas fa-globe" /> <span>Website</span>
               </a>
             </div>
           </div>
@@ -68,19 +68,20 @@ const IndexSingle = () => {
             <div className="col-xl-7 col-lg-9">
               <div className="about-content wow fadeInUp delay-0-4s">
                 <div className="section-title mb-40">
-                  <span className="sub-title mb-15">About Company</span>
+                  <span className="sub-title mb-15">About Social Funnel</span>
                   <h2>
-                    Our Main Goal to Satisficed Local &amp; Global Clients
+                    Building Client Acquisition Systems for High-Ticket Businesses
                   </h2>
                 </div>
                 <div className="content">
                   <p>
-                    Sed ut perspiciatis unde omnis iste natus error sit
-                    voluptatem accusantium doloremque laudantium totam aperiam
-                    eaque quae abillo inventore veritatisey et quasi architecto
-                    beatae vitae dictasunt explicabo voluptatem.
+                    Social Funnel is a Kenyan-based marketing agency that provides end-to-end
+                    Business Development solutions to businesses dealing in high ticket services
+                    and products. Our ideal client has a minimum product value of $10,000 (&gt;Ksh 1M)
+                    per sale. We offer a tested and proven Lead Generation solution, and we set up
+                    dedicated call centres for our clients to nurture the Leads through the Funnel.
                   </p>
-                  <Link legacyBehavior href="/about">
+                  <Link legacyBehavior href="/arch/about">
                     <a className="read-more mt-10">
                       Read More <i className="far fa-arrow-right" />
                     </a>
@@ -97,7 +98,7 @@ const IndexSingle = () => {
         <div className="container-fluid">
           <div className="headline-text marquee">
             <span>
-              Web <span>Design</span> Agency
+              Marketing <span>Automation</span> Solutions
             </span>
           </div>
         </div>
@@ -111,19 +112,19 @@ const IndexSingle = () => {
               <div className="what-we-do-content mb-55">
                 <div className="section-title mb-60 wow fadeInUp delay-0-2s">
                   <span className="sub-title mb-15">What We Do</span>
-                  <h2>Latest Way to Get Web Solutions &amp; Business Growth</h2>
+                  <h2>Predictable Client Acquisition Systems That Scale</h2>
                 </div>
                 <div className="what-we-do-item wow fadeInUp delay-0-3s">
                   <div className="number">
                     <span>01</span>
                   </div>
                   <div className="content">
-                    <h5>Mobile Solutions</h5>
+                    <h5>Client Acquisition Funnels</h5>
                     <p>
-                      Sed ut perspiciatis unde omnis natus error voluptatem
-                      accusantium doloremque
+                      We map and design the entire customer journey—from the first ad click to a booked
+                      appointment. Our funnels are built to maximize conversions at every step.
                     </p>
-                    <Link legacyBehavior href="/service-details">
+                    <Link legacyBehavior href="/arch/service-details">
                       <a className="read-more style-two">
                         <span>Read More</span>{" "}
                         <i className="far fa-arrow-right" />
@@ -136,12 +137,12 @@ const IndexSingle = () => {
                     <span>02</span>
                   </div>
                   <div className="content">
-                    <h5>Web Solutions</h5>
+                    <h5>AI-Powered Chatbots & CRM</h5>
                     <p>
-                      Quis autem veleum iure reprehe nderitecy quie voluptate
-                      velit esse quam nihile
+                      We set up intelligent chatbots that respond instantly, answer questions, and qualify
+                      prospects—all while syncing to your CRM for organized sales processes.
                     </p>
-                    <Link legacyBehavior href="/service-details">
+                    <Link legacyBehavior href="/arch/service-details">
                       <a className="read-more style-two">
                         <span>Read More</span>{" "}
                         <i className="far fa-arrow-right" />
@@ -154,12 +155,12 @@ const IndexSingle = () => {
                     <span>03</span>
                   </div>
                   <div className="content">
-                    <h5>Custome Solutions</h5>
+                    <h5>Paid Ads That Convert</h5>
                     <p>
-                      We denounce with righteous indignation and dislike
-                      beguiled demoralized charms
+                      Our ad campaigns are laser-focused on client acquisition. Facebook, Instagram & Google Ads
+                      built for ROI with precision targeting to reach decision-makers.
                     </p>
-                    <Link legacyBehavior href="/service-details">
+                    <Link legacyBehavior href="/arch/service-details">
                       <a className="read-more style-two">
                         <span>Read More</span>{" "}
                         <i className="far fa-arrow-right" />
@@ -187,9 +188,9 @@ const IndexSingle = () => {
           <div className="row justify-content-between">
             <div className="col-xl-2 col-lg-3 col-6">
               <div className="counter-item counter-text-wrap wow fadeInUp delay-0-2s">
-                <i className="fal fa-check-circle" />
-                <Counter end={25} />
-                <span className="counter-title">Years Of Experience</span>
+                <i className="fal fa-funnel-dollar" />
+                <Counter end={50} extraClass={"+"} />
+                <span className="counter-title">High-Ticket Clients Served</span>
               </div>
             </div>
             <div className="col-xl-2 col-lg-3 col-6">
@@ -226,8 +227,8 @@ const IndexSingle = () => {
           <div className="row justify-content-center">
             <div className="col-lg-7">
               <div className="section-title text-center mb-60 wow fadeInUp delay-0-2s">
-                <span className="sub-title mb-20">Popular Services</span>
-                <h2>We Provide Amazing Web Design Solutions</h2>
+                <span className="sub-title mb-20">Our Services</span>
+                <h2>We Build Systems That Create Predictable Revenue</h2>
               </div>
             </div>
           </div>
@@ -236,14 +237,14 @@ const IndexSingle = () => {
               <div className="service-three-item wow fadeInUp delay-0-2s">
                 <div className="title-icon">
                   <h5>
-                    <Link legacyBehavior href="/service-details">
-                      <a>Web Design From Figma</a>
+                    <Link legacyBehavior href="/arch/service-details">
+                      <a>Client Acquisition Funnels</a>
                     </Link>
                   </h5>
                   <img src="assets/images/services/icon1.png" alt="Icon" />
                 </div>
                 <div className="content">
-                  <p>We denounce with righteous indignation dislike beguile</p>
+                  <p>High-converting landing pages and automated lead capture sequences that maximize conversions</p>
                   <Link legacyBehavior href="/service-details">
                     <a className="read-more style-two">
                       <span>Read More</span>{" "}
@@ -257,14 +258,14 @@ const IndexSingle = () => {
               <div className="service-three-item wow fadeInDown delay-0-2s">
                 <div className="title-icon">
                   <h5>
-                    <Link legacyBehavior href="/service-details">
-                      <a>PSD, Figma, XD to HTML Convert</a>
+                    <Link legacyBehavior href="/arch/service-details">
+                      <a>AI-Powered Chatbots & CRM</a>
                     </Link>
                   </h5>
                   <img src="assets/images/services/icon2.png" alt="Icon" />
                 </div>
                 <div className="content">
-                  <p>At vero eos et accusamus et dignissim ducimbl ditiis</p>
+                  <p>24/7 chatbot support with automated lead scoring and CRM integrations</p>
                   <Link legacyBehavior href="/service-details">
                     <a className="read-more style-two">
                       <span>Read More</span>{" "}
@@ -278,14 +279,14 @@ const IndexSingle = () => {
               <div className="service-three-item wow fadeInUp delay-0-2s">
                 <div className="title-icon">
                   <h5>
-                    <Link legacyBehavior href="/service-details">
-                      <a>WordPress Development</a>
+                    <Link legacyBehavior href="/arch/service-details">
+                      <a>Paid Ads That Convert</a>
                     </Link>
                   </h5>
                   <img src="assets/images/services/icon3.png" alt="Icon" />
                 </div>
                 <div className="content">
-                  <p>To take trivial example which ever undertakes laborious</p>
+                  <p>Facebook, Instagram & Google Ads with precision targeting for decision-makers</p>
                   <Link legacyBehavior href="/service-details">
                     <a className="read-more style-two">
                       <span>Read More</span>{" "}
@@ -299,14 +300,14 @@ const IndexSingle = () => {
               <div className="service-three-item wow fadeInDown delay-0-2s">
                 <div className="title-icon">
                   <h5>
-                    <Link legacyBehavior href="/service-details">
-                      <a>React Development</a>
+                    <Link legacyBehavior href="/arch/service-details">
+                      <a>Strategic Communications</a>
                     </Link>
                   </h5>
                   <img src="assets/images/services/icon4.png" alt="Icon" />
                 </div>
                 <div className="content">
-                  <p>Sed persiciatis unde omnisey natus error voluptatem</p>
+                  <p>Campaigns that shift perception, win attention, and deliver measurable outcomes</p>
                   <Link legacyBehavior href="/service-details">
                     <a className="read-more style-two">
                       <span>Read More</span>{" "}
@@ -325,7 +326,7 @@ const IndexSingle = () => {
         <div className="container-fluid">
           <div className="headline-text marquee">
             <span>
-              <span>Digital</span> solutions
+              <span>Automation</span> Systems
             </span>
           </div>
         </div>
@@ -637,7 +638,7 @@ const IndexSingle = () => {
         <div className="container-fluid">
           <div className="headline-text marquee">
             <span>
-              pricing <span>Package</span>
+              Success <span>Stories</span>
             </span>
           </div>
         </div>
@@ -779,8 +780,8 @@ const IndexSingle = () => {
             <div className="col-xl-5">
               <div className="why-choose-two-wrap">
                 <div className="section-title mb-55 wow fadeInUp delay-0-2s">
-                  <span className="sub-title mb-15">Why Choose Us</span>
-                  <h2>We Provide Services In One Places</h2>
+                  <span className="sub-title mb-15">Why Choose Social Funnel</span>
+                  <h2>Proven Systems That Deliver Predictable Results</h2>
                 </div>
                 <div className="why-choose-item-two wow fadeInUp delay-0-3s">
                   <div className="icon">
@@ -789,13 +790,13 @@ const IndexSingle = () => {
                   </div>
                   <div className="content">
                     <h4>
-                      <Link legacyBehavior href="/service-details">
-                        <a>Competitive Rates</a>
+                      <Link legacyBehavior href="/arch/service-details">
+                        <a>High-Ticket Expertise</a>
                       </Link>
                     </h4>
                     <p>
-                      We denounce with righteous indignation and dislike
-                      beguiled demoralized charms
+                      We specialize in businesses with minimum product values of $10,000+ per sale,
+                      understanding the unique challenges of high-ticket industries
                     </p>
                   </div>
                 </div>
@@ -806,13 +807,13 @@ const IndexSingle = () => {
                   </div>
                   <div className="content">
                     <h4>
-                      <Link legacyBehavior href="/service-details">
-                        <a>No Contracts Needed</a>
+                      <Link legacyBehavior href="/arch/service-details">
+                        <a>ROI-Focused Approach</a>
                       </Link>
                     </h4>
                     <p>
-                      To take trivial example, which eundertakes laborious
-                      physical exercise except
+                      We prioritize measurable results over vanity metrics. Every campaign is built
+                      to deliver qualified leads and actual revenue growth
                     </p>
                   </div>
                 </div>
@@ -822,13 +823,13 @@ const IndexSingle = () => {
                   </div>
                   <div className="content">
                     <h4>
-                      <Link legacyBehavior href="/service-details">
-                        <a>Powerful Terminal Lines</a>
+                      <Link legacyBehavior href="/arch/service-details">
+                        <a>Scalable Systems</a>
                       </Link>
                     </h4>
                     <p>
-                      At vero eos et accusamus eto dignissimos duc blanditiis
-                      praesentium volupta
+                      Our automation systems grow with your business, providing
+                      sustainable lead generation that doesn't require constant manual work
                     </p>
                   </div>
                 </div>
@@ -1011,8 +1012,8 @@ const IndexSingle = () => {
           <div className="row justify-content-center">
             <div className="col-xl-8 col-lg-10">
               <div className="section-title text-center mb-60 wow fadeInUp delay-0-2s">
-                <span className="sub-title mb-20">Blog &amp; News</span>
-                <h2>Read Our Latest News &amp; Blog Get Every Updates</h2>
+                <span className="sub-title mb-20">Featured Insights</span>
+                <h2>Latest Updates from Social Funnel</h2>
               </div>
             </div>
           </div>

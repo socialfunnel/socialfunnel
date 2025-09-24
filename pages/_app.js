@@ -22,14 +22,14 @@ export default function App({ Component, pageProps }) {
     <Fragment>
       <Head>
         <meta charSet="utf-8" />
-        <meta name="description" content />
+        <meta name="description" content="Social Funnel - Kenyan marketing agency specializing in client acquisition systems for high-ticket businesses. Lead generation, automation, and ROI-focused campaigns." />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         {/* Title */}
-        <title>Ygency - Web Agency React NextJS Template</title>
+        <title>Social Funnel - Client Acquisition Systems for High-Ticket Businesses</title>
         {/* Favicon Icon */}
         <link
           rel="shortcut icon"

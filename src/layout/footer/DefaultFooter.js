@@ -29,17 +29,17 @@ const DefaultFooter = ({ dark }) => {
             </div>
             <div className="col-lg-8 text-lg-end">
               <div className="social-style-four mb-20 wow fadeInLeft delay-0-2s animated">
-                <a href="#">
-                  <i className="fab fa-facebook-f" /> <span>Facebook</span>
+                <a href="https://www.linkedin.com/company/socialfunnel-agency">
+                  <i className="fab fa-linkedin-in" /> <span>LinkedIn</span>
                 </a>
-                <a href="#">
-                  <i className="fab fa-twitter" /> <span>Twitter</span>
+                <a href="tel:+254721634183">
+                  <i className="fas fa-phone" /> <span>+254 721634183</span>
                 </a>
-                <a href="#">
-                  <i className="fab fa-dribbble" /> <span>Dribbble</span>
+                <a href="mailto:info@socialfunnel.agency">
+                  <i className="fas fa-envelope" /> <span>Email</span>
                 </a>
-                <a href="#">
-                  <i className="fab fa-behance" /> <span>Behance</span>
+                <a href="https://www.socialfunnel.agency">
+                  <i className="fas fa-globe" /> <span>Website</span>
                 </a>
               </div>
             </div>
@@ -58,15 +58,15 @@ const DefaultFooter = ({ dark }) => {
               <div className="footer-contact-info wow fadeInUp delay-0-3s animated">
                 <a
                   className="theme-btn style-three"
-                  href="mailto:support@gmail.com"
+                  href="mailto:info@socialfunnel.agency"
                 >
-                  support@gmail.com <i className="far fa-arrow-right" />
+                  info@socialfunnel.agency <i className="far fa-arrow-right" />
                 </a>
                 <a
                   className="theme-btn style-three phone-number"
-                  href="callto:+000(123)45688"
+                  href="tel:+254721634183"
                 >
-                  +000 (123) 456 88 <i className="far fa-arrow-right" />
+                  +254 721634183 <i className="far fa-arrow-right" />
                 </a>
               </div>
             </div>
@@ -79,55 +79,55 @@ const DefaultFooter = ({ dark }) => {
               <div className="footer-widget widget_nav_menu">
                 <ul className="list-style-two wow fadeInUp delay-0-3s animated">
                   <li>
-                    <Link legacyBehavior href="about">
+                    <Link legacyBehavior href="/">
                       Home
                     </Link>
                   </li>
                   <li>
-                    <Link legacyBehavior href="services">
-                      Popular Services
+                    <Link legacyBehavior href="/arch/services">
+                      Our Services
                     </Link>
                   </li>
                   <li>
-                    <Link legacyBehavior href="team">
-                      Team Member
+                    <Link legacyBehavior href="/arch/about">
+                      About Us
                     </Link>
                   </li>
                   <li>
-                    <Link legacyBehavior href="blog">
-                      Latest News
+                    <Link legacyBehavior href="/arch/blog">
+                      Insights
                     </Link>
                   </li>
                   <li>
-                    <Link legacyBehavior href="contact">
-                      Contact Us?
+                    <Link legacyBehavior href="/arch/contact">
+                      Contact Us
                     </Link>
                   </li>
                 </ul>
                 <ul className="list-style-two wow fadeInUp delay-0-4s animated">
                   <li>
-                    <Link legacyBehavior href="index">
-                      UI/UX Design
+                    <Link legacyBehavior href="/arch/services">
+                      Lead Generation
                     </Link>
                   </li>
                   <li>
-                    <Link legacyBehavior href="index2">
-                      Development
+                    <Link legacyBehavior href="/arch/services">
+                      Paid Advertising
                     </Link>
                   </li>
                   <li>
-                    <Link legacyBehavior href="index3">
-                      Marketing
+                    <Link legacyBehavior href="/arch/services">
+                      Marketing Automation
                     </Link>
                   </li>
                   <li>
-                    <Link legacyBehavior href="contact">
-                      Need a Career
+                    <Link legacyBehavior href="/arch/contact">
+                      Book Discovery Call
                     </Link>
                   </li>
                   <li>
-                    <Link legacyBehavior href="faqs">
-                      Faqs ?
+                    <Link legacyBehavior href="/arch/faqs">
+                      FAQs
                     </Link>
                   </li>
                 </ul>
@@ -166,9 +166,9 @@ const DefaultFooter = ({ dark }) => {
             <div className="col-xl-4 col-lg-6">
               <div className="copyright-text text-lg-end pt-40 pb-35 rpt-10 wow fadeInLeft delay-0-2s animated">
                 <p>
-                  Copyright @2023,{" "}
+                  Copyright @2024,{" "}
                   <Link legacyBehavior href="/">
-                    <a>Ygency</a>
+                    <a>Social Funnel</a>
                   </Link>{" "}
                   All Rights Reserved
                 </p>

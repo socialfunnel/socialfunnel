@@ -501,19 +501,22 @@ const SingleMenu = () => {
         <a href="#home">Home</a>
       </li>
       <li>
-        <a href="#about">about</a>
+        <a href="#about">About</a>
       </li>
       <li>
-        <a href="#services">services</a>
+        <a href="#services">Services</a>
       </li>
       <li>
-        <a href="#projects">project</a>
+        <a href="#projects">Case Studies</a>
       </li>
       <li>
-        <a href="#pricing">pricing</a>
+        <a href="#team">Team</a>
       </li>
       <li>
-        <a href="#news">news</a>
+        <a href="#testimonials">Testimonials</a>
+      </li>
+      <li>
+        <a href="#news">Insights</a>
       </li>
     </ul>
   );
