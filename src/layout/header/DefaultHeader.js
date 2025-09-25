@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Nav from "./Nav";
-import NavSearch from "./NavSearch";
 
 const DefaultHeader = ({ singleMenu, dark }) => {
   return (
@@ -14,13 +13,10 @@ const DefaultHeader = ({ singleMenu, dark }) => {
                 <Link legacyBehavior href="/">
                   <a>
                     <img
-                      src={
-                        dark
-                          ? "assets/images/logos/logo-white.png"
-                          : "assets/images/logos/logo.png"
-                      }
+                      src="assets/images/logos/logo.png"
                       alt="Logo"
                       title="Logo"
+                      style={{ maxHeight: "50px" }}
                     />
                   </a>
                 </Link>
@@ -31,8 +27,6 @@ const DefaultHeader = ({ singleMenu, dark }) => {
               <Nav singleMenu={singleMenu} />
               {/* Main Menu End*/}
             </div>
-            {/* Nav Search */}
-            <NavSearch />
             {/* Menu Button */}
             <div className="menu-btns">
               {/* menu sidbar */}

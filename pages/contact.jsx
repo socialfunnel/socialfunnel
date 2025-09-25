@@ -16,53 +16,66 @@ const Contact = () => {
                   <div className="col-xl-10">
                     <div className="section-title mb-60">
                       <span className="sub-title mb-15">Contact Us</span>
-                      <h2>Ready to Work Your Next Projects</h2>
+                      <h2>
+                        Not sure where to begin? Book a discovery Call with us
+                      </h2>
                     </div>
                   </div>
                 </div>
                 <div className="row gap-80 pb-30">
-                  <div className="col-sm-6">
+                  <div className="col-sm-12">
                     <div className="our-location-address mb-40">
-                      <h5>New York</h5>
+                      <h5>Our Office</h5>
                       <p>
-                        55 One State Road, 2nd Block New York, United States
+                        P. O. Box 1215 - 10400,
+                        <br />
+                        Cape Chestnut, Nanyuki
+                        <br />
+                        Kenya
                       </p>
-                      <a className="mailto" href="mailto:support@gmail.com">
-                        support@gmail.com
+                      <a
+                        className="mailto"
+                        href="mailto:info@socialfunnel.agency"
+                      >
+                        info@socialfunnel.agency
                       </a>
                       <br />
-                      <a className="callto" href="callto:+00012345688">
-                        <i className="fas fa-phone" /> +000 (123) 456 88
-                      </a>
-                    </div>
-                  </div>
-                  <div className="col-sm-6">
-                    <div className="our-location-address mb-40">
-                      <h5>Australia</h5>
-                      <p>67 One State Road, 2nd Block Melbourne, Australia</p>
-                      <a className="mailto" href="mailto:support@gmail.com">
-                        support@gmail.com
+                      <a className="callto" href="tel:+254721634183">
+                        <i className="fas fa-phone" /> +254 721634183
                       </a>
                       <br />
-                      <a className="callto" href="callto:+00012345688">
-                        <i className="fas fa-phone" /> +000 (123) 456 88
+                      <a
+                        className="website"
+                        href="https://www.socialfunnel.agency"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i className="fas fa-globe" /> www.socialfunnel.agency
                       </a>
                     </div>
                   </div>
                 </div>
                 <h4>Follow Us</h4>
                 <div className="social-style-two pt-15">
-                  <a href="#">
-                    <i className="fab fa-facebook-f" />
-                  </a>
-                  <a href="#">
-                    <i className="fab fa-twitter" />
-                  </a>
-                  <a href="#">
-                    <i className="fab fa-instagram" />
-                  </a>
-                  <a href="#">
+                  <a
+                    href="https://www.linkedin.com/company/socialfunnel-agency"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <i className="fab fa-linkedin-in" />
+                  </a>
+                  <a href="tel:+254721634183">
+                    <i className="fas fa-phone" />
+                  </a>
+                  <a href="mailto:info@socialfunnel.agency">
+                    <i className="fas fa-envelope" />
+                  </a>
+                  <a
+                    href="https://www.socialfunnel.agency"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="fas fa-globe" />
                   </a>
                 </div>
               </div>
@@ -177,7 +190,7 @@ const Contact = () => {
         <div className="container-fluid">
           <div className="our-location">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m12!1m10!1m3!1d142190.2862584524!2d-74.01298319978558!3d40.721725351435126!2m1!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sbd!4v1663473911885!5m2!1sen!2sbd"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.760445!2d37.074324!3d0.023618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17829b0b0b0b0b0b%3A0x0!2sNanyuki%2C%20Kenya!5e0!3m2!1sen!2ske!4v1663473911885!5m2!1sen!2ske"
               style={{ border: 0, width: "100%" }}
               allowFullScreen
               loading="lazy"

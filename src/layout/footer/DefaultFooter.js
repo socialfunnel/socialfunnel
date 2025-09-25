@@ -16,12 +16,9 @@ const DefaultFooter = ({ dark }) => {
                 <Link legacyBehavior href="/">
                   <a>
                     <img
-                      src={
-                        dark
-                          ? "assets/images/logos/footer-logo-white.png"
-                          : "assets/images/logos/footer-logo.png"
-                      }
+                      src="assets/images/logos/footer-logo.png"
                       alt="Logo"
+                      style={{ maxHeight: "50px" }}
                     />
                   </a>
                 </Link>
@@ -166,7 +163,7 @@ const DefaultFooter = ({ dark }) => {
             <div className="col-xl-4 col-lg-6">
               <div className="copyright-text text-lg-end pt-40 pb-35 rpt-10 wow fadeInLeft delay-0-2s animated">
                 <p>
-                  Copyright @2024,{" "}
+                  Copyright @{new Date().getFullYear()},{" "}
                   <Link legacyBehavior href="/">
                     <a>Social Funnel</a>
                   </Link>{" "}
