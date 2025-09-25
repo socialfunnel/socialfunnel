@@ -18,8 +18,7 @@ const IndexSingle = () => {
             <div className="col-lg-8">
               <div className="hero-content wow fadeInLeft delay-0-2s">
                 <h1>
-                  {hero.title.main} <span>{hero.title.accent}</span>{" "}
-                  <i>{hero.title.suffix}</i>
+                  Social <span>Funnel</span> <i>Marketing</i>
                 </h1>
               </div>
             </div>
@@ -34,16 +33,16 @@ const IndexSingle = () => {
           <div className="hero-bottom-image">
             <img src="assets/images/hero/hero.jpg" alt="Hero" />
             <div className="hero-social">
-              <a href={contact.social.linkedin}>
+              <a href="https://www.linkedin.com/company/socialfunnel-agency">
                 <i className="fab fa-linkedin-in" /> <span>LinkedIn</span>
               </a>
-              <a href={`tel:${contact.phone}`}>
-                <i className="fas fa-phone" /> <span>{contact.phone}</span>
+              <a href="tel:+254721634183">
+                <i className="fas fa-phone" /> <span>+254 721634183</span>
               </a>
-              <a href={`mailto:${contact.email}`}>
+              <a href="mailto:info@socialfunnel.agency">
                 <i className="fas fa-envelope" /> <span>Email Us</span>
               </a>
-              <a href={`https://${contact.website}`}>
+              <a href="https://www.socialfunnel.agency">
                 <i className="fas fa-globe" /> <span>Website</span>
               </a>
             </div>
@@ -69,11 +68,22 @@ const IndexSingle = () => {
             <div className="col-xl-7 col-lg-9">
               <div className="about-content wow fadeInUp delay-0-4s">
                 <div className="section-title mb-40">
-                  <span className="sub-title mb-15">About {company.name}</span>
-                  <h2>{company.tagline}</h2>
+                  <span className="sub-title mb-15">About Social Funnel</span>
+                  <h2>
+                    Building Client Acquisition Systems for High-Ticket
+                    Businesses
+                  </h2>
                 </div>
                 <div className="content">
-                  <p>{company.description.replace(">", "&gt;")}</p>
+                  <p>
+                    Social Funnel is a Kenyan-based marketing agency that
+                    provides end-to-end Business Development solutions to
+                    businesses dealing in high ticket services and products. Our
+                    ideal client has a minimum product value of $10,000 (&gt;Ksh
+                    1M) per sale. We offer a tested and proven Lead Generation
+                    solution, and we set up dedicated call centres for our
+                    clients to nurture the Leads through the Funnel.
+                  </p>
                   <Link legacyBehavior href="/about">
                     <a className="read-more mt-10">
                       Read More <i className="far fa-arrow-right" />
