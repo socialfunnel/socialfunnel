@@ -18,7 +18,7 @@ const IndexSingle = () => {
             <div className="col-lg-8">
               <div className="hero-content wow fadeInLeft delay-0-2s">
                 <h1>
-                  Social <span>Funnel</span> <i>Marketing</i>
+                  More <span>Clients</span> <i>Guaranteed</i>
                 </h1>
               </div>
             </div>
@@ -84,6 +84,12 @@ const IndexSingle = () => {
                     solution, and we set up dedicated call centres for our
                     clients to nurture the Leads through the Funnel.
                   </p>
+                  <p className="mt-15">
+                    <strong>Our Mission:</strong> To build client acquisition
+                    systems that create predictable revenue and freedom for
+                    service businesses—while funding generational impact across
+                    Africa.
+                  </p>
                   <Link legacyBehavior href="/about">
                     <a className="read-more mt-10">
                       Read More <i className="far fa-arrow-right" />
@@ -126,7 +132,8 @@ const IndexSingle = () => {
                     <p>
                       We map and design the entire customer journey—from the
                       first ad click to a booked appointment. Our funnels are
-                      built to maximize conversions at every step.
+                      built to maximize conversions at every step, using
+                      data-driven testing and proven frameworks.
                     </p>
                     <Link legacyBehavior href="/services">
                       <a className="read-more style-two">
@@ -143,9 +150,9 @@ const IndexSingle = () => {
                   <div className="content">
                     <h5>AI-Powered Chatbots & CRM</h5>
                     <p>
-                      We set up intelligent chatbots that respond instantly,
-                      answer questions, and qualify prospects—all while syncing
-                      to your CRM for organized sales processes.
+                      Your leads don't want to wait. We set up intelligent
+                      chatbots that respond instantly, answer questions, and
+                      qualify prospects—all while syncing to your CRM.
                     </p>
                     <Link legacyBehavior href="/services">
                       <a className="read-more style-two">
@@ -160,11 +167,11 @@ const IndexSingle = () => {
                     <span>03</span>
                   </div>
                   <div className="content">
-                    <h5>Paid Ads That Convert</h5>
+                    <h5>Paid Ads That Actually Work</h5>
                     <p>
-                      Our ad campaigns are laser-focused on client acquisition.
-                      Facebook, Instagram & Google Ads built for ROI with
-                      precision targeting to reach decision-makers.
+                      We don't waste money on "likes" or vanity metrics. Our ad
+                      campaigns are laser-focused on one thing: client
+                      acquisition.
                     </p>
                     <Link legacyBehavior href="/services">
                       <a className="read-more style-two">
@@ -249,14 +256,18 @@ const IndexSingle = () => {
                       <a>Client Acquisition Funnels</a>
                     </Link>
                   </h5>
-                  <img src="assets/images/services/icon1.png" alt="Icon" />
+                  <i
+                    className="fas fa-funnel-dollar"
+                    style={{ fontSize: "3rem", color: "#55E6A5" }}
+                  ></i>
                 </div>
                 <div className="content">
                   <p>
-                    High-converting landing pages and automated lead capture
-                    sequences that maximize conversions
+                    High-converting landing pages tailored to your industry,
+                    automated lead capture and follow-up sequences, and
+                    conversion tracking to measure ROI at every stage.
                   </p>
-                  <Link legacyBehavior href="/service-details">
+                  <Link legacyBehavior href="/services">
                     <a className="read-more style-two">
                       <span>Read More</span>{" "}
                       <i className="far fa-arrow-right" />
@@ -273,14 +284,18 @@ const IndexSingle = () => {
                       <a>AI-Powered Chatbots & CRM</a>
                     </Link>
                   </h5>
-                  <img src="assets/images/services/icon2.png" alt="Icon" />
+                  <i
+                    className="fas fa-robot"
+                    style={{ fontSize: "3rem", color: "#55E6A5" }}
+                  ></i>
                 </div>
                 <div className="content">
                   <p>
-                    24/7 chatbot support with automated lead scoring and CRM
-                    integrations
+                    24/7 chatbot support for instant lead response, automated
+                    lead scoring so you know who's ready to buy, and CRM setup
+                    and integrations to keep your sales organized.
                   </p>
-                  <Link legacyBehavior href="/service-details">
+                  <Link legacyBehavior href="/services">
                     <a className="read-more style-two">
                       <span>Read More</span>{" "}
                       <i className="far fa-arrow-right" />
@@ -297,14 +312,18 @@ const IndexSingle = () => {
                       <a>Paid Ads That Convert</a>
                     </Link>
                   </h5>
-                  <img src="assets/images/services/icon3.png" alt="Icon" />
+                  <i
+                    className="fas fa-bullseye"
+                    style={{ fontSize: "3rem", color: "#55E6A5" }}
+                  ></i>
                 </div>
                 <div className="content">
                   <p>
-                    Facebook, Instagram & Google Ads with precision targeting
-                    for decision-makers
+                    Facebook, Instagram & Google Ads built for ROI with
+                    precision targeting to reach decision-makers and continuous
+                    testing and optimization to lower cost per lead.
                   </p>
-                  <Link legacyBehavior href="/service-details">
+                  <Link legacyBehavior href="/services">
                     <a className="read-more style-two">
                       <span>Read More</span>{" "}
                       <i className="far fa-arrow-right" />
@@ -321,14 +340,18 @@ const IndexSingle = () => {
                       <a>Strategic Communications</a>
                     </Link>
                   </h5>
-                  <img src="assets/images/services/icon4.png" alt="Icon" />
+                  <i
+                    className="fas fa-comments"
+                    style={{ fontSize: "3rem", color: "#55E6A5" }}
+                  ></i>
                 </div>
                 <div className="content">
                   <p>
                     Campaigns that shift perception, win attention, and deliver
-                    measurable outcomes
+                    measurable outcomes. Campaign strategy, multi-channel
+                    execution, and data-driven monitoring to show real impact.
                   </p>
-                  <Link legacyBehavior href="/service-details">
+                  <Link legacyBehavior href="/services">
                     <a className="read-more style-two">
                       <span>Read More</span>{" "}
                       <i className="far fa-arrow-right" />
