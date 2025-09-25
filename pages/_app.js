@@ -23,6 +23,8 @@ export default function App({ Component, pageProps }) {
       <Head>
         <meta charSet="utf-8" />
         <meta name="description" content="Social Funnel - Kenyan marketing agency specializing in client acquisition systems for high-ticket businesses. Lead generation, automation, and ROI-focused campaigns." />
+        <meta name="keywords" content="marketing agency Kenya, lead generation, client acquisition, high-ticket sales, marketing automation, Nanyuki marketing, business development" />
+        <meta name="author" content="Social Funnel" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta
           name="viewport"

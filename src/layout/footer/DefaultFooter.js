@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 const DefaultFooter = ({ dark }) => {
+
   return (
     <footer
       className="main-footer rel z-1"
@@ -81,49 +82,49 @@ const DefaultFooter = ({ dark }) => {
                     </Link>
                   </li>
                   <li>
-                    <Link legacyBehavior href="/arch/services">
+                    <Link legacyBehavior href="/services">
                       Our Services
                     </Link>
                   </li>
                   <li>
-                    <Link legacyBehavior href="/arch/about">
+                    <Link legacyBehavior href="/about">
                       About Us
                     </Link>
                   </li>
                   <li>
-                    <Link legacyBehavior href="/arch/blog">
+                    <Link legacyBehavior href="/blog">
                       Insights
                     </Link>
                   </li>
                   <li>
-                    <Link legacyBehavior href="/arch/contact">
+                    <Link legacyBehavior href="/contact">
                       Contact Us
                     </Link>
                   </li>
                 </ul>
                 <ul className="list-style-two wow fadeInUp delay-0-4s animated">
                   <li>
-                    <Link legacyBehavior href="/arch/services">
+                    <Link legacyBehavior href="/services">
                       Lead Generation
                     </Link>
                   </li>
                   <li>
-                    <Link legacyBehavior href="/arch/services">
+                    <Link legacyBehavior href="/services">
                       Paid Advertising
                     </Link>
                   </li>
                   <li>
-                    <Link legacyBehavior href="/arch/services">
+                    <Link legacyBehavior href="/services">
                       Marketing Automation
                     </Link>
                   </li>
                   <li>
-                    <Link legacyBehavior href="/arch/contact">
+                    <Link legacyBehavior href="/contact">
                       Book Discovery Call
                     </Link>
                   </li>
                   <li>
-                    <Link legacyBehavior href="/arch/faqs">
+                    <Link legacyBehavior href="/faqs">
                       FAQs
                     </Link>
                   </li>

@@ -190,7 +190,9 @@ const Contact = () => {
         <div className="container-fluid">
           <div className="our-location">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.760445!2d37.074324!3d0.023618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17829b0b0b0b0b0b%3A0x0!2sNanyuki%2C%20Kenya!5e0!3m2!1sen!2ske!4v1663473911885!5m2!1sen!2ske"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.8183166776375!2d37.0768467!3d0.0024560000000000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1787f79732f43397%3A0x8581b3af5a65d0f4!2sCape%20Chestnut%20Ltd!5e0!3m2!1sen!2ske!4v1758782070144!5m2!1sen!2ske"
+              width="600"
+              height="450"
               style={{ border: 0, width: "100%" }}
               allowFullScreen
               loading="lazy"
