@@ -1,9 +1,14 @@
 // animation
 export const animation = () => {
   if (typeof window !== "undefined") {
-    window.WOW = require("wowjs");
+    // Use dynamic import to avoid SSR issues
+    import("wowjs").then((WOWModule) => {
+      const WOW = WOWModule.default;
+      new WOW().init();
+    }).catch((error) => {
+      console.error("WOW.js initialization failed:", error);
+    });
   }
-  new WOW.WOW().init();
 };
 
 // Sticky nav
