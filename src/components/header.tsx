@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Toggle } from "@/components/toggler";
 import React from "react";
 import { cn } from "@/lib/utils";
 
@@ -93,23 +94,15 @@ export const Header = () => {
                 </ul>
               </div>
               <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
+                <Toggle />
                 <Button
                   asChild
                   variant="outline"
                   size="sm"
                   className={cn(isScrolled && "lg:hidden")}
                 >
-                  <Link href="#">
-                    <span>Login</span>
-                  </Link>
-                </Button>
-                <Button
-                  asChild
-                  size="sm"
-                  className={cn(isScrolled && "lg:hidden")}
-                >
-                  <Link href="#">
-                    <span>Sign Up</span>
+                  <Link href="/contact">
+                    <span>Book Now</span>
                   </Link>
                 </Button>
                 <Button
@@ -117,7 +110,7 @@ export const Header = () => {
                   size="sm"
                   className={cn(isScrolled ? "lg:inline-flex" : "hidden")}
                 >
-                  <Link href="#">
+                  <Link href="/contact">
                     <span>Get Started</span>
                   </Link>
                 </Button>
