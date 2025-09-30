@@ -488,7 +488,7 @@ export default function About() {
               >
                 <div className="aspect-square relative overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1494790108755-2616b612b77c?w=400&h=400&fit=crop&crop=face&auto=format&q=80"
+                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face&auto=format&q=80"
                     alt="Sarah Kimani - Head of Operations"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
