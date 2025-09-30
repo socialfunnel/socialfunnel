@@ -98,12 +98,11 @@ export const Header = () => {
                 <Toggle />
                 <Button
                   asChild
-                  variant="outline"
                   size="sm"
                   className={cn(isScrolled && "lg:hidden")}
                 >
                   <Link href="/contact">
-                    <span>Book Now</span>
+                    <span>Free Consultation</span>
                   </Link>
                 </Button>
                 <Button
@@ -111,8 +110,8 @@ export const Header = () => {
                   size="sm"
                   className={cn(isScrolled ? "lg:inline-flex" : "hidden")}
                 >
-                  <Link href="/contact">
-                    <span>Get Started</span>
+                  <Link href="/services">
+                    <span>Our Process</span>
                   </Link>
                 </Button>
               </div>
