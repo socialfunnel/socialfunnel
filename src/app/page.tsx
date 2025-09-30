@@ -1,3 +1,4 @@
+import CallToAction from "@/components/call-to-action";
 import HeroSection from "@/components/hero-section";
 import ImpactStats from "@/components/impact-stats";
 import MiniServiceTeaser from "@/components/mini-service-teaser";
@@ -10,6 +11,7 @@ export default function Home() {
       <MiniServiceTeaser />
       <Tools />
       <ImpactStats />
+      <CallToAction />
     </>
   );
 }
