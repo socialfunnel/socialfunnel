@@ -51,6 +51,51 @@ const categories = [
   "Case Studies",
 ];
 
+const linkedInPosts = [
+  {
+    id: 1,
+    title: "Latest Marketing Insights",
+    iframe: `<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7189186812152537088?collapsed=1" height="590" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>`,
+    category: "Marketing Automation",
+    featured: true,
+  },
+  {
+    id: 2,
+    title: "Business Growth Strategies",
+    iframe: `<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7326526145561018368?collapsed=1" height="670" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>`,
+    category: "Business Growth",
+    featured: false,
+  },
+  {
+    id: 3,
+    title: "Lead Generation Insights",
+    iframe: `<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7325134242856751104" height="1024" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>`,
+    category: "Lead Generation",
+    featured: false,
+  },
+  {
+    id: 4,
+    title: "Digital Strategy Deep Dive",
+    iframe: `<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7267494921920483329" height="2076" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>`,
+    category: "Digital Strategy",
+    featured: false,
+  },
+  {
+    id: 5,
+    title: "Case Study Analysis",
+    iframe: `<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7259076968623562752" height="1174" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>`,
+    category: "Case Studies",
+    featured: false,
+  },
+  {
+    id: 6,
+    title: "Marketing Automation Tips",
+    iframe: `<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7247154515785773056" height="1213" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>`,
+    category: "Marketing Automation",
+    featured: false,
+  },
+];
+
 const blogPosts = [
   {
     id: 1,
@@ -179,8 +224,8 @@ const blogPosts = [
 ];
 
 export default function BlogPage() {
-  const featuredPost = blogPosts.find((post) => post.featured);
-  const regularPosts = blogPosts.filter((post) => !post.featured);
+  const featuredPost = linkedInPosts.find((post) => post.featured);
+  const regularPosts = linkedInPosts.filter((post) => !post.featured);
 
   return (
     <main className="overflow-hidden">
@@ -280,66 +325,25 @@ export default function BlogPage() {
             >
               <h2 className="text-2xl font-serif font-bold mb-8 flex items-center gap-2">
                 <TrendingUp className="h-6 w-6 text-primary" />
-                Featured Article
+                Featured Post
               </h2>
 
-              <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-3xl overflow-hidden hover:shadow-lg hover:shadow-primary/10 transition-all duration-300">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                  <div className="relative aspect-[4/3] lg:aspect-auto">
-                    <Image
-                      src={featuredPost.image}
-                      alt={featuredPost.title}
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1 bg-primary text-primary-foreground text-xs font-semibold rounded-full">
-                        {featuredPost.category}
-                      </span>
-                    </div>
+              <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-3xl p-8 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300">
+                <div className="flex flex-col items-center">
+                  <div className="mb-4">
+                    <span className="px-3 py-1 bg-primary text-primary-foreground text-xs font-semibold rounded-full">
+                      {featuredPost.category}
+                    </span>
                   </div>
 
-                  <div className="p-8 md:p-12 flex flex-col justify-center">
-                    <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
-                      <div className="flex items-center gap-2">
-                        <Image
-                          src={featuredPost.author.avatar}
-                          alt={featuredPost.author.name}
-                          width={24}
-                          height={24}
-                          className="rounded-full"
-                        />
-                        <span>{featuredPost.author.name}</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Calendar className="h-4 w-4" />
-                        <span>
-                          {new Date(
-                            featuredPost.publishedAt
-                          ).toLocaleDateString()}
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Clock className="h-4 w-4" />
-                        <span>{featuredPost.readTime}</span>
-                      </div>
-                    </div>
+                  <h3 className="text-2xl font-serif font-bold mb-6 text-center">
+                    {featuredPost.title}
+                  </h3>
 
-                    <h3 className="text-2xl md:text-3xl font-serif font-bold mb-4 leading-tight">
-                      {featuredPost.title}
-                    </h3>
-
-                    <p className="text-muted-foreground mb-6 leading-relaxed">
-                      {featuredPost.excerpt}
-                    </p>
-
-                    <Button asChild className="group w-fit">
-                      <Link href={`/blog/${featuredPost.slug}`}>
-                        Read Full Article
-                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                      </Link>
-                    </Button>
-                  </div>
+                  <div
+                    className="w-full max-w-[504px] mx-auto rounded-2xl overflow-hidden shadow-lg"
+                    dangerouslySetInnerHTML={{ __html: featuredPost.iframe }}
+                  />
                 </div>
               </div>
             </motion.div>
@@ -364,69 +368,28 @@ export default function BlogPage() {
           </motion.div>
 
           <AnimatedGroup variants={transitionVariants}>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {regularPosts.map((post, index) => (
                 <motion.article
                   key={post.id}
                   variants={transitionVariants.item}
-                  className="group bg-card/30 backdrop-blur-sm border border-border/50 rounded-2xl overflow-hidden hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 hover:border-primary/30"
+                  className="group bg-card/30 backdrop-blur-sm border border-border/50 rounded-3xl p-8 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 hover:border-primary/30"
                 >
-                  <div className="relative aspect-[4/3] overflow-hidden">
-                    <Image
-                      src={post.image}
-                      alt={post.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <div className="absolute top-4 left-4">
-                      <span className="px-2 py-1 bg-secondary/90 text-secondary-foreground text-xs font-semibold rounded-full">
+                  <div className="flex flex-col items-center">
+                    <div className="mb-6">
+                      <span className="px-4 py-2 bg-secondary/90 text-secondary-foreground text-sm font-semibold rounded-full">
                         {post.category}
                       </span>
                     </div>
-                  </div>
 
-                  <div className="p-6">
-                    <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3">
-                      <div className="flex items-center gap-1">
-                        <Image
-                          src={post.author.avatar}
-                          alt={post.author.name}
-                          width={16}
-                          height={16}
-                          className="rounded-full"
-                        />
-                        <span>{post.author.name}</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Calendar className="h-3 w-3" />
-                        <span>
-                          {new Date(post.publishedAt).toLocaleDateString()}
-                        </span>
-                      </div>
-                    </div>
-
-                    <h3 className="text-lg font-serif font-bold mb-3 leading-tight group-hover:text-primary transition-colors">
-                      <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+                    <h3 className="text-xl font-serif font-bold mb-8 text-center leading-tight group-hover:text-primary transition-colors max-w-md">
+                      {post.title}
                     </h3>
 
-                    <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
-                      {post.excerpt}
-                    </p>
-
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                        <Clock className="h-3 w-3" />
-                        <span>{post.readTime}</span>
-                      </div>
-
-                      <Link
-                        href={`/blog/${post.slug}`}
-                        className="text-primary hover:text-primary/80 text-sm font-medium inline-flex items-center gap-1 group/link"
-                      >
-                        Read More
-                        <ArrowRight className="h-3 w-3 transition-transform group-hover/link:translate-x-1" />
-                      </Link>
-                    </div>
+                    <div
+                      className="w-full max-w-[504px] mx-auto rounded-2xl overflow-hidden shadow-lg"
+                      dangerouslySetInnerHTML={{ __html: post.iframe }}
+                    />
                   </div>
                 </motion.article>
               ))}
