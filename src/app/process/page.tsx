@@ -182,32 +182,32 @@ export default function ProcessPage() {
                   <stop
                     offset="0%"
                     stopColor="hsl(var(--primary))"
-                    stopOpacity="0.3"
+                    stopOpacity="0.8"
                   />
                   <stop
                     offset="25%"
                     stopColor="hsl(var(--secondary))"
-                    stopOpacity="0.4"
+                    stopOpacity="0.9"
                   />
                   <stop
                     offset="50%"
                     stopColor="hsl(var(--primary))"
-                    stopOpacity="0.3"
+                    stopOpacity="0.8"
                   />
                   <stop
                     offset="75%"
                     stopColor="hsl(var(--secondary))"
-                    stopOpacity="0.4"
+                    stopOpacity="0.9"
                   />
                   <stop
                     offset="100%"
                     stopColor="hsl(var(--primary))"
-                    stopOpacity="0.3"
+                    stopOpacity="0.8"
                   />
                 </linearGradient>
                 <filter id="glow">
-                  <feMorphology operator="dilate" radius="2" />
-                  <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+                  <feMorphology operator="dilate" radius="3" />
+                  <feGaussianBlur stdDeviation="4" result="coloredBlur" />
                   <feMerge>
                     <feMergeNode in="coloredBlur" />
                     <feMergeNode in="SourceGraphic" />
@@ -215,7 +215,7 @@ export default function ProcessPage() {
                 </filter>
               </defs>
 
-              {/* Main river path */}
+              {/* Main river path with brand colors */}
               <path
                 d="M 150 100 
                    Q 250 150, 350 200
@@ -224,10 +224,10 @@ export default function ProcessPage() {
                    Q 350 650, 400 750
                    Q 450 850, 550 950
                    Q 650 1050, 650 1100"
-                stroke="url(#riverGradient)"
-                strokeWidth="8"
+                stroke="oklch(0.7228 0.1214 203.7873)"
+                strokeWidth="12"
                 fill="none"
-                className="animate-pulse"
+                className="animate-pulse drop-shadow-lg"
                 filter="url(#glow)"
               />
 
@@ -336,7 +336,7 @@ export default function ProcessPage() {
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="absolute top-0 left-0 md:left-2"
+                className="absolute top-0 left-0 md:left-16"
               >
                 <div className="group relative w-80 max-w-[90vw]">
                   {/* Step number floating badge */}
@@ -384,7 +384,7 @@ export default function ProcessPage() {
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="absolute top-60 right-0 md:right-2"
+                className="absolute top-60 right-0 md:right-16"
               >
                 <div className="group relative w-80 max-w-[90vw]">
                   <div className="absolute -top-4 -right-4 w-12 h-12 bg-secondary text-secondary-foreground rounded-full flex items-center justify-center text-xl font-bold shadow-lg z-20 group-hover:scale-110 transition-transform duration-300">
@@ -430,7 +430,7 @@ export default function ProcessPage() {
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="absolute top-[480px] left-0 md:left-1"
+                className="absolute top-[480px] left-0 md:left-32"
               >
                 <div className="group relative w-80 max-w-[90vw]">
                   <div className="absolute -top-4 -left-4 w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold shadow-lg z-20 group-hover:scale-110 transition-transform duration-300">
@@ -476,7 +476,7 @@ export default function ProcessPage() {
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="absolute top-[720px] right-0 md:right-1"
+                className="absolute top-[720px] right-0 md:right-16"
               >
                 <div className="group relative w-80 max-w-[90vw]">
                   <div className="absolute -top-4 -right-4 w-12 h-12 bg-secondary text-secondary-foreground rounded-full flex items-center justify-center text-xl font-bold shadow-lg z-20 group-hover:scale-110 transition-transform duration-300">
