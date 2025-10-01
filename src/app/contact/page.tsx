@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Metadata } from "next";
 import {
   ArrowRight,
   Calendar,
@@ -57,6 +56,7 @@ const services = [
 ];
 
 const budgetRanges = [
+  "$1,000 - $,5000",
   "$5,000 - $10,000",
   "$10,000 - $25,000",
   "$25,000 - $50,000",

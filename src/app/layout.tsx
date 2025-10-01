@@ -23,8 +23,12 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.png",
   },
-  title: "Social Funnel",
-  description: "Digital Marketing Agency",
+  title: {
+    template: "%s | Social Funnel",
+    default: "Social Funnel - Digital Marketing Agency",
+  },
+  description:
+    "Transform your business with our comprehensive digital marketing solutions. From lead generation to marketing automation, we help you create a powerful social funnel.",
 };
 
 export default function RootLayout({
@@ -34,9 +38,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${lexend.variable} ${firaCode.variable} antialiased`}
-      >
+      <body className={`${lexend.variable} ${firaCode.variable} antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
