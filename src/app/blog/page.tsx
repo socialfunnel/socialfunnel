@@ -106,7 +106,7 @@ const blogPosts = [
       "Discover proven strategies to generate quality leads for your high-ticket service business. Learn from real case studies and actionable insights.",
     content: "Full blog post content here...",
     author: {
-      name: "Elvis Wangari",
+      name: "Lewis Ngunyi",
       avatar:
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face&auto=format&q=80",
       role: "Founder & CEO",

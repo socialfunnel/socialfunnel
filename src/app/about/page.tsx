@@ -54,15 +54,15 @@ const stats = [
   },
   {
     number: "100%",
-    label: "Systems-Based Approach",
-    description: "Predictable revenue through proven frameworks",
+    label: "Tested & Proven",
+    description: "Lead generation solutions with dedicated call centres",
     icon: <Award className="h-8 w-8" />,
     color: "secondary",
   },
   {
     number: "24/7",
-    label: "Automated Operations",
-    description: "AI-powered systems that work around the clock",
+    label: "Latest Technology",
+    description: "Automation systems for efficiency and accuracy",
     icon: <TrendingUp className="h-8 w-8" />,
     color: "primary",
   },
@@ -147,10 +147,10 @@ export default function About() {
                 as="p"
                 className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8"
               >
-                Based in Nairobi, Kenya, we specialize in helping service-based
-                businesses generate high-quality leads and scale their
-                operations through proven automation systems and dedicated
-                support.
+                Social Funnel provides end-to-end Business Development solutions
+                to businesses dealing in high ticket services and products. We
+                specialize in clients with minimum product value of $10,000 per
+                sale.
               </TextEffect>
 
               <motion.div
@@ -187,33 +187,18 @@ export default function About() {
                 </h2>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    Social Funnel was founded in 2020 by Elvis Wangari with a
-                    clear vision: to bridge the gap between traditional Kenyan
-                    businesses and modern digital marketing. What started as a
-                    one-person consultancy in Nanyuki has grown into East
-                    Africa&apos;s premier marketing automation agency.
+                    Social Funnel is a Kenyan-based marketing agency that
+                    provides end-to-end Business Development solutions to
+                    businesses dealing in high ticket services and products. Our
+                    ideal client has a minimum product value of $10,000 per
+                    sale.
                   </p>
                   <p>
-                    The inspiration came from witnessing countless local service
-                    businesses— construction companies, healthcare providers,
-                    professional services— struggling to generate consistent
-                    leads despite offering exceptional value. These weren&apos;t
-                    businesses lacking quality; they lacked systems.
-                  </p>
-                  <p>
-                    Today, Social Funnel operates from our headquarters in Cape
-                    Chestnut, Nanyuki, with a dedicated team of 8 specialists.
-                    We&apos;ve evolved from basic lead generation to
-                    comprehensive business development solutions, including
-                    AI-powered automation, dedicated call centers, and
-                    sophisticated CRM systems.
-                  </p>
-                  <p>
-                    Our growth mirrors Kenya&apos;s digital transformation. As
-                    more businesses recognize the power of strategic marketing,
-                    Social Funnel has positioned itself as the trusted partner
-                    for companies ready to scale beyond traditional boundaries
-                    and embrace predictable, automated growth.
+                    We offer a tested and proven Lead Generation solution, and
+                    we set up dedicated call centres for our clients to nurture
+                    the Leads through the Funnel. We employ the use of the
+                    latest technologies in our operations for efficiency and
+                    accuracy in automating the sales processes.
                   </p>
                 </div>
               </motion.div>
@@ -241,7 +226,7 @@ export default function About() {
                           2020 - The Beginning
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          Elvis Wangari founded Social Funnel in Nanyuki,
+                          Lewis Ngunyi founded Social Funnel in Nanyuki,
                           starting with basic lead generation for local
                           businesses.
                         </p>
@@ -351,8 +336,7 @@ export default function About() {
                   To build client acquisition systems that create predictable
                   revenue and freedom for service businesses—while funding
                   generational impact across Africa. We use our skills to solve
-                  real-world problems and transform how businesses connect with
-                  their ideal clients.
+                  real-world problems.
                 </p>
                 <div className="flex flex-wrap gap-4 text-sm">
                   <div className="flex items-center gap-2">
@@ -434,7 +418,7 @@ export default function About() {
                 <div className="aspect-square relative overflow-hidden">
                   <Image
                     src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face&auto=format&q=80"
-                    alt="Elvis Wangari - Founder & CEO"
+                    alt="Lewis Ngunyi - Founder & CEO"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
@@ -443,7 +427,7 @@ export default function About() {
 
                 <div className="p-4">
                   <h3 className="text-lg font-serif font-bold mb-1">
-                    Elvis Wangari
+                    Lewis Ngunyi
                   </h3>
                   <p className="text-primary font-medium mb-2 text-sm">
                     Founder &amp; CEO
