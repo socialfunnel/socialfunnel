@@ -475,16 +475,16 @@ export default function About() {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {/* Founder & CEO */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+              {/* Lewis Ngunyi - Co-founder & Lead Consultant */}
               <motion.div
                 variants={transitionVariants.item}
                 className="group relative overflow-hidden rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
               >
                 <div className="aspect-square relative overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face&auto=format&q=80"
-                    alt="Lewis Ngunyi - Founder & CEO"
+                    src="/assets/images/Team/Lewis_Ngunyi.jpeg"
+                    alt="Lewis Ngunyi - Co-founder & Lead Consultant"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
@@ -496,7 +496,7 @@ export default function About() {
                     Lewis Ngunyi
                   </h3>
                   <p className="text-primary font-medium mb-2 text-sm">
-                    Founder &amp; CEO
+                    Founder &amp; Lead Consultant
                   </p>
                   <p className="text-xs text-muted-foreground leading-relaxed mb-3">
                     Visionary leader driving Social Funnel&apos;s mission to
@@ -516,13 +516,13 @@ export default function About() {
 
                   <div className="flex gap-2">
                     <a
-                      href="mailto:elvis@socialfunnel.agency"
+                      href="#"
                       className="w-7 h-7 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
                     >
                       <Mail className="h-3 w-3" />
                     </a>
                     <a
-                      href="https://linkedin.com/in/elviswangari"
+                      href="https://linkedin.com/in/lewisngunyi"
                       className="w-7 h-7 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
                     >
                       <Linkedin className="h-3 w-3" />
@@ -531,15 +531,15 @@ export default function About() {
                 </div>
               </motion.div>
 
-              {/* Head of Operations */}
+              {/* Mumbi Maina - Project Manager */}
               <motion.div
                 variants={transitionVariants.item}
                 className="group relative overflow-hidden rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-secondary/30 transition-all duration-300 hover:shadow-lg hover:shadow-secondary/10"
               >
                 <div className="aspect-square relative overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face&auto=format&q=80"
-                    alt="Sarah Kimani - Head of Operations"
+                    src="/assets/images/Team/Mumbi_Maina.jpeg"
+                    alt="Mumbi Maina - Project Manager"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
@@ -548,20 +548,20 @@ export default function About() {
 
                 <div className="p-4">
                   <h3 className="text-lg font-serif font-bold mb-1">
-                    Sarah Kimani
+                    Mumbi Maina
                   </h3>
                   <p className="text-secondary font-medium mb-2 text-sm">
-                    Head of Operations
+                    Project Manager
                   </p>
                   <p className="text-xs text-muted-foreground leading-relaxed mb-3">
-                    Ensures seamless operations and exceptional client
+                    Ensures seamless project execution and exceptional client
                     experience across all Social Funnel services.
                   </p>
 
                   <div className="mb-3">
                     <div className="flex flex-wrap gap-1">
                       <span className="px-2 py-1 bg-secondary/10 text-secondary text-xs rounded-full">
-                        Operations
+                        Project Management
                       </span>
                       <span className="px-2 py-1 bg-secondary/10 text-secondary text-xs rounded-full">
                         Client Success
@@ -571,7 +571,7 @@ export default function About() {
 
                   <div className="flex gap-2">
                     <a
-                      href="mailto:sarah@socialfunnel.agency"
+                      href="#"
                       className="w-7 h-7 bg-secondary/10 rounded-full flex items-center justify-center text-secondary hover:bg-secondary hover:text-white transition-colors"
                     >
                       <Mail className="h-3 w-3" />
@@ -586,15 +586,15 @@ export default function About() {
                 </div>
               </motion.div>
 
-              {/* Lead Generation Manager */}
+              {/* Layken Wamuyu - Social Media Manager */}
               <motion.div
                 variants={transitionVariants.item}
                 className="group relative overflow-hidden rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
               >
                 <div className="aspect-square relative overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face&auto=format&q=80"
-                    alt="James Mwangi - Lead Generation Manager"
+                    src="/assets/images/Team/Layken_Wamuyu.jpeg"
+                    alt="Layken Wamuyu - Social Media Manager"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
@@ -603,30 +603,30 @@ export default function About() {
 
                 <div className="p-4">
                   <h3 className="text-lg font-serif font-bold mb-1">
-                    James Mwangi
+                    Layken Wamuyu
                   </h3>
                   <p className="text-primary font-medium mb-2 text-sm">
-                    Lead Generation Manager
+                    Production Coordinator
                   </p>
                   <p className="text-xs text-muted-foreground leading-relaxed mb-3">
-                    Specializes in creating high-converting campaigns that
-                    consistently deliver quality leads for our clients.
+                    Oversees production workflows and ensures timely delivery of
+                    all marketing materials and campaign assets.
                   </p>
 
                   <div className="mb-3">
                     <div className="flex flex-wrap gap-1">
                       <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">
-                        Facebook Ads
+                        Production
                       </span>
                       <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">
-                        Google Ads
+                        Workflow Mgmt
                       </span>
                     </div>
                   </div>
 
                   <div className="flex gap-2">
                     <a
-                      href="mailto:james@socialfunnel.agency"
+                      href="#"
                       className="w-7 h-7 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
                     >
                       <Mail className="h-3 w-3" />
@@ -641,15 +641,15 @@ export default function About() {
                 </div>
               </motion.div>
 
-              {/* Marketing Automation Specialist */}
+              {/* Monica Mugo - Social Media Manager */}
               <motion.div
                 variants={transitionVariants.item}
                 className="group relative overflow-hidden rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-secondary/30 transition-all duration-300 hover:shadow-lg hover:shadow-secondary/10"
               >
                 <div className="aspect-square relative overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face&auto=format&q=80"
-                    alt="Grace Wanjiku - Automation Specialist"
+                    src="/assets/images/Team/Monica_Mugo.jpeg"
+                    alt="Monica Mugo - Social Media Manager"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
@@ -658,30 +658,30 @@ export default function About() {
 
                 <div className="p-4">
                   <h3 className="text-lg font-serif font-bold mb-1">
-                    Grace Wanjiku
+                    Monica Mugo
                   </h3>
                   <p className="text-secondary font-medium mb-2 text-sm">
-                    Automation Specialist
+                    Social Media Manager
                   </p>
                   <p className="text-xs text-muted-foreground leading-relaxed mb-3">
-                    Builds and optimizes marketing automation systems that
-                    nurture leads and drive conversions on autopilot.
+                    Develops creative social media campaigns and manages online
+                    communities to enhance brand engagement.
                   </p>
 
                   <div className="mb-3">
                     <div className="flex flex-wrap gap-1">
                       <span className="px-2 py-1 bg-secondary/10 text-secondary text-xs rounded-full">
-                        Automation
+                        Social Media
                       </span>
                       <span className="px-2 py-1 bg-secondary/10 text-secondary text-xs rounded-full">
-                        CRM Setup
+                        Community Mgmt
                       </span>
                     </div>
                   </div>
 
                   <div className="flex gap-2">
                     <a
-                      href="mailto:grace@socialfunnel.agency"
+                      href="#"
                       className="w-7 h-7 bg-secondary/10 rounded-full flex items-center justify-center text-secondary hover:bg-secondary hover:text-white transition-colors"
                     >
                       <Mail className="h-3 w-3" />
@@ -696,15 +696,15 @@ export default function About() {
                 </div>
               </motion.div>
 
-              {/* Call Center Manager */}
+              {/* Beryl Mase - Intern */}
               <motion.div
                 variants={transitionVariants.item}
                 className="group relative overflow-hidden rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
               >
                 <div className="aspect-square relative overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face&auto=format&q=80"
-                    alt="Peter Kariuki - Call Center Manager"
+                    src="/assets/images/Team/Beryl_Mase.jpeg"
+                    alt="Beryl Mase - Intern"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
@@ -713,30 +713,30 @@ export default function About() {
 
                 <div className="p-4">
                   <h3 className="text-lg font-serif font-bold mb-1">
-                    Peter Kariuki
+                    Beryl Mase
                   </h3>
                   <p className="text-primary font-medium mb-2 text-sm">
-                    Call Center Manager
+                    Project Assistant
                   </p>
                   <p className="text-xs text-muted-foreground leading-relaxed mb-3">
-                    Manages our dedicated call center team, ensuring every lead
-                    receives professional follow-up and qualification.
+                    Provides essential support to project management and ensures
+                    smooth coordination across all client deliverables.
                   </p>
 
                   <div className="mb-3">
                     <div className="flex flex-wrap gap-1">
                       <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">
-                        Lead Nurturing
+                        Project Support
                       </span>
                       <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">
-                        Team Training
+                        Coordination
                       </span>
                     </div>
                   </div>
 
                   <div className="flex gap-2">
                     <a
-                      href="mailto:peter@socialfunnel.agency"
+                      href="#"
                       className="w-7 h-7 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
                     >
                       <Mail className="h-3 w-3" />
@@ -744,171 +744,6 @@ export default function About() {
                     <a
                       href="#"
                       className="w-7 h-7 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
-                    >
-                      <Linkedin className="h-3 w-3" />
-                    </a>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Creative Director */}
-              <motion.div
-                variants={transitionVariants.item}
-                className="group relative overflow-hidden rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-secondary/30 transition-all duration-300 hover:shadow-lg hover:shadow-secondary/10"
-              >
-                <div className="aspect-square relative overflow-hidden">
-                  <Image
-                    src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&h=400&fit=crop&crop=face&auto=format&q=80"
-                    alt="Mary Njeri - Creative Director"
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                </div>
-
-                <div className="p-4">
-                  <h3 className="text-lg font-serif font-bold mb-1">
-                    Mary Njeri
-                  </h3>
-                  <p className="text-secondary font-medium mb-2 text-sm">
-                    Creative Director
-                  </p>
-                  <p className="text-xs text-muted-foreground leading-relaxed mb-3">
-                    Leads brand design and funnel creation, ensuring every
-                    client touchpoint reflects professionalism and trust.
-                  </p>
-
-                  <div className="mb-3">
-                    <div className="flex flex-wrap gap-1">
-                      <span className="px-2 py-1 bg-secondary/10 text-secondary text-xs rounded-full">
-                        Brand Design
-                      </span>
-                      <span className="px-2 py-1 bg-secondary/10 text-secondary text-xs rounded-full">
-                        Funnel Design
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="flex gap-2">
-                    <a
-                      href="mailto:mary@socialfunnel.agency"
-                      className="w-7 h-7 bg-secondary/10 rounded-full flex items-center justify-center text-secondary hover:bg-secondary hover:text-white transition-colors"
-                    >
-                      <Mail className="h-3 w-3" />
-                    </a>
-                    <a
-                      href="#"
-                      className="w-7 h-7 bg-secondary/10 rounded-full flex items-center justify-center text-secondary hover:bg-secondary hover:text-white transition-colors"
-                    >
-                      <Linkedin className="h-3 w-3" />
-                    </a>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Data Analytics Manager */}
-              <motion.div
-                variants={transitionVariants.item}
-                className="group relative overflow-hidden rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
-              >
-                <div className="aspect-square relative overflow-hidden">
-                  <Image
-                    src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=400&h=400&fit=crop&crop=face&auto=format&q=80"
-                    alt="David Kimeu - Analytics Manager"
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                </div>
-
-                <div className="p-4">
-                  <h3 className="text-lg font-serif font-bold mb-1">
-                    David Kimeu
-                  </h3>
-                  <p className="text-primary font-medium mb-2 text-sm">
-                    Analytics Manager
-                  </p>
-                  <p className="text-xs text-muted-foreground leading-relaxed mb-3">
-                    Tracks campaign performance and ROI, providing insights that
-                    drive data-informed optimization decisions.
-                  </p>
-
-                  <div className="mb-3">
-                    <div className="flex flex-wrap gap-1">
-                      <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">
-                        Data Analysis
-                      </span>
-                      <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">
-                        ROI Tracking
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="flex gap-2">
-                    <a
-                      href="mailto:david@socialfunnel.agency"
-                      className="w-7 h-7 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
-                    >
-                      <Mail className="h-3 w-3" />
-                    </a>
-                    <a
-                      href="#"
-                      className="w-7 h-7 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
-                    >
-                      <Linkedin className="h-3 w-3" />
-                    </a>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Client Success Manager */}
-              <motion.div
-                variants={transitionVariants.item}
-                className="group relative overflow-hidden rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-secondary/30 transition-all duration-300 hover:shadow-lg hover:shadow-secondary/10"
-              >
-                <div className="aspect-square relative overflow-hidden">
-                  <Image
-                    src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face&auto=format&q=80"
-                    alt="Ruth Muthoni - Client Success Manager"
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                </div>
-
-                <div className="p-4">
-                  <h3 className="text-lg font-serif font-bold mb-1">
-                    Ruth Muthoni
-                  </h3>
-                  <p className="text-secondary font-medium mb-2 text-sm">
-                    Client Success Manager
-                  </p>
-                  <p className="text-xs text-muted-foreground leading-relaxed mb-3">
-                    Dedicated to ensuring client satisfaction and long-term
-                    success through strategic relationship management.
-                  </p>
-
-                  <div className="mb-3">
-                    <div className="flex flex-wrap gap-1">
-                      <span className="px-2 py-1 bg-secondary/10 text-secondary text-xs rounded-full">
-                        Relationship Mgmt
-                      </span>
-                      <span className="px-2 py-1 bg-secondary/10 text-secondary text-xs rounded-full">
-                        Account Growth
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="flex gap-2">
-                    <a
-                      href="mailto:ruth@socialfunnel.agency"
-                      className="w-7 h-7 bg-secondary/10 rounded-full flex items-center justify-center text-secondary hover:bg-secondary hover:text-white transition-colors"
-                    >
-                      <Mail className="h-3 w-3" />
-                    </a>
-                    <a
-                      href="#"
-                      className="w-7 h-7 bg-secondary/10 rounded-full flex items-center justify-center text-secondary hover:bg-secondary hover:text-white transition-colors"
                     >
                       <Linkedin className="h-3 w-3" />
                     </a>

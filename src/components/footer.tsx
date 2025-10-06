@@ -180,7 +180,7 @@ export default function Footer() {
               </svg>
             </Link>
             <Link
-              href="#"
+              href="https://www.linkedin.com/company/social-funnel-ke/posts/?feedView=all"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
@@ -200,7 +200,7 @@ export default function Footer() {
               </svg>
             </Link>
             <Link
-              href="#"
+              href="https://www.facebook.com/profile.php?id=61556134019172"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
@@ -245,7 +245,7 @@ export default function Footer() {
               </svg>
             </Link>
             <Link
-              href="#"
+              href="https://www.instagram.com/socialfunnel_ke/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
