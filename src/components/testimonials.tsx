@@ -68,19 +68,16 @@ const testimonials: Testimonial[] = [
   },
 ];
 
-
-
 export default function WallOfLoveSection() {
   return (
     <section className="pb-20">
       <div className="mx-auto max-w-7xl px-6">
         {/* Creative masonry-style grid with staggered alignment */}
         <div className="columns-1 gap-6 space-y-6 md:columns-2 lg:columns-3 xl:gap-8">
-          {testimonials.map(
-            ({ name, role, company, sector, quote }, index) => (
-              <Card
-                key={index}
-                className={`
+          {testimonials.map(({ name, role, company, sector, quote }, index) => (
+            <Card
+              key={index}
+              className={`
                 break-inside-avoid mb-6 group overflow-hidden border-0 bg-gradient-to-br from-card/80 via-card to-card/60 
                 backdrop-blur-sm transition-all duration-500 hover:shadow-xl hover:shadow-primary/5
                 ${
@@ -92,12 +89,12 @@ export default function WallOfLoveSection() {
                 }
                 hover:scale-[1.02] hover:border-primary/20
               `}
-              >
-                <CardContent className="p-6 space-y-4">
-                  {/* Sector Badge with gradient */}
-                  <div className="flex justify-between items-start">
-                    <span
-                      className={`
+            >
+              <CardContent className="p-6 space-y-4">
+                {/* Sector Badge with gradient */}
+                <div className="flex justify-between items-start">
+                  <span
+                    className={`
                     inline-block px-3 py-1.5 text-xs font-semibold rounded-full transition-all duration-300
                     ${
                       sector === "NGO Sector"
@@ -113,33 +110,33 @@ export default function WallOfLoveSection() {
                         : "bg-indigo-100 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-300"
                     }
                   `}
+                  >
+                    {sector}
+                  </span>
+
+                  {/* Decorative quote mark */}
+                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center opacity-50 group-hover:opacity-100 transition-opacity duration-300">
+                    <svg
+                      className="w-4 h-4 text-primary"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
                     >
-                      {sector}
-                    </span>
-
-                    {/* Decorative quote mark */}
-                    <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center opacity-50 group-hover:opacity-100 transition-opacity duration-300">
-                      <svg
-                        className="w-4 h-4 text-primary"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                      </svg>
-                    </div>
+                      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                    </svg>
                   </div>
+                </div>
 
-                  {/* Testimonial Quote with better typography */}
-                  <blockquote className="relative">
-                                      <p className="text-muted-foreground leading-relaxed text-sm lg:text-base font-light italic">
+                {/* Testimonial Quote with better typography */}
+                <blockquote className="relative">
+                  <p className="text-muted-foreground leading-relaxed text-sm lg:text-base font-light italic">
                     &ldquo;{quote}&rdquo;
                   </p>
-                  </blockquote>
+                </blockquote>
 
-                  {/* Author section with enhanced design */}
-                  <div className="flex items-center gap-4 pt-4 border-t border-border/50">
-                    <Avatar
-                      className={`
+                {/* Author section with enhanced design */}
+                <div className="flex items-center gap-4 pt-4 border-t border-border/50">
+                  <Avatar
+                    className={`
                     h-12 w-12 ring-2 ring-offset-2 ring-offset-background transition-all duration-300 group-hover:ring-primary/30
                     ${
                       index % 5 === 0
@@ -153,34 +150,33 @@ export default function WallOfLoveSection() {
                         : "ring-pink-200"
                     }
                   `}
-                    >
-                      <AvatarFallback className="bg-gradient-to-br from-primary/10 to-primary/20 text-primary font-semibold text-lg transition-transform duration-300 group-hover:scale-110">
-                        {name
-                          .split(" ")
-                          .map((n) => n[0])
-                          .join("")}
-                      </AvatarFallback>
-                    </Avatar>
+                  >
+                    <AvatarFallback className="bg-gradient-to-br from-primary/10 to-primary/20 text-primary font-semibold text-lg transition-transform duration-300 group-hover:scale-110">
+                      {name
+                        .split(" ")
+                        .map((n) => n[0])
+                        .join("")}
+                    </AvatarFallback>
+                  </Avatar>
 
-                    <div className="flex-1 min-w-0">
-                      <h3 className="font-semibold text-sm lg:text-base text-foreground truncate">
-                        {name}
-                      </h3>
-                      <p className="text-xs lg:text-sm text-muted-foreground font-medium truncate">
-                        {role}
-                      </p>
-                      <p className="text-xs text-primary font-semibold truncate mt-0.5">
-                        {company}
-                      </p>
-                    </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-semibold text-sm lg:text-base text-foreground truncate">
+                      {name}
+                    </h3>
+                    <p className="text-xs lg:text-sm text-muted-foreground font-medium truncate">
+                      {role}
+                    </p>
+                    <p className="text-xs text-primary font-semibold truncate mt-0.5">
+                      {company}
+                    </p>
                   </div>
+                </div>
 
-                  {/* Subtle gradient overlay for visual depth */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/5 via-transparent to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                </CardContent>
-              </Card>
-            )
-          )}
+                {/* Subtle gradient overlay for visual depth */}
+                <div className="absolute inset-0 bg-gradient-to-t from-background/5 via-transparent to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
     </section>
