@@ -11,6 +11,7 @@ const menuItems = [
   { name: "About", href: "/about" },
   { name: "Services", href: "/services" },
   { name: "Process", href: "/process" },
+  { name: "Testimonials", href: "/testimonials" },
   { name: "Blog", href: "/blog" },
   { name: "Contact", href: "/contact" },
 ];
@@ -48,8 +49,8 @@ export const Header = () => {
               >
                 <Image
                   src="/assets/images/logos/logo.png"
-                  width={200}
-                  height={200}
+                  width={180}
+                  height={180}
                   alt="Social Funnel Logo"
                 />
               </Link>

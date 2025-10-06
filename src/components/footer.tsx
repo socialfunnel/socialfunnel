@@ -47,8 +47,8 @@ const links = [
         href: "/about",
       },
       {
-        title: "Careers",
-        href: "#",
+        title: "Testimonials",
+        href: "/testimonials",
       },
       {
         title: "Blog",
