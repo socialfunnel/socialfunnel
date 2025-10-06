@@ -174,140 +174,206 @@ export default function About() {
 
       {/* Story Section */}
       <section className="py-20 relative">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <AnimatedGroup variants={transitionVariants}>
-              <motion.div variants={transitionVariants.item}>
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary/10 rounded-full text-secondary text-sm font-semibold mb-6">
-                  <Building className="h-4 w-4" />
-                  Our Story
-                </div>
-                <h2 className="text-3xl md:text-4xl font-serif font-bold mb-8">
-                  From Vision to Reality: The Social Funnel Journey
-                </h2>
-                <div className="space-y-4 text-muted-foreground leading-relaxed">
-                  <p>
-                    Social Funnel is a Kenyan-based marketing agency that
-                    provides end-to-end Business Development solutions to
-                    businesses dealing in high ticket services and products. Our
-                    ideal client has a minimum product value of $10,000 per
-                    sale.
-                  </p>
-                  <p>
-                    We offer a tested and proven Lead Generation solution, and
-                    we set up dedicated call centres for our clients to nurture
-                    the Leads through the Funnel. We employ the use of the
-                    latest technologies in our operations for efficiency and
-                    accuracy in automating the sales processes.
-                  </p>
-                </div>
-              </motion.div>
-            </AnimatedGroup>
-
+        <div className="mx-auto max-w-4xl px-6">
+          <AnimatedGroup variants={transitionVariants}>
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="relative"
+              variants={transitionVariants.item}
+              className="text-center"
             >
-              <div className="space-y-6">
-                {/* Timeline */}
-                <div className="relative">
-                  <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary to-secondary"></div>
-
-                  <div className="space-y-8">
-                    <div className="relative flex items-start">
-                      <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white text-sm font-bold relative z-10">
-                        1
-                      </div>
-                      <div className="ml-6">
-                        <h3 className="text-lg font-serif font-bold text-primary mb-1">
-                          2020 - The Beginning
-                        </h3>
-                        <p className="text-sm text-muted-foreground">
-                          Lewis Ngunyi founded Social Funnel in Nanyuki,
-                          starting with basic lead generation for local
-                          businesses.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="relative flex items-start">
-                      <div className="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white text-sm font-bold relative z-10">
-                        2
-                      </div>
-                      <div className="ml-6">
-                        <h3 className="text-lg font-serif font-bold text-secondary mb-1">
-                          2022 - Team Expansion
-                        </h3>
-                        <p className="text-sm text-muted-foreground">
-                          Grew to a team of specialists including automation
-                          experts, creative directors, and call center managers.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="relative flex items-start">
-                      <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white text-sm font-bold relative z-10">
-                        3
-                      </div>
-                      <div className="ml-6">
-                        <h3 className="text-lg font-serif font-bold text-primary mb-1">
-                          2023 - Technology Focus
-                        </h3>
-                        <p className="text-sm text-muted-foreground">
-                          Introduced AI-powered automation, dedicated call
-                          centers, and sophisticated CRM integrations.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="relative flex items-start">
-                      <div className="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white text-sm font-bold relative z-10">
-                        4
-                      </div>
-                      <div className="ml-6">
-                        <h3 className="text-lg font-serif font-bold text-secondary mb-1">
-                          2024 - Regional Leader
-                        </h3>
-                        <p className="text-sm text-muted-foreground">
-                          Established as East Africa&apos;s premier marketing
-                          automation agency, serving high-ticket service
-                          businesses across the region.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Location Card */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                  className="p-6 rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5 border border-primary/10"
-                >
-                  <div className="flex items-center gap-3 mb-3">
-                    <MapPin className="h-6 w-6 text-primary" />
-                    <h3 className="text-lg font-serif font-bold">
-                      Our Home Base
-                    </h3>
-                  </div>
-                  <p className="text-sm text-muted-foreground mb-3">
-                    Cape Chestnut, Nanyuki - Where innovation meets the stunning
-                    backdrop of Mount Kenya, inspiring our team to reach new
-                    heights.
-                  </p>
-                  <div className="text-xs text-muted-foreground space-y-1">
-                    <p>P.O. Box 1215 - 10400</p>
-                    <p>+254 721634183</p>
-                    <p>info@socialfunnel.agency</p>
-                  </div>
-                </motion.div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary/10 rounded-full text-secondary text-sm font-semibold mb-6">
+                <Building className="h-4 w-4" />
+                Our Story
+              </div>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-8">
+                From Vision to Reality: The Social Funnel Journey
+              </h2>
+              <div className="text-muted-foreground leading-relaxed text-lg">
+                <p>
+                  Social Funnel is a Kenyan-based marketing agency that provides
+                  end-to-end Business Development solutions to businesses
+                  dealing in high ticket services and products. Our ideal client
+                  has a minimum product value of $10,000 (&gt;Ksh 1M) per sale.
+                  We offer a tested and proven Lead Generation solution, and we
+                  set up dedicated call centres for our clients to nurture the
+                  Leads through the Funnel. We employ the use of the latest
+                  technologies in our operations for efficiency and accuracy in
+                  automating the sales processes.
+                </p>
               </div>
             </motion.div>
+          </AnimatedGroup>
+        </div>
+      </section>
+
+      {/* Timeline Section */}
+      <section className="py-20 relative">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-semibold mb-6">
+              <Calendar className="h-4 w-4" />
+              Our Journey
+            </div>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold">
+              Milestones That Define Us
+            </h2>
+          </div>
+
+          <div className="relative">
+            {/* Animated Timeline Line */}
+            <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-secondary to-primary rounded-full opacity-20 transform -translate-x-1/2 hidden md:block"></div>
+            <motion.div
+              className="absolute left-1/2 top-0 w-1 bg-gradient-to-b from-primary via-secondary to-primary rounded-full transform -translate-x-1/2 hidden md:block"
+              initial={{ height: 0 }}
+              whileInView={{ height: "100%" }}
+              viewport={{ once: true }}
+              transition={{ duration: 2, ease: "easeInOut" }}
+            />
+
+            <div className="space-y-24">
+              {/* 2020 - Foundation (Left) */}
+              <motion.div
+                className="relative flex flex-col md:flex-row items-center group"
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+              >
+                {/* Card on Left */}
+                <div className="w-full md:w-5/12 md:pr-8">
+                  <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 group-hover:shadow-lg group-hover:shadow-primary/10 transition-all duration-300 hover:border-primary/30">
+                    <div className="flex items-center justify-center md:justify-start gap-3 mb-3">
+                      <span className="px-4 py-2 bg-primary/10 text-primary text-sm font-semibold rounded-full">
+                        2020
+                      </span>
+                      <h3 className="text-xl font-serif font-bold text-primary">
+                        The Foundation
+                      </h3>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed text-center md:text-left">
+                      Lewis Ngunyi founded Social Funnel in Nanyuki, starting
+                      with a vision to help local businesses generate quality
+                      leads through modern digital strategies.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Icon in Center */}
+                <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center text-white font-bold relative z-10 shadow-lg group-hover:scale-110 transition-transform duration-300 mb-6 md:mb-0">
+                  <Building className="h-8 w-8" />
+                </div>
+
+                {/* Empty space on Right */}
+                <div className="w-full md:w-5/12 md:pl-8 hidden md:block"></div>
+              </motion.div>
+
+              {/* 2022 - Growth (Right) */}
+              <motion.div
+                className="relative flex flex-col md:flex-row items-center group"
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                {/* Empty space on Left */}
+                <div className="w-full md:w-5/12 md:pr-8 hidden md:block"></div>
+
+                {/* Icon in Center */}
+                <div className="w-16 h-16 bg-gradient-to-br from-secondary to-secondary/80 rounded-2xl flex items-center justify-center text-white font-bold relative z-10 shadow-lg group-hover:scale-110 transition-transform duration-300 mb-6 md:mb-0">
+                  <Users className="h-8 w-8" />
+                </div>
+
+                {/* Card on Right */}
+                <div className="w-full md:w-5/12 md:pl-8">
+                  <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 group-hover:shadow-lg group-hover:shadow-secondary/10 transition-all duration-300 hover:border-secondary/30">
+                    <div className="flex items-center justify-center md:justify-start gap-3 mb-3">
+                      <span className="px-4 py-2 bg-secondary/10 text-secondary text-sm font-semibold rounded-full">
+                        2022
+                      </span>
+                      <h3 className="text-xl font-serif font-bold text-secondary">
+                        Team & Systems
+                      </h3>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed text-center md:text-left">
+                      Expanded to a specialized team including automation
+                      experts, creative directors, and call center managers,
+                      building our core service offerings.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* 2023 - Innovation (Left) */}
+              <motion.div
+                className="relative flex flex-col md:flex-row items-center group"
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
+                {/* Card on Left */}
+                <div className="w-full md:w-5/12 md:pr-8">
+                  <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 group-hover:shadow-lg group-hover:shadow-primary/10 transition-all duration-300 hover:border-primary/30">
+                    <div className="flex items-center justify-center md:justify-start gap-3 mb-3">
+                      <span className="px-4 py-2 bg-primary/10 text-primary text-sm font-semibold rounded-full">
+                        2023
+                      </span>
+                      <h3 className="text-xl font-serif font-bold text-primary">
+                        Tech Innovation
+                      </h3>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed text-center md:text-left">
+                      Launched AI-powered automation systems, dedicated call
+                      centers, and sophisticated CRM integrations, becoming the
+                      go-to partner for high-ticket businesses.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Icon in Center */}
+                <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center text-white font-bold relative z-10 shadow-lg group-hover:scale-110 transition-transform duration-300 mb-6 md:mb-0">
+                  <TrendingUp className="h-8 w-8" />
+                </div>
+
+                {/* Empty space on Right */}
+                <div className="w-full md:w-5/12 md:pl-8 hidden md:block"></div>
+              </motion.div>
+
+              {/* 2024 - Leadership (Right) */}
+              <motion.div
+                className="relative flex flex-col md:flex-row items-center group"
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                {/* Empty space on Left */}
+                <div className="w-full md:w-5/12 md:pr-8 hidden md:block"></div>
+
+                {/* Icon in Center */}
+                <div className="w-16 h-16 bg-gradient-to-br from-secondary to-secondary/80 rounded-2xl flex items-center justify-center text-white font-bold relative z-10 shadow-lg group-hover:scale-110 transition-transform duration-300 mb-6 md:mb-0">
+                  <Award className="h-8 w-8" />
+                </div>
+
+                {/* Card on Right */}
+                <div className="w-full md:w-5/12 md:pl-8">
+                  <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 group-hover:shadow-lg group-hover:shadow-secondary/10 transition-all duration-300 hover:border-secondary/30">
+                    <div className="flex items-center justify-center md:justify-start gap-3 mb-3">
+                      <span className="px-4 py-2 bg-secondary/10 text-secondary text-sm font-semibold rounded-full">
+                        2024
+                      </span>
+                      <h3 className="text-xl font-serif font-bold text-secondary">
+                        Regional Leadership
+                      </h3>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed text-center md:text-left">
+                      Established as East Africa&apos;s premier marketing
+                      automation agency, serving high-ticket service businesses
+                      across the region with proven results.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
