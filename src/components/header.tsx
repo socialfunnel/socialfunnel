@@ -66,7 +66,7 @@ export const Header = () => {
             </div>
 
             <div className="absolute inset-0 m-auto hidden size-fit lg:block">
-              <ul className="flex gap-8 text-sm font-medium">
+              <ul className="flex gap-6 text-sm font-medium">
                 {menuItems.map((item, index) => (
                   <li key={index}>
                     <Link
