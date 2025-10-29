@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -27,9 +29,94 @@ const transitionVariants = {
 };
 
 export default function HeroSection() {
+  const [showVideo, setShowVideo] = useState(false);
+  const [isHeroVisible, setIsHeroVisible] = useState(true);
+
+  useEffect(() => {
+    console.log("Hero component mounted");
+    // Start video after 4 seconds to allow initial animations to complete
+    const timer = setTimeout(() => {
+      console.log("Switching to video");
+      setShowVideo(true);
+    }, 4000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Track scroll position to hide backgrounds when not on hero
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const heroHeight = window.innerHeight; // Approximate hero height
+
+      // Hide backgrounds if scrolled past half the hero section
+      if (scrollPosition > heroHeight * 0.5) {
+        setIsHeroVisible(false);
+      } else {
+        setIsHeroVisible(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Debug component state
+  useEffect(() => {
+    console.log("showVideo state:", showVideo, "isHeroVisible:", isHeroVisible);
+  }, [showVideo, isHeroVisible]);
+
   return (
     <>
       <main className="overflow-hidden">
+        {/* Video/Image Background Layer - Full coverage */}
+        <div
+          className={`fixed inset-0 -z-30 overflow-hidden h-screen w-full transition-opacity duration-300 ${
+            isHeroVisible ? "opacity-100" : "opacity-0 pointer-events-none"
+          }`}
+        >
+          {/* Initial Image Background */}
+          <div
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              showVideo ? "opacity-0" : "opacity-70"
+            }`}
+          >
+            <Image
+              src="/assets/images/hero/hero_home_img.svg"
+              alt="Social Funnel Hero Background"
+              fill
+              className="object-cover object-center"
+              priority
+            />
+          </div>
+
+          {/* Video Background - Replaces image after delay */}
+          <div
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              showVideo ? "opacity-70" : "opacity-0"
+            }`}
+          >
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover object-center"
+              onError={(e) => {
+                console.error("Video failed to load:", e);
+                setShowVideo(false);
+              }}
+              onLoadStart={() => console.log("Video loading started")}
+              onCanPlay={() => console.log("Video can play")}
+            >
+              <source
+                src="/assets/images/hero/animated_video.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+        </div>
+
         <div
           aria-hidden
           className="absolute inset-0 isolate hidden opacity-65 contain-strict lg:block"
@@ -40,41 +127,7 @@ export default function HeroSection() {
         </div>
         <section>
           <div className="relative pt-24 md:pt-36">
-            <AnimatedGroup
-              variants={{
-                container: {
-                  visible: {
-                    transition: {
-                      delayChildren: 1,
-                    },
-                  },
-                },
-                item: {
-                  hidden: {
-                    opacity: 0,
-                    y: 20,
-                  },
-                  visible: {
-                    opacity: 1,
-                    y: 0,
-                    transition: {
-                      type: "spring" as const,
-                      bounce: 0.3,
-                      duration: 2,
-                    },
-                  },
-                },
-              }}
-              className="mask-b-from-35% mask-b-to-90% absolute inset-0 top-56 -z-20 lg:top-32"
-            >
-              <Image
-                src="https://ik.imagekit.io/lrigu76hy/tailark/night-background.jpg?updatedAt=1745733451120"
-                alt="background"
-                className="hidden size-full dark:block"
-                width="3276"
-                height="4095"
-              />
-            </AnimatedGroup>
+            {/* Removed the masked background image that was creating the border effect */}
 
             <div
               aria-hidden

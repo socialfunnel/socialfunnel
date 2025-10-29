@@ -365,7 +365,7 @@ export default function ContactPage() {
                         className="text-sm font-semibold flex items-center gap-2"
                       >
                         <MessageSquare className="h-4 w-4" />
-                        Marketing Needs / Services you're interested in *
+                        Marketing Needs / Services you&apos;re interested in *
                       </Label>
                       <select
                         id="marketingNeeds"
@@ -376,7 +376,7 @@ export default function ContactPage() {
                         className="w-full h-12 px-3 py-2 bg-background border border-border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                       >
                         <option value="">
-                          Select services you're interested in
+                          Select services you&apos;re interested in
                         </option>
                         {marketingServices.map((service, index) => (
                           <option key={index} value={service}>
