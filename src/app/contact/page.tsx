@@ -44,7 +44,7 @@ const transitionVariants = {
   },
 };
 
-const services = [
+const marketingServices = [
   "Lead Generation",
   "Marketing Automation",
   "Call Center Setup",
@@ -53,10 +53,39 @@ const services = [
   "Paid Advertising (Facebook/Google)",
   "Analytics & Reporting",
   "Full Business Development Package",
+  "Website Development & Optimization",
+  "Social Media Marketing",
+  "Content Marketing & SEO",
+  "Other",
+];
+
+const sectors = [
+  "Healthcare",
+  "Real Estate & Construction",
+  "Technology & Software",
+  "Financial Services",
+  "Education",
+  "E-commerce & Retail",
+  "Professional Services",
+  "Manufacturing",
+  "NGO & Non-Profit",
+  "Hospitality & Tourism",
+  "Other",
+];
+
+const hearAboutUs = [
+  "Google Search",
+  "Social Media (Facebook, Instagram, LinkedIn)",
+  "Referral from a friend/colleague",
+  "Industry event/conference",
+  "Online advertisement",
+  "Business directory",
+  "Previous client recommendation",
+  "Other",
 ];
 
 const budgetRanges = [
-  "$1,000 - $,5000",
+  "$1,000 - $5,000",
   "$5,000 - $10,000",
   "$10,000 - $25,000",
   "$25,000 - $50,000",
@@ -70,9 +99,12 @@ export default function ContactPage() {
     fullName: "",
     companyName: "",
     email: "",
-    serviceRequired: "",
+    companyWebsite: "",
+    sector: "",
+    marketingNeeds: "",
+    otherMarketingNeeds: "",
+    hearAboutUs: "",
     projectBudget: "",
-    projectDetails: "",
   });
 
   const handleInputChange = (
@@ -232,27 +264,69 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  {/* Service Required & Project Budget */}
+                  {/* Company Website & Sector */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label
-                        htmlFor="serviceRequired"
+                        htmlFor="companyWebsite"
                         className="text-sm font-semibold"
                       >
-                        Service Required *
+                        Company Website (Optional)
+                      </Label>
+                      <Input
+                        id="companyWebsite"
+                        name="companyWebsite"
+                        type="url"
+                        value={formData.companyWebsite}
+                        onChange={handleInputChange}
+                        placeholder="https://www.yourcompany.com"
+                        className="h-12"
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="sector" className="text-sm font-semibold">
+                        Sector/Industry *
                       </Label>
                       <select
-                        id="serviceRequired"
-                        name="serviceRequired"
+                        id="sector"
+                        name="sector"
                         required
-                        value={formData.serviceRequired}
+                        value={formData.sector}
                         onChange={handleInputChange}
                         className="w-full h-12 px-3 py-2 bg-background border border-border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                       >
-                        <option value="">Select a service</option>
-                        {services.map((service, index) => (
-                          <option key={index} value={service}>
-                            {service}
+                        <option value="">Select your sector/industry</option>
+                        {sectors.map((sector, index) => (
+                          <option key={index} value={sector}>
+                            {sector}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+
+                  {/* How They Heard About Us & Project Budget */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label
+                        htmlFor="hearAboutUs"
+                        className="text-sm font-semibold"
+                      >
+                        How did you hear about us? *
+                      </Label>
+                      <select
+                        id="hearAboutUs"
+                        name="hearAboutUs"
+                        required
+                        value={formData.hearAboutUs}
+                        onChange={handleInputChange}
+                        className="w-full h-12 px-3 py-2 bg-background border border-border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                      >
+                        <option value="">Select how you found us</option>
+                        {hearAboutUs.map((source, index) => (
+                          <option key={index} value={source}>
+                            {source}
                           </option>
                         ))}
                       </select>
@@ -283,25 +357,56 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  {/* Project Details */}
-                  <div className="space-y-2">
-                    <Label
-                      htmlFor="projectDetails"
-                      className="text-sm font-semibold flex items-center gap-2"
-                    >
-                      <MessageSquare className="h-4 w-4" />
-                      Project Details *
-                    </Label>
-                    <textarea
-                      id="projectDetails"
-                      name="projectDetails"
-                      required
-                      value={formData.projectDetails}
-                      onChange={handleInputChange}
-                      placeholder="Tell us about your business, current challenges, and what you hope to achieve with our services..."
-                      rows={5}
-                      className="w-full px-3 py-2 bg-background border border-border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
-                    />
+                  {/* Marketing Needs - Moved to bottom */}
+                  <div className="space-y-4">
+                    <div className="space-y-2">
+                      <Label
+                        htmlFor="marketingNeeds"
+                        className="text-sm font-semibold flex items-center gap-2"
+                      >
+                        <MessageSquare className="h-4 w-4" />
+                        Marketing Needs / Services you're interested in *
+                      </Label>
+                      <select
+                        id="marketingNeeds"
+                        name="marketingNeeds"
+                        required
+                        value={formData.marketingNeeds}
+                        onChange={handleInputChange}
+                        className="w-full h-12 px-3 py-2 bg-background border border-border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                      >
+                        <option value="">
+                          Select services you're interested in
+                        </option>
+                        {marketingServices.map((service, index) => (
+                          <option key={index} value={service}>
+                            {service}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+
+                    {/* Conditional text field for "Other" option */}
+                    {formData.marketingNeeds === "Other" && (
+                      <div className="space-y-2">
+                        <Label
+                          htmlFor="otherMarketingNeeds"
+                          className="text-sm font-semibold"
+                        >
+                          Please specify your marketing needs:
+                        </Label>
+                        <textarea
+                          id="otherMarketingNeeds"
+                          name="otherMarketingNeeds"
+                          required={formData.marketingNeeds === "Other"}
+                          value={formData.otherMarketingNeeds}
+                          onChange={handleInputChange}
+                          placeholder="Describe your specific marketing needs and goals..."
+                          rows={4}
+                          className="w-full px-3 py-2 bg-background border border-border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
+                        />
+                      </div>
+                    )}
                   </div>
 
                   {/* Submit Button */}
