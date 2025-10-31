@@ -31,13 +31,12 @@ export default config({
       },
     },
     navigation: {
-      Content: ["posts"],
-      Team: ["authors"],
+      Writing: ["posts", "authors"],
     },
   },
   collections: {
     authors: collection({
-      label: "Team Members",
+      label: "Authors",
       slugField: "name",
       path: "src/content/authors/*",
       format: { data: "json" },

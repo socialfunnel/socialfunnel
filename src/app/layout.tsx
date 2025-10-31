@@ -21,9 +21,14 @@ const firaCode = Fira_Code({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NODE_ENV === 'production' 
-    ? 'https://socialfunnel.agency' 
-    : 'http://localhost:3000'
+  metadataBase: new URL(
+    process.env.NODE_ENV === "production"
+      ? process.env.VERCEL_URL
+        ? `https://${process.env.VERCEL_URL}`
+        : process.env.NETLIFY_URL
+        ? process.env.NETLIFY_URL
+        : "https://socialfunnel.agency"
+      : "http://localhost:3000"
   ),
   icons: {
     icon: "/favicon.png",
