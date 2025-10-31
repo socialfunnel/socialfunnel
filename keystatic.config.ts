@@ -4,9 +4,15 @@ import { config, fields, collection } from "@keystatic/core";
 import { authors } from "./src/lib/author";
 
 export default config({
-  storage: {
-    kind: "local",
-  },
+  storage:
+    process.env.NODE_ENV === "production"
+      ? {
+          kind: "github" as const,
+          repo: "elviswangari/socialfunnel",
+        }
+      : {
+          kind: "local" as const,
+        },
   ui: {
     brand: {
       name: "SocialFunnel",
@@ -19,7 +25,7 @@ export default config({
           style: {
             height: "24px",
             width: "auto",
-            filter: colorScheme === "dark" ? "brightness(0) invert(1)" : "none",
+            // filter: colorScheme === "light" ? "brightness(0) invert(1)" : "none",
           },
         });
       },
