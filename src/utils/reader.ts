@@ -16,25 +16,40 @@ export const reader = cache(async () => {
     // Draft mode not available in this context
   }
 
-  // In production, always use GitHub reader
+  // Match the storage configuration from keystatic.config.ts
   if (process.env.NODE_ENV === "production") {
-    const cookieStore = await cookies().catch(() => ({ get: () => undefined }));
-    const branch = isDraftModeEnabled
-      ? cookieStore.get("ks-branch")?.value
-      : "main";
+    // For private repos, try GitHub reader with token, fallback to local
+    try {
+      const cookieStore = await cookies().catch(() => ({
+        get: () => undefined,
+      }));
+      const branch = isDraftModeEnabled
+        ? cookieStore.get("ks-branch")?.value
+        : "main";
 
-    return createGitHubReader(keystaticConfig, {
-      repo: "elviswangari/socialfunnel",
-      ref: branch || "main",
-      // In production, we don't need a token for public repos reading from main branch
-      // Token is only needed for preview/draft mode
-      token: isDraftModeEnabled
+      const token = isDraftModeEnabled
         ? cookieStore.get("keystatic-gh-access-token")?.value
-        : undefined,
-    });
+        : process.env.GITHUB_TOKEN;
+
+      if (token) {
+        return createGitHubReader(keystaticConfig, {
+          repo: "elviswangari/socialfunnel",
+          ref: branch || "main",
+          token,
+        });
+      }
+    } catch (error) {
+      console.warn(
+        "GitHub reader failed, falling back to local reader:",
+        error
+      );
+    }
+
+    // Fallback to local reader if GitHub fails (content should be built into deployment)
+    return createReader(process.cwd(), keystaticConfig);
   }
 
-  // In development, use draft mode logic or local reader
+  // In development, handle draft mode
   if (isDraftModeEnabled) {
     const cookieStore = await cookies();
     const branch = cookieStore.get("ks-branch")?.value;
@@ -48,6 +63,6 @@ export const reader = cache(async () => {
     }
   }
 
-  // Development default: use local reader
+  // Development default: use local reader (matching keystatic config)
   return createReader(process.cwd(), keystaticConfig);
 });
