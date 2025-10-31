@@ -3,9 +3,7 @@ import Image from "next/image";
 import {
   Calendar,
   Clock,
-  User,
   ArrowRight,
-  Tag,
   Search,
   TrendingUp,
   Target,
@@ -53,24 +51,35 @@ const categories = [
   "Digital Strategy",
 ];
 
+type PostEntry = Awaited<
+  ReturnType<Awaited<ReturnType<typeof reader>>["collections"]["posts"]["all"]>
+>[0];
+
 export default async function BlogPage() {
-  // Read the "Posts" collection
-  const posts = await (await reader()).collections.posts.all();
+  let sortedPosts: PostEntry[] = [];
+  let featuredPosts: PostEntry[] = [];
 
-  // Sort posts by published date (newest first)
-  const sortedPosts = posts.sort((a, b) => {
-    const dateA = a.entry.publishedAt
-      ? new Date(a.entry.publishedAt)
-      : new Date(0);
-    const dateB = b.entry.publishedAt
-      ? new Date(b.entry.publishedAt)
-      : new Date(0);
-    return dateB.getTime() - dateA.getTime();
-  });
+  try {
+    // Read the "Posts" collection
+    const posts = await (await reader()).collections.posts.all();
 
-  // Get featured and regular posts
-  const featuredPosts = sortedPosts.filter((post) => post.entry.featured);
-  const regularPosts = sortedPosts.filter((post) => !post.entry.featured);
+    // Sort posts by published date (newest first)
+    sortedPosts = posts.sort((a, b) => {
+      const dateA = a.entry.publishedAt
+        ? new Date(a.entry.publishedAt)
+        : new Date(0);
+      const dateB = b.entry.publishedAt
+        ? new Date(b.entry.publishedAt)
+        : new Date(0);
+      return dateB.getTime() - dateA.getTime();
+    });
+
+    // Get featured posts
+    featuredPosts = sortedPosts.filter((post) => post.entry.featured);
+  } catch (error) {
+    console.error("Error loading blog posts:", error);
+    // Arrays are already initialized as empty above
+  }
 
   return (
     <main className="overflow-hidden">

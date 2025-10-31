@@ -16,21 +16,38 @@ export const reader = cache(async () => {
     // Draft mode not available in this context
   }
 
+  // In production, always use GitHub reader
+  if (process.env.NODE_ENV === "production") {
+    const cookieStore = await cookies().catch(() => ({ get: () => undefined }));
+    const branch = isDraftModeEnabled
+      ? cookieStore.get("ks-branch")?.value
+      : "main";
+
+    return createGitHubReader(keystaticConfig, {
+      repo: "elviswangari/socialfunnel",
+      ref: branch || "main",
+      // In production, we don't need a token for public repos reading from main branch
+      // Token is only needed for preview/draft mode
+      token: isDraftModeEnabled
+        ? cookieStore.get("keystatic-gh-access-token")?.value
+        : undefined,
+    });
+  }
+
+  // In development, use draft mode logic or local reader
   if (isDraftModeEnabled) {
     const cookieStore = await cookies();
     const branch = cookieStore.get("ks-branch")?.value;
 
     if (branch) {
       return createGitHubReader(keystaticConfig, {
-        // Replace with your actual GitHub repo when you connect to GitHub
         repo: "elviswangari/socialfunnel",
         ref: branch,
-        // Assuming an existing GitHub app or personal access token
         token: cookieStore.get("keystatic-gh-access-token")?.value,
       });
     }
   }
 
-  // If draft mode is off, use the regular reader
+  // Development default: use local reader
   return createReader(process.cwd(), keystaticConfig);
 });
