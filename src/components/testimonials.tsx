@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -69,6 +70,8 @@ const testimonials: Testimonial[] = [
 ];
 
 export default function WallOfLoveSection() {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
   return (
     <section className="pb-20">
       <div className="mx-auto max-w-7xl px-6">
@@ -77,6 +80,8 @@ export default function WallOfLoveSection() {
           {testimonials.map(({ name, role, company, sector, quote }, index) => (
             <Card
               key={index}
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
               className={`
                 break-inside-avoid mb-6 group overflow-hidden border-0 bg-gradient-to-br from-card/80 via-card to-card/60 
                 backdrop-blur-sm transition-all duration-500 hover:shadow-xl hover:shadow-primary/5
@@ -88,6 +93,11 @@ export default function WallOfLoveSection() {
                     : "hover:rotate-0"
                 }
                 hover:scale-[1.02] hover:border-primary/20
+                ${
+                  hoveredIndex !== null && hoveredIndex !== index
+                    ? "blur-sm opacity-50"
+                    : "blur-none opacity-100"
+                }
               `}
             >
               <CardContent className="p-6 space-y-4">

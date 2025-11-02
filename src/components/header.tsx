@@ -106,7 +106,7 @@ export const Header = () => {
                   )}
                 >
                   <Link href="/contact">
-                    <span>Free Consultation</span>
+                    <span>Get a Demo</span>
                   </Link>
                 </Button>
                 <Button
@@ -117,8 +117,8 @@ export const Header = () => {
                     "font-sans font-medium"
                   )}
                 >
-                  <Link href="/services">
-                    <span>Our Process</span>
+                  <Link href="/contact">
+                    <span>Get a Demo</span>
                   </Link>
                 </Button>
               </div>
