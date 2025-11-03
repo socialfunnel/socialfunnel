@@ -9,9 +9,8 @@ const DEFAULT_AUDIENCE_ID = "general";
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const email = searchParams.get("email");
-  
-  try {
 
+  try {
     if (!email) {
       return NextResponse.json(
         { error: "Email parameter is required" },
