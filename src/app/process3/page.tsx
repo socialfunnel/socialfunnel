@@ -12,7 +12,7 @@ const processSteps = [
     subtitle: "Attract Your Ideal Clients",
     description:
       "We launch targeted campaigns and create high-converting funnels that attract your ideal clients and capture their information.",
-    icon: <Bot className="w-8 h-8 text-teal-600" />,
+    icon: <Bot className="w-8 h-8 text-primary" />,
     timeline: "Week 1-2",
     color: "primary",
     position: { top: "140px", left: "100px" },
@@ -23,7 +23,7 @@ const processSteps = [
     subtitle: "Never Miss a Lead Again",
     description:
       "Our AI systems and call center team qualify leads, nurture prospects, and book qualified appointments directly into your calendar.",
-    icon: <CheckCircle className="w-8 h-8 text-teal-700" />,
+    icon: <CheckCircle className="w-8 h-8 text-secondary" />,
     timeline: "Week 2-3",
     color: "secondary",
     position: { top: "220px", right: "120px" },
@@ -34,7 +34,7 @@ const processSteps = [
     subtitle: "Focus on What You Do Best",
     description:
       "You focus on what you do best—consulting with pre-qualified prospects and closing deals with clients ready to invest.",
-    icon: <CheckCircle className="w-8 h-8 text-teal-600" />,
+    icon: <CheckCircle className="w-8 h-8 text-primary" />,
     timeline: "Week 3-4",
     color: "primary",
     position: { top: "360px", left: "140px" },
@@ -45,7 +45,7 @@ const processSteps = [
     subtitle: "Optimize for Growth",
     description:
       "We provide detailed reports and analytics so you can see exactly how your investment is performing and optimize for growth.",
-    icon: <BarChart3 className="w-8 h-8 text-teal-700" />,
+    icon: <BarChart3 className="w-8 h-8 text-secondary" />,
     timeline: "Ongoing",
     color: "secondary",
     position: { top: "480px", right: "160px" },
@@ -56,7 +56,7 @@ const processSteps = [
     subtitle: "Achieve Your Goals",
     description:
       "Celebrate your success and optimize for continued growth with our comprehensive metrics and support.",
-    icon: <CheckCircle className="w-8 h-8 text-teal-600" />,
+    icon: <CheckCircle className="w-8 h-8 text-primary" />,
     timeline: "Ongoing",
     color: "primary",
     position: { top: "620px", left: "180px" },
@@ -73,9 +73,9 @@ export default function Process2Page() {
           await controls.start({
             scale: [1, 1.15, 1],
             boxShadow: [
-              "0 0 10px 3px rgba(16, 185, 129, 0.2)",
-              "0 0 20px 8px rgba(16, 185, 129, 0.6)",
-              "0 0 10px 3px rgba(16, 185, 129, 0.2)",
+              "0 0 10px 3px hsl(var(--primary) / 0.2)",
+              "0 0 20px 8px hsl(var(--primary) / 0.6)",
+              "0 0 10px 3px hsl(var(--primary) / 0.2)",
             ],
             transition: { duration: 1.2, delay: i * 2 },
           });
@@ -100,7 +100,7 @@ export default function Process2Page() {
             per="word"
             as="h2"
             preset="slide"
-            className="text-4xl font-bold font-serif mb-4 text-primary-foreground"
+            className="text-4xl font-bold font-serif mb-4 text-foreground"
           >
             Social Funnel Process
           </TextEffect>
@@ -168,19 +168,28 @@ export default function Process2Page() {
               </linearGradient>
               <filter
                 id="glowWater"
-                height="150%"
-                width="150%"
-                x="-25%"
-                y="-25%"
+                height="200%"
+                width="200%"
+                x="-50%"
+                y="-50%"
                 colorInterpolationFilters="sRGB"
               >
                 <feDropShadow
                   dx="0"
                   dy="0"
-                  stdDeviation="3"
+                  stdDeviation="4"
                   style={{
                     floodColor: "hsl(var(--primary))",
-                    floodOpacity: 0.4,
+                    floodOpacity: 0.8,
+                  }}
+                />
+                <feDropShadow
+                  dx="0"
+                  dy="0"
+                  stdDeviation="8"
+                  style={{
+                    floodColor: "hsl(var(--primary))",
+                    floodOpacity: 0.3,
                   }}
                 />
               </filter>
@@ -202,8 +211,9 @@ export default function Process2Page() {
               "
               fill="url(#funnelGradientWater)"
               stroke="hsl(var(--primary))"
-              strokeWidth="3"
+              strokeWidth="4"
               className="drop-shadow-lg"
+              filter="url(#glowWater)"
             />
 
             {/* Funnel neck */}
@@ -214,10 +224,11 @@ export default function Process2Page() {
               height="80"
               fill="url(#funnelGradientWater)"
               stroke="hsl(var(--primary))"
-              strokeWidth="3"
+              strokeWidth="4"
               className="drop-shadow-lg"
               rx="15"
               ry="15"
+              filter="url(#glowWater)"
             />
 
             {/* Funnel rim */}
@@ -227,9 +238,10 @@ export default function Process2Page() {
               rx="220"
               ry="25"
               fill="hsl(var(--secondary) / 0.4)"
-              stroke="hsl(var(--secondary))"
-              strokeWidth="2.5"
+              stroke="hsl(var(--primary))"
+              strokeWidth="3"
               className="drop-shadow-lg"
+              filter="url(#glowWater)"
             />
 
             {/* Inner rim shadow */}

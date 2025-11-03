@@ -12,6 +12,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { TextEffect } from "@/components/ui/text-effect";
+import { NewsletterSignup } from "@/components/newsletter-signup";
 import { reader } from "@/utils/reader";
 import {
   BlogAnimatedGroup,
@@ -379,26 +380,11 @@ export default async function BlogPage() {
       {/* Newsletter CTA */}
       <section className="py-20 relative">
         <div className="mx-auto max-w-4xl px-6">
-          <BlogMotionItem className="text-center p-12 rounded-3xl bg-gradient-to-br from-primary/5 via-background to-secondary/5 border border-primary/10">
-            <Target className="h-12 w-12 text-primary mx-auto mb-6" />
-            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">
-              Never Miss an Insight
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Get our latest marketing strategies, case studies, and business
-              growth insights delivered directly to your inbox.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-              <Input
-                type="email"
-                placeholder="Enter your email address"
-                className="h-12"
-              />
-              <Button size="lg" className="group">
-                Subscribe
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
-            </div>
+          <BlogMotionItem className="p-12 rounded-3xl bg-gradient-to-br from-primary/5 via-background to-secondary/5 border border-primary/10">
+            <NewsletterSignup
+              title="Never Miss an Insight"
+              description="Get our latest marketing strategies, case studies, and business growth insights delivered directly to your inbox."
+            />
           </BlogMotionItem>
         </div>
       </section>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import React from "react";
 import { Button } from "./ui/button";
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
@@ -76,6 +77,52 @@ const links = [
 ];
 
 export default function Footer() {
+  const [email, setEmail] = React.useState("");
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [submitStatus, setSubmitStatus] = React.useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({ type: null, message: "" });
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: "" });
+
+    try {
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus({
+          type: "success",
+          message: result.message || "Successfully subscribed!",
+        });
+        setEmail(""); // Reset form
+      } else {
+        setSubmitStatus({
+          type: "error",
+          message: result.error || "Something went wrong. Please try again.",
+        });
+      }
+    } catch (error) {
+      console.error("Newsletter subscription error:", error);
+      setSubmitStatus({
+        type: "error",
+        message: "Network error. Please check your connection and try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <footer className="relative z-10 border-b bg-white pt-20 dark:bg-transparent">
       <div className="mx-auto max-w-5xl px-6">
@@ -98,23 +145,42 @@ export default function Footer() {
                   </p>
                 </div>
 
-                <form className="space-y-3">
+                <form onSubmit={handleNewsletterSubmit} className="space-y-3">
                   <div className="relative group">
                     <Input
                       suppressHydrationWarning
                       type="email"
                       id="mail"
                       name="mail"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       placeholder="Enter your email address"
                       className="h-12 pr-32 text-sm font-sans bg-background/50 border-border/50 focus:border-primary/50 focus:bg-background transition-all duration-200 placeholder:text-muted-foreground/60"
+                      required
+                      disabled={isSubmitting}
                     />
                     <Button
+                      type="submit"
                       size="sm"
                       className="absolute right-1 top-1 h-10 px-4 font-sans font-medium bg-primary hover:bg-primary/90 text-primary-foreground transition-all duration-200"
+                      disabled={isSubmitting}
                     >
-                      Subscribe
+                      {isSubmitting ? "..." : "Subscribe"}
                     </Button>
                   </div>
+
+                  {/* Status Messages */}
+                  {submitStatus.type && (
+                    <div
+                      className={`text-xs p-2 rounded ${
+                        submitStatus.type === "success"
+                          ? "bg-green-50 text-green-700 border border-green-200"
+                          : "bg-red-50 text-red-700 border border-red-200"
+                      }`}
+                    >
+                      {submitStatus.message}
+                    </div>
+                  )}
 
                   <div className="flex items-center gap-2 text-xs text-muted-foreground font-sans">
                     <svg

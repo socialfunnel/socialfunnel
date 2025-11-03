@@ -11,6 +11,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "images.unsplash.com",
       },
+      {
+        protocol: "https",
+        hostname: "html.tailus.io",
+      },
     ],
   },
   allowedDevOrigins: ["localhost", "127.0.0.1", "*.localhost", "*.127.0.0.1"],
