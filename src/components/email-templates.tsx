@@ -22,7 +22,7 @@ export function ThankYouEmailTemplate({
       {/* Header */}
       <div
         style={{
-          backgroundColor: "#4F8EDB",
+          backgroundColor: "#10bbc8",
           padding: "40px 20px",
           textAlign: "center" as const,
         }}
@@ -30,12 +30,14 @@ export function ThankYouEmailTemplate({
         {/* Logo */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/assets/images/logos/logo.png"
+          src="https://socialfunnel.agency/assets/images/logos/logo.png"
           alt="Social Funnel Logo"
           style={{
             height: "60px",
             width: "auto",
             marginBottom: "16px",
+            display: "block",
+            margin: "0 auto 16px auto",
           }}
         />
         <h1
@@ -99,11 +101,11 @@ export function ThankYouEmailTemplate({
 
         <div
           style={{
-            backgroundColor: "#E8F2FC",
+            backgroundColor: "#ade7ec",
             padding: "20px",
             borderRadius: "8px",
             marginBottom: "30px",
-            borderLeft: "4px solid #4F8EDB",
+            borderLeft: "4px solid #10bbc8",
           }}
         >
           <h3
@@ -162,7 +164,7 @@ export function ThankYouEmailTemplate({
             href="https://calendly.com/musemind/30min"
             style={{
               display: "inline-block",
-              backgroundColor: "#4F8EDB",
+              backgroundColor: "#10bbc8",
               color: "#ffffff",
               padding: "12px 24px",
               textDecoration: "none",
@@ -234,7 +236,7 @@ export function AdminNotificationEmailTemplate({
       {/* Header */}
       <div
         style={{
-          backgroundColor: "#D65A31",
+          backgroundColor: "#10bbc8",
           padding: "30px 20px",
           textAlign: "center" as const,
         }}
@@ -242,12 +244,14 @@ export function AdminNotificationEmailTemplate({
         {/* Logo */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/assets/images/logos/logo.png"
+          src="https://socialfunnel.agency/assets/images/logos/logo.png"
           alt="Social Funnel Logo"
           style={{
             height: "50px",
             width: "auto",
             marginBottom: "12px",
+            display: "block",
+            margin: "0 auto 12px auto",
           }}
         />
         <h1
@@ -277,11 +281,11 @@ export function AdminNotificationEmailTemplate({
       <div style={{ padding: "30px 20px" }}>
         <div
           style={{
-            backgroundColor: "#f8f9fa",
+            backgroundColor: "#ade7ec",
             padding: "20px",
             borderRadius: "8px",
             marginBottom: "20px",
-            border: "1px solid #e9ecef",
+            border: "1px solid #10bbc8",
           }}
         >
           <h2
@@ -291,7 +295,7 @@ export function AdminNotificationEmailTemplate({
               fontWeight: "bold",
               color: "#000000",
               marginBottom: "16px",
-              borderBottom: "2px solid #4F8EDB",
+              borderBottom: "2px solid #10bbc8",
               paddingBottom: "8px",
             }}
           >
@@ -299,40 +303,40 @@ export function AdminNotificationEmailTemplate({
           </h2>
 
           <div style={{ marginBottom: "12px" }}>
-            <strong style={{ color: "#D65A31" }}>Name:</strong>{" "}
+            <strong style={{ color: "#000000" }}>Name:</strong>{" "}
             {formData.fullName}
           </div>
           <div style={{ marginBottom: "12px" }}>
-            <strong style={{ color: "#D65A31" }}>Company:</strong>{" "}
+            <strong style={{ color: "#000000" }}>Company:</strong>{" "}
             {formData.companyName}
           </div>
           <div style={{ marginBottom: "12px" }}>
-            <strong style={{ color: "#D65A31" }}>Email:</strong>{" "}
-            <a href={`mailto:${formData.email}`} style={{ color: "#4F8EDB" }}>
+            <strong style={{ color: "#000000" }}>Email:</strong>{" "}
+            <a href={`mailto:${formData.email}`} style={{ color: "#10bbc8" }}>
               {formData.email}
             </a>
           </div>
           {formData.companyWebsite && (
             <div style={{ marginBottom: "12px" }}>
-              <strong style={{ color: "#D65A31" }}>Website:</strong>{" "}
-              <a href={formData.companyWebsite} style={{ color: "#4F8EDB" }}>
+              <strong style={{ color: "#000000" }}>Website:</strong>{" "}
+              <a href={formData.companyWebsite} style={{ color: "#10bbc8" }}>
                 {formData.companyWebsite}
               </a>
             </div>
           )}
           <div style={{ marginBottom: "12px" }}>
-            <strong style={{ color: "#D65A31" }}>Sector:</strong>{" "}
+            <strong style={{ color: "#000000" }}>Sector:</strong>{" "}
             {formData.sector}
           </div>
         </div>
 
         <div
           style={{
-            backgroundColor: "#E8F2FC",
+            backgroundColor: "#ade7ec",
             padding: "20px",
             borderRadius: "8px",
             marginBottom: "20px",
-            border: "1px solid #4F8EDB",
+            border: "1px solid #10bbc8",
           }}
         >
           <h2
@@ -342,7 +346,7 @@ export function AdminNotificationEmailTemplate({
               fontWeight: "bold",
               color: "#000000",
               marginBottom: "16px",
-              borderBottom: "2px solid #D65A31",
+              borderBottom: "2px solid #000000",
               paddingBottom: "8px",
             }}
           >
@@ -350,12 +354,12 @@ export function AdminNotificationEmailTemplate({
           </h2>
 
           <div style={{ marginBottom: "12px" }}>
-            <strong style={{ color: "#D65A31" }}>Marketing Needs:</strong>{" "}
+            <strong style={{ color: "#000000" }}>Marketing Needs:</strong>{" "}
             {formData.marketingNeeds}
           </div>
           {formData.otherMarketingNeeds && (
             <div style={{ marginBottom: "12px" }}>
-              <strong style={{ color: "#D65A31" }}>Specific Needs:</strong>
+              <strong style={{ color: "#000000" }}>Specific Needs:</strong>
               <br />
               <div
                 style={{
@@ -371,21 +375,21 @@ export function AdminNotificationEmailTemplate({
             </div>
           )}
           <div style={{ marginBottom: "12px" }}>
-            <strong style={{ color: "#D65A31" }}>Project Budget:</strong>{" "}
+            <strong style={{ color: "#000000" }}>Project Budget:</strong>{" "}
             {formData.projectBudget}
           </div>
           <div style={{ marginBottom: "12px" }}>
-            <strong style={{ color: "#D65A31" }}>How they found us:</strong>{" "}
+            <strong style={{ color: "#000000" }}>How they found us:</strong>{" "}
             {formData.hearAboutUs}
           </div>
         </div>
 
         <div
           style={{
-            backgroundColor: "#FFF3E0",
+            backgroundColor: "#ade7ec",
             padding: "20px",
             borderRadius: "8px",
-            border: "1px solid #D65A31",
+            border: "1px solid #10bbc8",
             textAlign: "center" as const,
           }}
         >
@@ -394,7 +398,7 @@ export function AdminNotificationEmailTemplate({
               fontFamily: '"Times New Roman", serif',
               fontSize: "18px",
               fontWeight: "bold",
-              color: "#D65A31",
+              color: "#000000",
               marginBottom: "12px",
             }}
           >
@@ -407,7 +411,7 @@ export function AdminNotificationEmailTemplate({
             href={`mailto:${formData.email}?subject=Re: Your inquiry about ${formData.marketingNeeds}&body=Hi ${formData.fullName},%0D%0A%0D%0AThank you for your inquiry about ${formData.marketingNeeds} for ${formData.companyName}.%0D%0A%0D%0ABest regards,%0D%0ASocial Funnel Team`}
             style={{
               display: "inline-block",
-              backgroundColor: "#D65A31",
+              backgroundColor: "#10bbc8",
               color: "#ffffff",
               padding: "10px 20px",
               textDecoration: "none",
@@ -462,7 +466,7 @@ export function NewsletterThankYouEmailTemplate({
       {/* Header */}
       <div
         style={{
-          backgroundColor: "#4F8EDB",
+          backgroundColor: "#10bbc8",
           padding: "40px 20px",
           textAlign: "center" as const,
         }}
@@ -470,12 +474,14 @@ export function NewsletterThankYouEmailTemplate({
         {/* Logo */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/assets/images/logos/logo.png"
+          src="https://socialfunnel.agency/assets/images/logos/logo.png"
           alt="Social Funnel Logo"
           style={{
             height: "60px",
             width: "auto",
             marginBottom: "16px",
+            display: "block",
+            margin: "0 auto 16px auto",
           }}
         />
         <h1
@@ -531,11 +537,11 @@ export function NewsletterThankYouEmailTemplate({
 
         <div
           style={{
-            backgroundColor: "#E8F2FC",
+            backgroundColor: "#ade7ec",
             padding: "20px",
             borderRadius: "8px",
             marginBottom: "30px",
-            borderLeft: "4px solid #4F8EDB",
+            borderLeft: "4px solid #10bbc8",
           }}
         >
           <h3
@@ -604,7 +610,7 @@ export function NewsletterThankYouEmailTemplate({
             href="https://calendly.com/musemind/30min"
             style={{
               display: "inline-block",
-              backgroundColor: "#4F8EDB",
+              backgroundColor: "#10bbc8",
               color: "#ffffff",
               padding: "12px 24px",
               textDecoration: "none",
@@ -620,7 +626,7 @@ export function NewsletterThankYouEmailTemplate({
             href="https://socialfunnel.agency/blog"
             style={{
               display: "inline-block",
-              backgroundColor: "#D65A31",
+              backgroundColor: "#000000",
               color: "#ffffff",
               padding: "12px 24px",
               textDecoration: "none",
@@ -635,11 +641,11 @@ export function NewsletterThankYouEmailTemplate({
 
         <div
           style={{
-            backgroundColor: "#FFF3E0",
+            backgroundColor: "#ade7ec",
             padding: "20px",
             borderRadius: "8px",
             marginBottom: "20px",
-            border: "1px solid #D65A31",
+            border: "1px solid #10bbc8",
           }}
         >
           <h3
@@ -647,7 +653,7 @@ export function NewsletterThankYouEmailTemplate({
               fontFamily: '"Times New Roman", serif',
               fontSize: "18px",
               fontWeight: "bold",
-              color: "#D65A31",
+              color: "#000000",
               marginBottom: "12px",
             }}
           >

@@ -4,9 +4,6 @@ import { NewsletterThankYouEmailTemplate } from "@/components/email-templates";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-// Use default 'general' audience
-const DEFAULT_AUDIENCE_ID = "general";
-
 export async function POST(req: NextRequest) {
   try {
     const { email, firstName } = await req.json();
@@ -19,9 +16,16 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Create contact in Resend using default audience
+    // Create contact in Resend using environment audience ID
     try {
-      const audienceId = process.env.RESEND_AUDIENCE_ID || DEFAULT_AUDIENCE_ID;
+      const audienceId = process.env.RESEND_AUDIENCE_ID;
+
+      if (!audienceId) {
+        return NextResponse.json(
+          { error: "Resend audience ID not configured" },
+          { status: 500 }
+        );
+      }
 
       await resend.contacts.create({
         email,
@@ -35,31 +39,59 @@ export async function POST(req: NextRequest) {
       console.log("Contact creation info:", contactError);
     }
 
-    // Send thank you email
-    const { data: emailData, error: emailError } = await resend.emails.send({
-      from: "Social Funnel <noreply@mail.socialfunnel.agency>",
-      to: [email],
-      subject: "🎉 Welcome to Social Funnel Newsletter!",
-      react: NewsletterThankYouEmailTemplate({
-        firstName,
-        email,
-      }),
-    });
+    // Send thank you email - handle domain verification gracefully
+    try {
+      const { data: emailData, error: emailError } = await resend.emails.send({
+        from: "Social Funnel <noreply@socialfunnel.agency>",
+        to: [email],
+        subject: "🎉 Welcome to Social Funnel Newsletter!",
+        react: NewsletterThankYouEmailTemplate({
+          firstName,
+          email,
+        }),
+      });
 
-    if (emailError) {
-      console.error("Error sending newsletter thank you email:", emailError);
-      return NextResponse.json(
-        { error: "Failed to send welcome email" },
-        { status: 500 }
-      );
+      if (emailError) {
+        console.error("Error sending newsletter thank you email:", emailError);
+
+        // If domain is not verified, still return success since contact was added
+        if (
+          emailError.message &&
+          emailError.message.includes("domain is not verified")
+        ) {
+          return NextResponse.json({
+            success: true,
+            message:
+              "Successfully subscribed! Welcome email will be sent once domain is verified.",
+            note: "Domain verification pending - contact was added to audience successfully.",
+          });
+        }
+
+        // For other email errors, still return success since contact was added
+        return NextResponse.json({
+          success: true,
+          message:
+            "Successfully subscribed! There was an issue sending the welcome email, but you're on the list.",
+          emailError: emailError.message,
+        });
+      }
+
+      return NextResponse.json({
+        success: true,
+        message:
+          "Successfully subscribed!",
+        emailId: emailData?.id,
+      });
+    } catch (emailSendError) {
+      console.error("Email sending failed:", emailSendError);
+
+      // Still return success since contact was added successfully
+      return NextResponse.json({
+        success: true,
+        message:
+          "Successfully subscribed! Welcome email couldn't be sent, but you're on our list.",
+      });
     }
-
-    return NextResponse.json({
-      success: true,
-      message:
-        "Successfully subscribed! Check your email for a welcome message.",
-      emailId: emailData?.id,
-    });
   } catch (error) {
     console.error("Newsletter subscription API error:", error);
     return NextResponse.json(

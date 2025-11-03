@@ -43,9 +43,12 @@ export async function POST(req: NextRequest) {
     });
 
     // Send thank you email to the user
-    const { data: thankYouData, error: thankYouError } =
-      await resend.emails.send({
-        from: "Social Funnel <noreply@mail.socialfunnel.agency>",
+    let thankYouData, adminData;
+    const emailStatus = { thankYou: false, admin: false };
+
+    try {
+      const thankYouResult = await resend.emails.send({
+        from: "Social Funnel <noreply@socialfunnel.agency>",
         to: [formData.email],
         subject: `Thank you for your inquiry, ${firstName}!`,
         react: ThankYouEmailTemplate({
@@ -54,36 +57,63 @@ export async function POST(req: NextRequest) {
         }),
       });
 
-    if (thankYouError) {
-      console.error("Error sending thank you email:", thankYouError);
-      return NextResponse.json(
-        { error: "Failed to send thank you email" },
-        { status: 500 }
-      );
+      if (thankYouResult.error) {
+        console.error("Error sending thank you email:", thankYouResult.error);
+
+        // If domain not verified, continue but note the issue
+        if (
+          thankYouResult.error.message &&
+          thankYouResult.error.message.includes("domain is not verified")
+        ) {
+          console.log(
+            "Domain verification pending - continuing with form submission"
+          );
+        }
+      } else {
+        thankYouData = thankYouResult.data;
+        emailStatus.thankYou = true;
+      }
+    } catch (thankYouError) {
+      console.error("Thank you email failed:", thankYouError);
     }
 
     // Send admin notification email
-    const { data: adminData, error: adminError } = await resend.emails.send({
-      from: "Contact Form <noreply@mail.socialfunnel.agency>",
-      to: ["info@socialfunnel.agency"], // Add more admin emails if needed
-      subject: `🚨 New Contact Form: ${formData.companyName} - ${formData.marketingNeeds}`,
-      react: AdminNotificationEmailTemplate({
-        formData,
-        submittedAt,
-      }),
-    });
+    try {
+      const adminResult = await resend.emails.send({
+        from: "Contact Form <noreply@socialfunnel.agency>",
+        // to: ["info@socialfunnel.agency"],
+        to: ["socialfunnelke@gmail.com"],
+        subject: `🚨 New Contact Form: ${formData.companyName} - ${formData.marketingNeeds}`,
+        react: AdminNotificationEmailTemplate({
+          formData,
+          submittedAt,
+        }),
+      });
 
-    if (adminError) {
-      console.error("Error sending admin notification:", adminError);
-      // Still return success since the thank you email was sent
-      // But log the error for monitoring
+      if (adminResult.error) {
+        console.error("Error sending admin notification:", adminResult.error);
+      } else {
+        adminData = adminResult.data;
+        emailStatus.admin = true;
+      }
+    } catch (adminError) {
+      console.error("Admin notification failed:", adminError);
     }
+
+    // Return success regardless of email status since form was processed
+    const message =
+      emailStatus.thankYou && emailStatus.admin
+        ? "Your inquiry has been submitted successfully! Check your email for confirmation."
+        : emailStatus.thankYou
+        ? "Your inquiry has been submitted successfully! Check your email for confirmation."
+        : "Your inquiry has been submitted successfully! Our team will contact you within 24 hours.";
 
     return NextResponse.json({
       success: true,
-      message: "Your inquiry has been submitted successfully!",
+      message,
       thankYouEmailId: thankYouData?.id,
       adminEmailId: adminData?.id,
+      emailStatus,
     });
   } catch (error) {
     console.error("Contact form API error:", error);

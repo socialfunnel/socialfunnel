@@ -3,9 +3,6 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-// Use default 'general' audience
-const DEFAULT_AUDIENCE_ID = "general";
-
 export async function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
@@ -19,8 +16,16 @@ export async function GET(req: NextRequest) {
     }
 
     // Get contact information
+    const audienceId = process.env.RESEND_AUDIENCE_ID;
+
+    if (!audienceId) {
+      return new NextResponse(
+        `<!DOCTYPE html><html><head><title>Configuration Error</title></head><body><h1>Configuration Error</h1><p>Audience ID not configured.</p></body></html>`,
+        { headers: { "Content-Type": "text/html" }, status: 500 }
+      );
+    }
+
     try {
-      const audienceId = process.env.RESEND_AUDIENCE_ID || DEFAULT_AUDIENCE_ID;
       const contact = await resend.contacts.get({
         email,
         audienceId: audienceId,
