@@ -81,8 +81,8 @@ export async function POST(req: NextRequest) {
     try {
       const adminResult = await resend.emails.send({
         from: "Contact Form <noreply@socialfunnel.agency>",
-        // to: ["info@socialfunnel.agency"],
-        to: ["socialfunnelke@gmail.com"],
+        to: ["info@socialfunnel.agency"],
+        cc: ["socialfunnelke@gmail.com"],
         subject: `🚨 New Contact Form: ${formData.companyName} - ${formData.marketingNeeds}`,
         react: AdminNotificationEmailTemplate({
           formData,
