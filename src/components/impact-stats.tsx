@@ -36,22 +36,22 @@ const StatItem: React.FC<StatItemProps> = ({
       // Animate counter
       const startTime = Date.now();
       const duration = 2000; // 2 seconds
-      
+
       const animateCount = () => {
         const elapsed = Date.now() - startTime;
         const progress = Math.min(elapsed / duration, 1);
-        
+
         // Easing function for smooth animation
         const easeOut = 1 - Math.pow(1 - progress, 3);
         const currentCount = Math.floor(numericValue * easeOut);
-        
+
         setCount(currentCount);
-        
+
         if (progress < 1) {
           requestAnimationFrame(animateCount);
         }
       };
-      
+
       setTimeout(() => {
         animateCount();
       }, delay);
@@ -146,22 +146,22 @@ export default function ImpactStats() {
       suffix: "%",
     },
     {
-      value: "105", 
+      value: "105",
       label: "YoY Leads",
       prefix: "+",
       suffix: "%",
     },
     {
-      value: "500",
+      value: "20",
       label: "Value Built",
       prefix: "$",
-      suffix: "K",
+      suffix: "M",
     },
     {
-      value: "20",
+      value: "500",
       label: "Ad Spend Managed",
       prefix: "$",
-      suffix: "M",
+      suffix: "K",
     },
   ];
 
@@ -177,7 +177,8 @@ export default function ImpactStats() {
               Proven Results That Speak
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Our data-driven approach delivers measurable growth for businesses across Africa
+              Our data-driven approach delivers measurable growth for businesses
+              across Africa
             </p>
           </motion.div>
 
