@@ -32,7 +32,7 @@ export async function GET(req: NextRequest) {
       });
     } catch (removeError) {
       // Log error but continue - contact might not exist
-      console.log("Contact removal info:", removeError);
+      // Contact removal failed - continuing with unsubscribe flow
     }
 
     // Return confirmation page

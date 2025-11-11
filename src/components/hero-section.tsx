@@ -40,7 +40,6 @@ export default function HeroSection() {
   ];
 
   useEffect(() => {
-    console.log("Hero component mounted");
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
     }, 5000);
@@ -48,10 +47,7 @@ export default function HeroSection() {
     return () => clearInterval(interval);
   }, [heroImages.length]);
 
-  // Debug component state
-  useEffect(() => {
-    console.log("Current image index:", currentImageIndex);
-  }, [currentImageIndex]);
+  
 
   return (
     <>

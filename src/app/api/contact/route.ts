@@ -65,9 +65,7 @@ export async function POST(req: NextRequest) {
           thankYouResult.error.message &&
           thankYouResult.error.message.includes("domain is not verified")
         ) {
-          console.log(
-            "Domain verification pending - continuing with form submission"
-          );
+          // Domain verification pending - continuing with form submission
         }
       } else {
         thankYouData = thankYouResult.data;
@@ -82,7 +80,6 @@ export async function POST(req: NextRequest) {
       const adminResult = await resend.emails.send({
         from: "Contact Form <noreply@socialfunnel.agency>",
         to: ["info@socialfunnel.agency"],
-        cc: ["socialfunnelke@gmail.com"],
         subject: `🚨 New Contact Form: ${formData.companyName} - ${formData.marketingNeeds}`,
         react: AdminNotificationEmailTemplate({
           formData,

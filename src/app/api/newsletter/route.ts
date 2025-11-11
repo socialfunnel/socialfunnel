@@ -32,11 +32,9 @@ export async function POST(req: NextRequest) {
         firstName: firstName || email.split("@")[0],
         audienceId: audienceId,
       });
-
-      console.log(`Contact ${email} added to audience ${audienceId}`);
     } catch (contactError) {
       // Log error but don't fail the request if contact already exists
-      console.log("Contact creation info:", contactError);
+     
     }
 
     // Send thank you email - handle domain verification gracefully
