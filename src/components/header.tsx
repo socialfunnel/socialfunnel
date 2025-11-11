@@ -19,6 +19,12 @@ const menuItems = [
 export const Header = () => {
   const [menuState, setMenuState] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
+  const [mounted, setMounted] = React.useState(false);
+  const headerRef = React.useRef<HTMLElement>(null);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -27,8 +33,33 @@ export const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  React.useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        headerRef.current &&
+        !headerRef.current.contains(event.target as Node)
+      ) {
+        setMenuState(false);
+      }
+    };
+
+    if (menuState) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [menuState]);
+
+  // Prevent hydration mismatch by not applying scroll-dependent styles on first render
+  const scrollClasses =
+    mounted && isScrolled
+      ? "bg-background/50 max-w-4xl rounded-2xl border backdrop-blur-lg lg:px-5"
+      : "";
   return (
-    <header>
+    <header ref={headerRef}>
       <nav
         data-state={menuState && "active"}
         className="fixed z-20 w-full px-2"
@@ -36,14 +67,14 @@ export const Header = () => {
         <div
           className={cn(
             "mx-auto mt-2 max-w-6xl px-6 transition-all duration-700 lg:px-12",
-            isScrolled &&
-              "bg-background/50 max-w-4xl rounded-2xl border backdrop-blur-lg lg:px-5"
+            scrollClasses
           )}
         >
           <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
             <div className="flex w-full justify-between lg:w-auto">
               <Link
                 href="/"
+                prefetch={true}
                 aria-label="home"
                 className="flex items-center space-x-2"
               >
@@ -71,6 +102,7 @@ export const Header = () => {
                   <li key={index}>
                     <Link
                       href={item.href}
+                      prefetch={true}
                       className="text-muted-foreground hover:text-accent-foreground block duration-150 font-sans"
                     >
                       <span>{item.name}</span>
@@ -87,6 +119,10 @@ export const Header = () => {
                     <li key={index}>
                       <Link
                         href={item.href}
+                        prefetch={true}
+                        onClick={() => {
+                          setMenuState(false);
+                        }}
                         className="text-muted-foreground hover:text-accent-foreground block duration-150 font-sans"
                       >
                         <span>{item.name}</span>
@@ -97,27 +133,8 @@ export const Header = () => {
               </div>
               <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
                 <Toggle />
-                <Button
-                  asChild
-                  size="sm"
-                  className={cn(
-                    isScrolled && "lg:hidden",
-                    "font-sans font-medium"
-                  )}
-                >
-                  <Link href="/contact">
-                    <span>Get a Demo</span>
-                  </Link>
-                </Button>
-                <Button
-                  asChild
-                  size="sm"
-                  className={cn(
-                    isScrolled ? "lg:inline-flex" : "hidden",
-                    "font-sans font-medium"
-                  )}
-                >
-                  <Link href="/contact">
+                <Button asChild size="sm" className="font-sans font-medium">
+                  <Link href="/contact" prefetch={true}>
                     <span>Get a Demo</span>
                   </Link>
                 </Button>

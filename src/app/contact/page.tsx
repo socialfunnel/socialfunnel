@@ -119,9 +119,15 @@ export default function ContactPage() {
     >
   ) => {
     const { name, value } = e.target;
+    let newValue = value;
+    
+    if (name === "companyWebsite") {
+      newValue = newValue.replace(/^https?:\/\//i, "").trim();
+    }
+
     setFormData((prev) => ({
       ...prev,
-      [name]: value,
+      [name]: newValue,
     }));
   };
 
@@ -131,12 +137,22 @@ export default function ContactPage() {
     setSubmitStatus({ type: null, message: "" });
 
     try {
+      // Prepare payload and ensure companyWebsite includes protocol in production
+      const payload = { ...formData };
+      if (payload.companyWebsite && payload.companyWebsite.length > 0) {
+        // remove any accidental leading/trailing slashes
+        const trimmed = payload.companyWebsite.replace(/^\/+|\/+$/g, "");
+        payload.companyWebsite = /^https?:\/\//i.test(trimmed)
+          ? trimmed
+          : `https://${trimmed}`;
+      }
+
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(payload),
       });
 
       const result = await response.json();
@@ -327,10 +343,10 @@ export default function ContactPage() {
                       <Input
                         id="companyWebsite"
                         name="companyWebsite"
-                        type="url"
+                        type="text"
                         value={formData.companyWebsite}
                         onChange={handleInputChange}
-                        placeholder="https://www.yourcompany.com"
+                        placeholder="yourcompany.com"
                         className="h-12"
                       />
                     </div>
