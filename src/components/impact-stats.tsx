@@ -30,31 +30,36 @@ const StatItem: React.FC<StatItemProps> = ({
 
   useEffect(() => {
     if (isInView && !hasAnimated) {
-      setHasAnimated(true);
-      controls.start("visible");
+      // Use an async function to avoid synchronous setState in effect
+      const animate = async () => {
+        setHasAnimated(true);
+        await controls.start("visible");
 
-      // Animate counter
-      const startTime = Date.now();
-      const duration = 2000; // 2 seconds
+        // Animate counter
+        const startTime = Date.now();
+        const duration = 2000; // 2 seconds
 
-      const animateCount = () => {
-        const elapsed = Date.now() - startTime;
-        const progress = Math.min(elapsed / duration, 1);
+        const animateCount = () => {
+          const elapsed = Date.now() - startTime;
+          const progress = Math.min(elapsed / duration, 1);
 
-        // Easing function for smooth animation
-        const easeOut = 1 - Math.pow(1 - progress, 3);
-        const currentCount = Math.floor(numericValue * easeOut);
+          // Easing function for smooth animation
+          const easeOut = 1 - Math.pow(1 - progress, 3);
+          const currentCount = Math.floor(numericValue * easeOut);
 
-        setCount(currentCount);
+          setCount(currentCount);
 
-        if (progress < 1) {
-          requestAnimationFrame(animateCount);
-        }
+          if (progress < 1) {
+            requestAnimationFrame(animateCount);
+          }
+        };
+
+        setTimeout(() => {
+          animateCount();
+        }, delay);
       };
 
-      setTimeout(() => {
-        animateCount();
-      }, delay);
+      animate();
     }
   }, [isInView, hasAnimated, numericValue, controls, delay]);
 

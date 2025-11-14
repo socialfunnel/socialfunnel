@@ -57,7 +57,7 @@ const stats = [
     label: "Tested & Proven",
     description: "Lead generation solutions with dedicated call centres",
     icon: <Award className="h-8 w-8" />,
-    color: "secondary",
+    color: "primary",
   },
   {
     number: "24/7",
@@ -72,7 +72,7 @@ const stats = [
     description:
       "Every campaign built for client acquisition, not vanity metrics",
     icon: <Users className="h-8 w-8" />,
-    color: "secondary",
+    color: "primary",
   },
 ];
 
@@ -89,7 +89,7 @@ const specializations = [
     description:
       "We focus on scalability: systems that grow with you, not ones you'll outgrow. Built for predictable revenue and long-term growth.",
     icon: <TrendingUp className="h-6 w-6" />,
-    color: "secondary",
+    color: "primary",
   },
   {
     title: "ROI-Focused",
@@ -103,7 +103,7 @@ const specializations = [
     description:
       "From lead generation to dedicated call centers, we provide complete Business Development solutions using the latest technologies for efficiency and accuracy.",
     icon: <Globe className="h-6 w-6" />,
-    color: "secondary",
+    color: "primary",
   },
 ];
 
@@ -180,7 +180,7 @@ export default function About() {
               variants={transitionVariants.item}
               className="text-center"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary/10 rounded-full text-secondary text-sm font-semibold mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-semibold mb-6">
                 <Building className="h-4 w-4" />
                 Our Story
               </div>
@@ -278,18 +278,18 @@ export default function About() {
                 <div className="w-full md:w-5/12 md:pr-8 hidden md:block"></div>
 
                 {/* Icon in Center */}
-                <div className="w-16 h-16 bg-gradient-to-br from-secondary to-secondary/80 rounded-2xl flex items-center justify-center text-white font-bold relative z-10 shadow-lg group-hover:scale-110 transition-transform duration-300 mb-6 md:mb-0">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center text-white font-bold relative z-10 shadow-lg group-hover:scale-110 transition-transform duration-300 mb-6 md:mb-0">
                   <Users className="h-8 w-8" />
                 </div>
 
                 {/* Card on Right */}
                 <div className="w-full md:w-5/12 md:pl-8">
-                  <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 group-hover:shadow-lg group-hover:shadow-secondary/10 transition-all duration-300 hover:border-secondary/30">
+                  <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 group-hover:shadow-lg group-hover:shadow-primary/10 transition-all duration-300 hover:border-primary/30">
                     <div className="flex items-center justify-center md:justify-start gap-3 mb-3">
-                      <span className="px-4 py-2 bg-secondary/10 text-secondary text-sm font-semibold rounded-full">
+                      <span className="px-4 py-2 bg-primary/10 text-primary text-sm font-semibold rounded-full">
                         2022
                       </span>
-                      <h3 className="text-xl font-serif font-bold text-secondary">
+                      <h3 className="text-xl font-serif font-bold text-primary">
                         Team & Systems
                       </h3>
                     </div>
@@ -350,18 +350,18 @@ export default function About() {
                 <div className="w-full md:w-5/12 md:pr-8 hidden md:block"></div>
 
                 {/* Icon in Center */}
-                <div className="w-16 h-16 bg-gradient-to-br from-secondary to-secondary/80 rounded-2xl flex items-center justify-center text-white font-bold relative z-10 shadow-lg group-hover:scale-110 transition-transform duration-300 mb-6 md:mb-0">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center text-white font-bold relative z-10 shadow-lg group-hover:scale-110 transition-transform duration-300 mb-6 md:mb-0">
                   <Award className="h-8 w-8" />
                 </div>
 
                 {/* Card on Right */}
                 <div className="w-full md:w-5/12 md:pl-8">
-                  <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 group-hover:shadow-lg group-hover:shadow-secondary/10 transition-all duration-300 hover:border-secondary/30">
+                  <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 group-hover:shadow-lg group-hover:shadow-primary/10 transition-all duration-300 hover:border-primary/30">
                     <div className="flex items-center justify-center md:justify-start gap-3 mb-3">
-                      <span className="px-4 py-2 bg-secondary/10 text-secondary text-sm font-semibold rounded-full">
+                      <span className="px-4 py-2 bg-primary/10 text-primary text-sm font-semibold rounded-full">
                         2024
                       </span>
-                      <h3 className="text-xl font-serif font-bold text-secondary">
+                      <h3 className="text-xl font-serif font-bold text-primary">
                         Regional Leadership
                       </h3>
                     </div>
@@ -386,7 +386,7 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="p-12 rounded-3xl bg-gradient-to-br from-primary/5 via-background to-secondary/5 border border-primary/10"
+            className="p-12 rounded-3xl bg-gradient-to-br from-primary/5 via-background to-primary/5 border border-primary/10"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
               {/* Mission */}
@@ -422,7 +422,7 @@ export default function About() {
 
               {/* Vision */}
               <div className="space-y-6">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary/10 rounded-full text-secondary text-sm font-semibold">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-semibold">
                   <Star className="h-4 w-4" />
                   Our Vision
                 </div>
@@ -439,13 +439,13 @@ export default function About() {
                 </p>
                 <div className="flex flex-wrap gap-4 text-sm">
                   <div className="flex items-center gap-2">
-                    <Award className="h-4 w-4 text-secondary" />
+                    <Award className="h-4 w-4 text-primary" />
                     <span className="text-muted-foreground">
                       Premier Agency
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Users className="h-4 w-4 text-secondary" />
+                    <Users className="h-4 w-4 text-primary" />
                     <span className="text-muted-foreground">
                       Lasting Impact
                     </span>
@@ -534,7 +534,7 @@ export default function About() {
               {/* Mumbi Maina - Project Manager */}
               <motion.div
                 variants={transitionVariants.item}
-                className="group relative overflow-hidden rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-secondary/30 transition-all duration-300 hover:shadow-lg hover:shadow-secondary/10"
+                className="group relative overflow-hidden rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
               >
                 <div className="aspect-square relative overflow-hidden">
                   <Image
@@ -550,7 +550,7 @@ export default function About() {
                   <h3 className="text-lg font-serif font-bold mb-1">
                     Mumbi Maina
                   </h3>
-                  <p className="text-secondary font-medium mb-2 text-sm">
+                  <p className="text-primary font-medium mb-2 text-sm">
                     Project Manager
                   </p>
                   <p className="text-xs text-muted-foreground leading-relaxed mb-3">
@@ -560,10 +560,10 @@ export default function About() {
 
                   <div className="mb-3">
                     <div className="flex flex-wrap gap-1">
-                      <span className="px-2 py-1 bg-secondary/10 text-secondary text-xs rounded-full">
+                      <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">
                         Project Management
                       </span>
-                      <span className="px-2 py-1 bg-secondary/10 text-secondary text-xs rounded-full">
+                      <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">
                         Client Success
                       </span>
                     </div>
@@ -572,13 +572,13 @@ export default function About() {
                   <div className="flex gap-2">
                     <a
                       href="#"
-                      className="w-7 h-7 bg-secondary/10 rounded-full flex items-center justify-center text-secondary hover:bg-secondary hover:text-white transition-colors"
+                      className="w-7 h-7 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
                     >
                       <Mail className="h-3 w-3" />
                     </a>
                     <a
                       href="#"
-                      className="w-7 h-7 bg-secondary/10 rounded-full flex items-center justify-center text-secondary hover:bg-secondary hover:text-white transition-colors"
+                      className="w-7 h-7 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
                     >
                       <Linkedin className="h-3 w-3" />
                     </a>
@@ -644,7 +644,7 @@ export default function About() {
               {/* Monica Mugo - Social Media Manager */}
               <motion.div
                 variants={transitionVariants.item}
-                className="group relative overflow-hidden rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-secondary/30 transition-all duration-300 hover:shadow-lg hover:shadow-secondary/10"
+                className="group relative overflow-hidden rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
               >
                 <div className="aspect-square relative overflow-hidden">
                   <Image
@@ -660,7 +660,7 @@ export default function About() {
                   <h3 className="text-lg font-serif font-bold mb-1">
                     Monica Mugo
                   </h3>
-                  <p className="text-secondary font-medium mb-2 text-sm">
+                  <p className="text-primary font-medium mb-2 text-sm">
                     Social Media Manager
                   </p>
                   <p className="text-xs text-muted-foreground leading-relaxed mb-3">
@@ -670,10 +670,10 @@ export default function About() {
 
                   <div className="mb-3">
                     <div className="flex flex-wrap gap-1">
-                      <span className="px-2 py-1 bg-secondary/10 text-secondary text-xs rounded-full">
+                      <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">
                         Social Media
                       </span>
-                      <span className="px-2 py-1 bg-secondary/10 text-secondary text-xs rounded-full">
+                      <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">
                         Community Mgmt
                       </span>
                     </div>
@@ -682,13 +682,13 @@ export default function About() {
                   <div className="flex gap-2">
                     <a
                       href="#"
-                      className="w-7 h-7 bg-secondary/10 rounded-full flex items-center justify-center text-secondary hover:bg-secondary hover:text-white transition-colors"
+                      className="w-7 h-7 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
                     >
                       <Mail className="h-3 w-3" />
                     </a>
                     <a
                       href="#"
-                      className="w-7 h-7 bg-secondary/10 rounded-full flex items-center justify-center text-secondary hover:bg-secondary hover:text-white transition-colors"
+                      className="w-7 h-7 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors"
                     >
                       <Linkedin className="h-3 w-3" />
                     </a>
@@ -784,7 +784,7 @@ export default function About() {
                       className={`w-12 h-12 rounded-xl ${
                         value.color === "primary"
                           ? "bg-primary/10 text-primary"
-                          : "bg-secondary/10 text-secondary"
+                          : "bg-primary/10 text-primary"
                       } flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}
                     >
                       {value.icon}
@@ -833,16 +833,14 @@ export default function About() {
                     className={`w-16 h-16 mx-auto mb-6 rounded-2xl ${
                       stat.color === "primary"
                         ? "bg-primary/10 text-primary"
-                        : "bg-secondary/10 text-secondary"
+                        : "bg-primary/10 text-primary"
                     } flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}
                   >
                     {stat.icon}
                   </div>
                   <div
                     className={`text-3xl md:text-4xl font-serif font-bold mb-2 ${
-                      stat.color === "primary"
-                        ? "text-primary"
-                        : "text-secondary"
+                      stat.color === "primary" ? "text-primary" : "text-primary"
                     }`}
                   >
                     {stat.number}
@@ -866,7 +864,7 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center p-12 rounded-3xl bg-gradient-to-br from-primary/5 via-background to-secondary/5 border border-primary/10"
+            className="text-center p-12 rounded-3xl bg-gradient-to-br from-primary/5 via-background to-primary/5 border border-primary/10"
           >
             <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">
               Ready to Transform Your Business?

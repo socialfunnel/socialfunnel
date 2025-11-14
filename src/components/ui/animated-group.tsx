@@ -105,8 +105,8 @@ function AnimatedGroup({
   className,
   variants,
   preset,
-  as = "div",
-  asChild = "div",
+  as: Component = "div",
+  asChild: ChildComponent = "div",
 }: AnimatedGroupProps) {
   const selectedVariants = {
     item: addDefaultVariants(preset ? presetVariants[preset] : {}),
@@ -115,22 +115,26 @@ function AnimatedGroup({
   const containerVariants = variants?.container || selectedVariants.container;
   const itemVariants = variants?.item || selectedVariants.item;
 
-  const MotionComponent = React.useMemo(() => motion(as), [as]);
-  const MotionChild = React.useMemo(() => motion(asChild), [asChild]);
-
   return (
-    <MotionComponent
+    <motion.div
       initial="hidden"
       animate="visible"
       variants={containerVariants}
       className={className}
+      // @ts-expect-error - motion will handle the component type
+      as={Component}
     >
       {React.Children.map(children, (child, index) => (
-        <MotionChild key={index} variants={itemVariants}>
+        <motion.div
+          key={index}
+          variants={itemVariants}
+          // @ts-expect-error - motion will handle the component type
+          as={ChildComponent}
+        >
           {child}
-        </MotionChild>
+        </motion.div>
       ))}
-    </MotionComponent>
+    </motion.div>
   );
 }
 

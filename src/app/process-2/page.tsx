@@ -45,7 +45,7 @@ const transitionVariants = {
   },
 } as const;
 
-export default function Process2Page() {
+export default function ProcessPage() {
   const processSteps = [
     {
       step: 1,
@@ -122,35 +122,58 @@ export default function Process2Page() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl" />
       </div>
 
-      {/* Social Funnel Process */}
-      <section className="py-12 md:py-20 relative overflow-hidden">
-        <div className="mx-auto max-w-6xl px-4 md:px-6">
-          {/* Section Header */}
-          <div className="text-center mb-12">
-            <TextEffect
-              per="word"
-              as="h2"
-              preset="slide"
-              className="text-3xl md:text-4xl font-bold font-serif mb-4"
+      {/* Hero Section */}
+      <section className="pt-24 md:pt-36 pb-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <AnimatedGroup variants={transitionVariants}>
+            <motion.div
+              variants={transitionVariants.item}
+              className="text-center mb-16"
             >
-              Social Funnel Process
-            </TextEffect>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Watch how we guide your prospects through our proven conversion
-              funnel, transforming awareness into action.
-            </p>
-          </div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-semibold mb-6">
+                <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+                Your Roadmap to Success
+              </div>
 
-          <div className="relative min-h-[800px] md:min-h-[700px]">
-            {/* Funnel SVG Background - Desktop */}
+              <TextEffect
+                preset="fade-in-blur"
+                speedSegment={0.3}
+                as="h1"
+                className="font-serif mx-auto max-w-4xl text-balance text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+              >
+                Our Proven Process
+              </TextEffect>
+
+              <TextEffect
+                per="line"
+                preset="fade-in-blur"
+                speedSegment={0.3}
+                delay={0.3}
+                as="p"
+                className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
+              >
+                From first contact to closed deals, here&apos;s exactly what you
+                can expect when working with Social Funnel. Our systematic
+                approach ensures predictable results every time.
+              </TextEffect>
+            </motion.div>
+          </AnimatedGroup>
+        </div>
+      </section>
+
+      {/* Process Roadmap - Curved River */}
+      <section className="py-12 md:py-20 relative overflow-hidden">
+        <div className="mx-auto max-w-7xl px-4 md:px-6">
+          <div className="relative md:min-h-[1200px]">
+            {/* Curved River Path */}
             <svg
               className="absolute inset-0 w-full h-full pointer-events-none hidden md:block"
-              viewBox="0 0 600 700"
+              viewBox="0 0 800 1200"
               preserveAspectRatio="xMidYMid meet"
             >
               <defs>
                 <linearGradient
-                  id="funnelGradient"
+                  id="riverGradient"
                   x1="0%"
                   y1="0%"
                   x2="0%"
@@ -159,34 +182,32 @@ export default function Process2Page() {
                   <stop
                     offset="0%"
                     stopColor="hsl(var(--primary))"
+                    stopOpacity="0.8"
+                  />
+                  <stop
+                    offset="25%"
+                    stopColor="hsl(var(--secondary))"
                     stopOpacity="0.9"
                   />
                   <stop
                     offset="50%"
-                    stopColor="hsl(var(--secondary))"
+                    stopColor="hsl(var(--primary))"
                     stopOpacity="0.8"
                   />
                   <stop
-                    offset="100%"
-                    stopColor="hsl(var(--primary))"
+                    offset="75%"
+                    stopColor="hsl(var(--secondary))"
                     stopOpacity="0.9"
                   />
-                </linearGradient>
-                <radialGradient id="funnelFlow" cx="50%" cy="50%" r="50%">
-                  <stop
-                    offset="0%"
-                    stopColor="hsl(var(--primary))"
-                    stopOpacity="0.3"
-                  />
                   <stop
                     offset="100%"
                     stopColor="hsl(var(--primary))"
                     stopOpacity="0.8"
                   />
-                </radialGradient>
+                </linearGradient>
                 <filter id="glow">
-                  <feMorphology operator="dilate" radius="2" />
-                  <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+                  <feMorphology operator="dilate" radius="3" />
+                  <feGaussianBlur stdDeviation="4" result="coloredBlur" />
                   <feMerge>
                     <feMergeNode in="coloredBlur" />
                     <feMergeNode in="SourceGraphic" />
@@ -194,124 +215,38 @@ export default function Process2Page() {
                 </filter>
               </defs>
 
-              {/* Realistic Funnel Shape */}
-
-              {/* Main funnel body with curved sides - much wider opening */}
+              {/* Main river path with brand colors */}
               <path
-                d="M 80 60 
-                   Q 50 70, 50 100
-                   L 50 350
-                   Q 50 380, 70 400
-                   L 260 520
-                   Q 280 540, 300 540
-                   Q 320 540, 340 520
-                   L 530 400
-                   Q 550 380, 550 350
-                   L 550 100
-                   Q 550 70, 520 60
-                   L 80 60 Z"
-                fill="url(#funnelGradient)"
+                d="M 150 100 
+                   Q 250 150, 350 200
+                   Q 450 250, 500 350
+                   Q 550 450, 450 550
+                   Q 350 650, 400 750
+                   Q 450 850, 550 950
+                   Q 650 1050, 650 1100"
                 stroke="oklch(0.7228 0.1214 203.7873)"
-                strokeWidth="3"
-                className="drop-shadow-lg opacity-85"
-                filter="url(#glow)"
-              />
-
-              {/* Funnel neck (narrow part) */}
-              <path
-                d="M 260 520
-                   Q 280 540, 300 540
-                   Q 320 540, 340 520
-                   L 340 580
-                   Q 340 600, 320 600
-                   L 280 600
-                   Q 260 600, 260 580
-                   L 260 520 Z"
-                fill="url(#funnelGradient)"
-                stroke="oklch(0.7228 0.1214 203.7873)"
-                strokeWidth="3"
-                className="drop-shadow-lg opacity-90"
-                filter="url(#glow)"
-              />
-
-              {/* Large funnel rim (top edge) - much bigger opening */}
-              <ellipse
-                cx="300"
-                cy="60"
-                rx="240"
-                ry="25"
-                fill="oklch(0.7228 0.1214 203.7873)"
-                opacity="0.4"
-                className="drop-shadow-lg"
-              />
-
-              {/* Inner rim shadow for depth */}
-              <ellipse
-                cx="300"
-                cy="65"
-                rx="235"
-                ry="20"
-                fill="oklch(0.5 0.1 203)"
-                opacity="0.2"
-                className="drop-shadow-md"
-              />
-
-              {/* Funnel sections - curved dividers matching wider opening */}
-              <path
-                d="M 75 180 Q 300 190, 525 180"
-                stroke="oklch(0.7228 0.1214 203.7873)"
-                strokeWidth="2"
-                opacity="0.6"
-                fill="none"
-              />
-              <path
-                d="M 110 280 Q 300 290, 490 280"
-                stroke="oklch(0.7228 0.1214 203.7873)"
-                strokeWidth="2"
-                opacity="0.6"
-                fill="none"
-              />
-              <path
-                d="M 150 380 Q 300 390, 450 380"
-                stroke="oklch(0.7228 0.1214 203.7873)"
-                strokeWidth="2"
-                opacity="0.6"
-                fill="none"
-              />
-
-              {/* Central flow line through funnel */}
-              <path
-                d="M 300 60 L 300 520 L 300 600"
-                stroke="oklch(0.7228 0.1214 203.7873)"
-                strokeWidth="4"
+                strokeWidth="12"
                 fill="none"
                 className="animate-pulse drop-shadow-lg"
                 filter="url(#glow)"
-                opacity="0.4"
               />
 
-              {/* Funnel spout opening */}
-              <circle
-                cx="300"
-                cy="600"
-                r="20"
-                fill="none"
-                stroke="oklch(0.7228 0.1214 203.7873)"
-                strokeWidth="3"
-                opacity="0.6"
-                className="animate-pulse"
-              />
-
-              {/* Animated flowing particles through funnel */}
+              {/* Animated flowing dots along the river */}
               <circle r="4" fill="hsl(var(--primary))" opacity="0.8">
                 <animateMotion
                   dur="8s"
                   repeatCount="indefinite"
-                  path="M 300 60 L 300 520 L 300 600"
+                  path="M 150 100 
+                        Q 250 150, 350 200
+                        Q 450 250, 500 350
+                        Q 550 450, 450 550
+                        Q 350 650, 400 750
+                        Q 450 850, 550 950
+                        Q 650 1050, 650 1100"
                 />
                 <animate
                   attributeName="opacity"
-                  values="0.3;0.9;0.3"
+                  values="0.3;0.8;0.3"
                   dur="2s"
                   repeatCount="indefinite"
                 />
@@ -319,10 +254,16 @@ export default function Process2Page() {
 
               <circle r="3" fill="hsl(var(--secondary))" opacity="0.6">
                 <animateMotion
-                  dur="10s"
+                  dur="12s"
                   repeatCount="indefinite"
                   begin="2s"
-                  path="M 180 70 Q 180 300, 290 520 L 295 600"
+                  path="M 150 100 
+                        Q 250 150, 350 200
+                        Q 450 250, 500 350
+                        Q 550 450, 450 550
+                        Q 350 650, 400 750
+                        Q 450 850, 550 950
+                        Q 650 1050, 650 1100"
                 />
                 <animate
                   attributeName="opacity"
@@ -332,292 +273,72 @@ export default function Process2Page() {
                 />
               </circle>
 
-              <circle r="3" fill="hsl(var(--primary))" opacity="0.5">
+              <circle r="2" fill="hsl(var(--primary))" opacity="0.4">
                 <animateMotion
-                  dur="12s"
+                  dur="6s"
                   repeatCount="indefinite"
                   begin="4s"
-                  path="M 420 75 Q 420 300, 310 520 L 305 600"
-                />
-                <animate
-                  attributeName="opacity"
-                  values="0.2;0.6;0.2"
-                  dur="2.5s"
-                  repeatCount="indefinite"
-                />
-              </circle>
-
-              {/* Additional swirling particles using full funnel width */}
-              <circle r="2" fill="hsl(var(--secondary))" opacity="0.4">
-                <animateMotion
-                  dur="14s"
-                  repeatCount="indefinite"
-                  begin="6s"
-                  path="M 100 80 Q 500 250, 280 400 Q 300 450, 298 600"
+                  path="M 150 100 
+                        Q 250 150, 350 200
+                        Q 450 250, 500 350
+                        Q 550 450, 450 550
+                        Q 350 650, 400 750
+                        Q 450 850, 550 950
+                        Q 650 1050, 650 1100"
                 />
                 <animate
                   attributeName="opacity"
                   values="0.1;0.5;0.1"
-                  dur="4s"
-                  repeatCount="indefinite"
-                />
-              </circle>
-
-              <circle r="2" fill="hsl(var(--primary))" opacity="0.3">
-                <animateMotion
-                  dur="16s"
-                  repeatCount="indefinite"
-                  begin="8s"
-                  path="M 500 85 Q 100 220, 320 380 Q 300 430, 302 600"
-                />
-                <animate
-                  attributeName="opacity"
-                  values="0.1;0.4;0.1"
-                  dur="3s"
-                  repeatCount="indefinite"
-                />
-              </circle>
-
-              {/* Edge particles from rim */}
-              <circle r="2" fill="hsl(var(--secondary))" opacity="0.3">
-                <animateMotion
-                  dur="11s"
-                  repeatCount="indefinite"
-                  begin="1s"
-                  path="M 120 75 Q 250 200, 285 520 L 290 600"
-                />
-                <animate
-                  attributeName="opacity"
-                  values="0.1;0.4;0.1"
-                  dur="3.5s"
-                  repeatCount="indefinite"
-                />
-              </circle>
-
-              <circle r="2" fill="hsl(var(--primary))" opacity="0.3">
-                <animateMotion
-                  dur="13s"
-                  repeatCount="indefinite"
-                  begin="3s"
-                  path="M 480 70 Q 350 200, 315 520 L 310 600"
-                />
-                <animate
-                  attributeName="opacity"
-                  values="0.1;0.4;0.1"
-                  dur="2.8s"
-                  repeatCount="indefinite"
-                />
-              </circle>
-
-              {/* Funnel flow indicators - curved arrows following funnel shape */}
-              <path
-                d="M 270 150 Q 300 155, 330 150 L 325 165 Q 300 160, 275 165 Z"
-                fill="hsl(var(--primary))"
-                opacity="0.6"
-                className="animate-pulse"
-              />
-              <path
-                d="M 260 250 Q 300 255, 340 250 L 335 265 Q 300 260, 265 265 Z"
-                fill="hsl(var(--primary))"
-                opacity="0.6"
-                className="animate-pulse"
-              />
-              <path
-                d="M 250 350 Q 300 355, 350 350 L 345 365 Q 300 360, 255 365 Z"
-                fill="hsl(var(--primary))"
-                opacity="0.6"
-                className="animate-pulse"
-              />
-              <polygon
-                points="290,480 310,480 300,500"
-                fill="hsl(var(--primary))"
-                opacity="0.7"
-                className="animate-pulse"
-              />
-
-              {/* Process flow arrows - clear progression through funnel */}
-              <defs>
-                <marker
-                  id="arrowhead"
-                  markerWidth="10"
-                  markerHeight="7"
-                  refX="9"
-                  refY="3.5"
-                  orient="auto"
-                >
-                  <polygon
-                    points="0 0, 10 3.5, 0 7"
-                    fill="hsl(var(--primary))"
-                    opacity="0.8"
-                  />
-                </marker>
-              </defs>
-
-              {/* Step 1 to Step 2 - Inside funnel flow */}
-              <path
-                d="M 240 140 Q 330 160, 400 190"
-                stroke="hsl(var(--primary))"
-                strokeWidth="2"
-                strokeDasharray="8,4"
-                opacity="0.6"
-                fill="none"
-                markerEnd="url(#arrowhead)"
-                className="animate-pulse"
-              >
-                <animate
-                  attributeName="stroke-dashoffset"
-                  values="0;12"
-                  dur="2s"
-                  repeatCount="indefinite"
-                />
-              </path>
-
-              {/* Step 2 to Step 3 - Inside funnel flow */}
-              <path
-                d="M 380 230 Q 300 280, 240 330"
-                stroke="hsl(var(--primary))"
-                strokeWidth="2"
-                strokeDasharray="8,4"
-                opacity="0.6"
-                fill="none"
-                markerEnd="url(#arrowhead)"
-                className="animate-pulse"
-              >
-                <animate
-                  attributeName="stroke-dashoffset"
-                  values="0;12"
-                  dur="2s"
-                  repeatCount="indefinite"
-                  begin="0.7s"
-                />
-              </path>
-
-              {/* Step 3 to Step 4 - Inside funnel flow */}
-              <path
-                d="M 260 370 Q 320 430, 360 470"
-                stroke="hsl(var(--primary))"
-                strokeWidth="2"
-                strokeDasharray="8,4"
-                opacity="0.6"
-                fill="none"
-                markerEnd="url(#arrowhead)"
-                className="animate-pulse"
-              >
-                <animate
-                  attributeName="stroke-dashoffset"
-                  values="0;12"
-                  dur="2s"
-                  repeatCount="indefinite"
-                  begin="1.4s"
-                />
-              </path>
-
-              {/* Final flow to funnel output */}
-              <path
-                d="M 350 510 Q 325 540, 300 570"
-                stroke="hsl(var(--primary))"
-                strokeWidth="3"
-                strokeDasharray="6,3"
-                opacity="0.8"
-                fill="none"
-                markerEnd="url(#arrowhead)"
-                className="animate-pulse"
-              >
-                <animate
-                  attributeName="stroke-dashoffset"
-                  values="0;9"
                   dur="1.5s"
                   repeatCount="indefinite"
-                  begin="2.1s"
                 />
-              </path>
+              </circle>
 
-              {/* Step numbers inside funnel */}
-              <circle
-                cx="200"
-                cy="120"
-                r="16"
-                fill="hsl(var(--primary))"
-                opacity="0.9"
+              {/* River banks */}
+              <path
+                d="M 150 100 
+                   Q 250 150, 350 200
+                   Q 450 250, 500 350
+                   Q 550 450, 450 550
+                   Q 350 650, 400 750
+                   Q 450 850, 550 950
+                   Q 650 1050, 650 1100"
+                stroke="hsl(var(--primary))"
+                strokeWidth="2"
+                strokeOpacity="0.2"
+                fill="none"
+                strokeDasharray="4,2"
+                transform="translate(-15, 0)"
               />
-              <text
-                x="200"
-                y="126"
-                textAnchor="middle"
-                fill="white"
-                fontSize="12"
-                fontWeight="bold"
-              >
-                1
-              </text>
 
-              <circle
-                cx="420"
-                cy="210"
-                r="16"
-                fill="hsl(var(--secondary))"
-                opacity="0.9"
+              <path
+                d="M 150 100 
+                   Q 250 150, 350 200
+                   Q 450 250, 500 350
+                   Q 550 450, 450 550
+                   Q 350 650, 400 750
+                   Q 450 850, 550 950
+                   Q 650 1050, 650 1100"
+                stroke="hsl(var(--primary))"
+                strokeWidth="2"
+                strokeOpacity="0.2"
+                fill="none"
+                strokeDasharray="4,2"
+                transform="translate(15, 0)"
               />
-              <text
-                x="420"
-                y="216"
-                textAnchor="middle"
-                fill="white"
-                fontSize="12"
-                fontWeight="bold"
-              >
-                2
-              </text>
-
-              <circle
-                cx="220"
-                cy="350"
-                r="16"
-                fill="hsl(var(--primary))"
-                opacity="0.9"
-              />
-              <text
-                x="220"
-                y="356"
-                textAnchor="middle"
-                fill="white"
-                fontSize="12"
-                fontWeight="bold"
-              >
-                3
-              </text>
-
-              <circle
-                cx="380"
-                cy="490"
-                r="16"
-                fill="hsl(var(--secondary))"
-                opacity="0.9"
-              />
-              <text
-                x="380"
-                y="496"
-                textAnchor="middle"
-                fill="white"
-                fontSize="12"
-                fontWeight="bold"
-              >
-                4
-              </text>
             </svg>
 
-            {/* Process Cards positioned along the funnel - Desktop Only */}
+            {/* Process Cards positioned along the river - Desktop Only */}
             <div className="relative z-10 hidden md:block">
-              {/* Step 1 - Inside Funnel Opening (Awareness Stage) */}
+              {/* Step 1 - Top Left */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8, y: 50 }}
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="absolute"
-                style={{ top: "90px", left: "80px" }}
+                className="absolute top-0 left-0 md:left-16"
               >
-                <div className="group relative w-64 max-w-[85vw]">
+                <div className="group relative w-80 max-w-[90vw]">
                   {/* Step number floating badge */}
                   <div className="absolute -top-4 -left-4 w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold shadow-lg z-20 group-hover:scale-110 transition-transform duration-300">
                     1
@@ -657,16 +378,15 @@ export default function Process2Page() {
                 </div>
               </motion.div>
 
-              {/* Step 2 - Inside Upper Funnel (Interest Stage) */}
+              {/* Step 2 - Center Right */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8, y: 50 }}
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="absolute"
-                style={{ top: "180px", right: "100px" }}
+                className="absolute top-60 right-0 md:right-16"
               >
-                <div className="group relative w-64 max-w-[85vw]">
+                <div className="group relative w-80 max-w-[90vw]">
                   <div className="absolute -top-4 -right-4 w-12 h-12 bg-secondary text-secondary-foreground rounded-full flex items-center justify-center text-xl font-bold shadow-lg z-20 group-hover:scale-110 transition-transform duration-300">
                     2
                   </div>
@@ -704,16 +424,15 @@ export default function Process2Page() {
                 </div>
               </motion.div>
 
-              {/* Step 3 - Inside Middle Funnel (Consideration Stage) */}
+              {/* Step 3 - Center Left */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8, y: 50 }}
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="absolute"
-                style={{ top: "320px", left: "120px" }}
+                className="absolute top-[480px] left-0 md:left-32"
               >
-                <div className="group relative w-64 max-w-[85vw]">
+                <div className="group relative w-80 max-w-[90vw]">
                   <div className="absolute -top-4 -left-4 w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold shadow-lg z-20 group-hover:scale-110 transition-transform duration-300">
                     3
                   </div>
@@ -751,16 +470,15 @@ export default function Process2Page() {
                 </div>
               </motion.div>
 
-              {/* Step 4 - Inside Funnel Neck (Conversion Stage) */}
+              {/* Step 4 - Bottom Right */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8, y: 50 }}
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="absolute"
-                style={{ top: "460px", right: "140px" }}
+                className="absolute top-[720px] right-0 md:right-16"
               >
-                <div className="group relative w-56 max-w-[80vw]">
+                <div className="group relative w-80 max-w-[90vw]">
                   <div className="absolute -top-4 -right-4 w-12 h-12 bg-secondary text-secondary-foreground rounded-full flex items-center justify-center text-xl font-bold shadow-lg z-20 group-hover:scale-110 transition-transform duration-300">
                     4
                   </div>
@@ -958,6 +676,59 @@ export default function Process2Page() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 relative">
+        <div className="mx-auto max-w-4xl px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center p-12 rounded-3xl bg-gradient-to-br from-primary/5 via-background to-secondary/5 border border-primary/10"
+          >
+            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">
+              Ready to Start Your Journey?
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Join hundreds of high-ticket service businesses that have
+              transformed their growth with our proven process.
+            </p>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <div className="bg-foreground/5 rounded-2xl border p-0.5">
+                <Button
+                  asChild
+                  size="lg"
+                  className="rounded-2xl px-8 py-6 text-base font-semibold group"
+                >
+                  <Link
+                    href="https://calendly.com/musemind/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2"
+                  >
+                    <span>Book Your Strategy Call</span>
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </Button>
+              </div>
+
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="rounded-2xl px-8 py-6 text-base font-semibold border-2 hover:bg-primary/5"
+              >
+                <Link href="/services" className="flex items-center gap-2">
+                  <span>View Our Services</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </motion.div>
         </div>
       </section>
     </main>
